@@ -1,0 +1,55 @@
+<style> *{font-family: helvetica;}</style>
+<h1>Test de cookies</h1>
+<hr>
+
+<!--Incluimos jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--Incluimos jquery.cookie.js-->
+<script src="jquery.cookie.js"></script>
+<!--Incluimos los gestores de cookie-->
+<script src="cookieArray.js"></script>
+<script src="cookieJSONSting.js"></script>
+
+<div class="field">
+	<p><b>GalletaArr:  </b></p>
+	<p><b>GalletaString: </b></p>
+	<p><b>GalletaJSON: </b></p>
+</div>
+
+
+<!-- ::::::::::: cookieArray :::::::::::-->
+<script>
+	//Cookie de tipo array:
+	//Creamos una cookie con el nombre ArrayGalleta
+	var galletaAr = new cookieArray("ArrayGalleta");
+	//Añadimos un numero entero a la cookie
+
+	//------------------ COMENTAR/DESCOMENT
+	/*galletaAr.add(1);
+	galletaAr.add(2);
+	galletaAr.add(8);*/
+
+	//Obtenemos los valores de la cookie
+	$('.field p:nth-child(1)').append(galletaAr.items());
+</script>
+
+<!--::::::::::: cookieJSONString :::::::::::-->
+<script>
+	var galletaJSON = new cookieJSONString("JSONGalleta");
+	
+	//------------------ COMENTAR/DESCOMENTAR
+	/*var miJSON = {
+		nombre: 'pepe',
+		apellido: 'perez',
+		email: 'pepePerez@email.com'
+	}
+	galletaJSON.set(miJSON);
+	*/
+
+	var jsonRet = galletaJSON.getJSON();
+	var fstring = galletaJSON.getString();
+	$('.field p:nth-child(3)').append(jsonRet.nombre + ' : ' + jsonRet.email);
+	$('.field p:nth-child(2)').append(fstring);
+
+
+</script>
