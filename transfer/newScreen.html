@@ -1,12 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>NewScreen</title>
-	<link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
-	<link href="../static/fwk/styles/ac.css" rel="stylesheet">
+	<link href="fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
+	<link href="fwk/styles/ac.css" rel="stylesheet">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="BusquedaDinamica.js"></script>
+	<!--<script src="BusquedaDinamica.js"></script>-->
+	<!--<script src="bloqueoAdicional.js"></script>-->
+	<script src="CBPControlBloqueo.js"></script>
+	<script src="CBPinfoTooltip.js"></script>
+	<script src="CBPControlFechas.js"></script>
 </head>
 <body>
 	
@@ -60,13 +66,79 @@
 			background: #DDE8ED;
 		}
 		
+
+		.bann{
+			position: fixed;
+			top: 10px;
+		}
+
+		span.Toolinfo{
+			font-size: 12px;
+			border-radius: 100px;
+			cursor: help;
+			margin-right: 5px;
+			color:#DFDFDE;
+
+		}
+
+		.CBPtooltip{
+			padding: 10px;
+			max-width: 400px;
+			background: #fcf4e0;
+			box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
+			position: absolute;
+			z-index: 300;
+			display: none;
+			opacity: 0.9;
+			border-radius: 10px;
+		}
+
+		.toggle-box-boton{
+			    color: #1A64A4;
+    			cursor: default;
+    			margin-left: 1em;
+    			padding-left: 0.5em;
+    			padding-right: 0.5em;
+    			background: white;
+		}
+
+
+		/*-------------------*/
+
+		.navebar{
+			width: 100%;
+		}
+
+		.navebar li{
+			display: inline-block;
+		}
+		
+		.navebar img{
+			height: 25px;
+			width: 25px;
+			margin-top: -8px;
+			border-radius: 100px;
+		}
+
+		.navebar img:hover{
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+		}
+
+		.navebar #navTitle{
+			font-size: 20px;
+			padding-left: 10px;
+		}
+
 	</style>
 
 	<script>
+	/*
 		$(document).ready(function(){
+
  				$('#aplicacion').CBPBusquedaDinamica({
  					placeHolder: 'Aplicación',
- 					notFound: 'Aplicación no encontrada'
+ 					notFound: 'Aplicación no encontrada',
+ 					path:'localhost:8080/dynamicSearch/'
  				});
  				$('#componente').CBPBusquedaDinamica({
  					placeHolder: 'Componente',
@@ -80,8 +152,87 @@
  					placeHolder: 'Proveedor',
  					notFound: 'Componente no encontrado'
  				});
+		});*/
+
+		$(document).ready(function(){
+
+			/*-------- Control de bloqueo ----------*/
+			/*======================================*/
+			//Seleccionamos los ids que se bloquearán cuando se entre información.
+			
+			//Segun entrada de texto
+			/*$('#aplicacion').CBPControlBloqueo({
+				bloquear:['#version', '#componente', '#prov', '#tipoConsulta','#mostrarSolo'],
+				alfanum: true,
+				maxLetras: 6
+			});*/
+
+			var espacio = ['#aplicacion','#version', '#componente', '#prov', '#tipoConsulta','#mostrarSolo','#resultado', '#periodo'];
+			var desbloqueantes = ["#aplicacion", "#version","#componente","#prov"];
+
+
+			$('#aplicacion').CBPControlBloqueo({
+				espacio: espacio,
+				foco:['#tipoConsulta','#mostrarSolo'],
+				desbloqueantes: desbloqueantes,
+				alfanum: true,
+				maxLetras: 6
+			});
+
+			$('#version').CBPControlBloqueo({
+				espacio: espacio,
+				foco:['#periodo','#mostrarSolo'],
+				desbloqueantes: desbloqueantes,
+				alfanum: true,
+				maxLetras: 6
+			});
+
+			$('#componente').CBPControlBloqueo({
+				espacio: espacio,
+				foco:['#resultado'],
+				desbloqueantes: desbloqueantes,
+				alfanum: true,
+				maxLetras: 12
+			});
+
+			$('#prov').CBPControlBloqueo({
+				espacio: espacio,
+				foco:['#resultado'],
+				desbloqueantes: desbloqueantes,
+				alfanum: true,
+				maxLetras: 6
+			});
+		
+
+		/*-------- Control de fechas ----------*/
+		/*======================================*/
+		//Coherencia entre la fecha de inicio y fin en los formularios
+		$('#periodo').CBPControlFechas({
+			inInicio: '#fechaInicio',
+			inFinal: '#fechaFinal'
 		});
+
+
+
+		});//Fin del jQuery
 	</script>
+	
+	<!--*** Tooltips ***-->
+		
+		<!--Tooltips-->
+		<div id="toolVers" class="CBPtooltip">Esto es la versión</div>
+		<div id="toolComp" class="CBPtooltip">Esto es el componente</div>
+		<div id="toolApp" class="CBPtooltip">6 letras que definen el nombre de la aplicación</div>
+		<div id="toolProv" class="CBPtooltip">El nombre del proveedor</div>
+		
+		<!--*** Errores ***-->
+
+
+	<!--End de los tooltips-->
+
+
+	
+
 
 	<!--Cabecera-->
 	<div class="page-header"> 
@@ -96,6 +247,14 @@
 		   	</div>
 
 	<!--Titulo-->
+	<!--Navbar-->
+	<ul class="navebar">
+		<li><a href=""><img src="atrasCBP.png" alt="Atrás"></a></li>
+		<li><a href=""><img src="homeCBP.png" alt="Home"></a></li>
+		<li id="navTitle">Título</li>
+	</ul>
+	<!--End navbar-->
+
 	<br>
 	<h3 class="content-title emphasized blue">Consulta<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
 	
@@ -105,15 +264,15 @@
 		<div class="row-fluid">
 			<div class="span2"></div>
 			<div class="span4 cons">
-				<div class="span4"><b>Aplicación</b></div>
+				<div class="span4"><span class="Toolinfo" id="toolApp"></span><b>Aplicación</b></div>
 				 <div class="span4"><input type="text" id="aplicacion" class="input-medium">
 					
-
+				
 				 </div>
 			</div>
 			
 			<div class="span4 cons">
-				<div class="span4"><b>Versión</b></div>
+				<div class="span4"><span class="Toolinfo" id="toolVers"></span><b>Versión</b></div>
 				 <div class="span4"><input type="text" id="version" class="input-medium"></div>
 			</div>
 			<div class="span2"></div>
@@ -124,12 +283,12 @@
 			<div class="row-fluid">
 			<div class="span2"></div>
 			<div class="span4 cons">
-				<div class="span4"><b>Componente</b></div>
+				<div class="span4"><span class="Toolinfo" id="toolComp"></span><b>Componente</b></div>
 				 <div class="span4"><input type="text" id="componente" class="input-medium"></div>
 			</div>
 			
 			<div class="span4 cons">
-				<div class="span4"><b>Proveedor</b></div>
+				<div class="span4"><span class="Toolinfo" id="toolProv"></span><b>Proveedor</b></div>
 				 <div class="span4"><select name="proveedor" id="prov">
 				 	<option value="">Hola</option>
 				 	<option value="">Hola</option>
@@ -144,28 +303,28 @@
 	<!--Elementos de busqueda-->
 
 	<div class="toggle-box expandido" style="margin-top: 200px;">		
-			<span class="toggle-box-boton-contraer">Filtros</span>
+			<span class="toggle-box-boton">Filtros</span>
 			<div class="toggle-box-content ">
 			
 
 	<div class="row-fluid">
 	<div class="span12">
-		<div class="span6">
+		<div class="span6" id="tipoConsulta">
 			<h3 class="content-title emphasized">Tipo de consulta<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
 			
 			<ul>
-				<li><input type="radio"  checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"> Actual</li>
-				<li><input  type="radio"  checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"> Histórico</li>
+				<li><input type="radio"  checked="checked" value="actual" id="optionsRadios1" name="optionsRadios"> Actual</li>
+				<li><input  type="radio"  value="historico" id="optionsRadios1" name="optionsRadios"> Histórico</li>
 			</ul>
 
 		</div>
-		<div class="span6">
+		<div class="span6" id="resultado">
 			<h3 class="content-title emphasized">Resultado<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
 
 			<ul>
-				<li><input type="radio"  checked="checked" value="option1" id="optionsRadios1" name="resulRadio"> Todos</li>
-				<li><input  type="radio"  checked="checked" value="option1" id="optionsRadios1" name="resulRadio"> OK ✔ </li>
-				<li><input  type="radio"  checked="checked" value="option1" id="optionsRadios1" name="resulRadio"> KO ✖</li>
+				<li><input type="radio"  checked="checked" value="todos" id="optionsRadios1" name="resulRadio"> Todos</li>
+				<li><input  type="radio"  value="OK" id="optionsRadios1" name="resulRadio"> OK ✔ </li>
+				<li><input  type="radio"   value="KO" id="optionsRadios1" name="resulRadio"> KO ✖</li>
 			</ul>
 		</div>
 
@@ -175,20 +334,20 @@
 
 	<div class="row-fluid">
 	<div class="span12">
-		<div class="span6">
+		<div class="span6" id="periodo">
 			<h3 class="content-title emphasized">Periodo<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
 			
 			<div class="row-fluid"> 
-					<div class="span6">Desde <input type="text"></div>
-					<div class="span6"> Hasta <input type="text"></div>
+					<div class="span6">Desde <input type="text" id="fechaInicio"></div>
+					<div class="span6"> Hasta <input type="text" id="fechaFinal"></div>
 			</div>
 
 		</div>
-		<div class="span6">
+		<div class="span6" id="mostrarSolo">
 			<h3 class="content-title emphasized">Mostrar solo<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
 			<ul>
-				<li><input type="checkbox"  checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"> Bloqueados</li>
-				<li><input  type="checkbox"   value="option1" id="optionsRadios1" name="optionsRadios"> Susceptibles de bloqueo</li>
+				<li><input type="checkbox"  checked="checked" value="bloqueados" id="optionsRadios1" name="optionsRadios"> Bloqueados</li>
+				<li><input  type="checkbox"   value="susceptibles" id="optionsRadios1" name="optionsRadios"> Susceptibles de bloqueo</li>
 			</ul>
 		</div>
 

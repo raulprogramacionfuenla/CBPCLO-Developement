@@ -1,40 +1,51 @@
 /**
-*-----Búsqueda Dinámica----- 
+*-----Búsqueda Dinámica Cliente----- 
 *-----by: Álvaro Peris Zaragozá----
+*-----AbsisCloud
 *-----CBPCLO v1.0 2017-------
 **/
 $(document).ready(function(){	
 (function ($) {
-	/*
-	* Parsea la información procedente de la base de datos y añade los elementos a la lista de componentes
-	* @param id: id del recuadro de la lista de elementos que se muestra
-	* @param info: información en crudo que se adecuará para mostrarse en el html
-	*/
-	function parseaRecepcion(id,info){
-		$('#'+id).append('<li>'+elemento+'</li>');
-	}
-
-	/**
-	* Elimina la lista de elementos
-	**/
-	function borraLista(id,elemento){
-		$('#'+id).html('');
-	}
-
+	
 	/**
 	* Conexión AJAX con el servidor. Realiza las consultas al servidor
 	* @param path : path en el que se encuentra el servidor para realizar peticiones 
 	* @param id id: del recuadro de la lista de elementos que se muestra
+	* @param info :información a transmitir al servidor
 	**/
-	function TxRx(id, path){
-
+	function TxRx(id, path, info){
+		$.ajax({
+		             type: "POST",
+		             contentType: "application/json",
+		             url: path,
+		             data: JSON.stringify(info),
+		             dataType: 'json',
+		             timeout: 600000,
+		             success: function (data) {
+		             	 //Borramos el placeholder
+		             	 $("#" + id).html(data);
+		             }
+			}); //End AJAX
 	}
 
+
+	function plotError(num){
+		switch (num) {
+			case 1:
+				console.log('Introduzca un path valido path:"/path/to/info"');
+				break;
+			default:
+				// statements_def
+				break;
+		}
+	}
 	/*
 	* Plugin principal
 	* @param pJ objeto JSON con las preferencias del buscador dinámico
 	*/
 	$.fn.CBPBusquedaDinamica = function(pJ) {
+		var path = '';
+		if(pJ.path != '') path = pJ.path; else  plotError(1);
 	   	//Ponemos un place holder
 		if (pJ.placeHolder != '') $(this).attr('placeholder',pJ.placeHolder);
 		//Creamos un id de holder:
@@ -53,6 +64,10 @@ $(document).ready(function(){
 		$(this).on('input',function(event) {
 			//Mostramos el menu desplegable
 			var valor=$(this).val().replace(/ /g,'');
+
+			//Transmitimos la información al servidor
+			TxRx(inId,path,valor);
+
 			if(valor !=''){
 				$('#' + holdName).slideDown('fast');
 			}else{
