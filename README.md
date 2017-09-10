@@ -7,5 +7,5 @@
 
 ## Módulos JAVA
 
-* 📦 __JAVA CBPExlMaker__ Módulo para exportar y gestionar archivos Excel.
+* 📦 [__JAVA CBPExlMaker__](https://github.com/alpeza/GreenCompany/wiki/JAVA-CBPExlMaker) Módulo para exportar y gestionar archivos Excel.
 
