@@ -9,55 +9,57 @@ $(document).ready(function(){
 	
 	/**
 	* Conexión AJAX con el servidor. Realiza las consultas al servidor
-	* @param path : path en el que se encuentra el servidor para realizar peticiones 
 	* @param id id: del recuadro de la lista de elementos que se muestra
 	* @param info :información a transmitir al servidor
 	**/
-	function TxRx(id, path, info){
-		$.ajax({
-		             type: "POST",
-		             contentType: "application/json",
-		             url: path,
-		             data: JSON.stringify(info),
-		             dataType: 'json',
-		             timeout: 600000,
-		             success: function (data) {
-		             	 //Borramos el placeholder
-		             	 $("#" + id).html(data);
-		             }
-			}); //End AJAX
+	function TxRx(id, info){
+		//Obtiene información de la base de datos.
+		//DirectoryPath representa la página donde se gestiona la petición
+		$.post(preferencias.path,info, function(data) {
+			$('body').append(data);
+		});
 	}
 
-
-	function plotError(num){
-		switch (num) {
-			case 1:
-				console.log('Introduzca un path valido path:"/path/to/info"');
-				break;
-			default:
-				// statements_def
-				break;
-		}
+	/**
+	 * Retorna un mensaje JSON con los parámetros seleccionados por el usuario
+	 * @param: valor String, valor que se va consultar en la base de datos.
+	 */
+	function componMensaje(valor){
+		pref = preferencias;
+		msg = {
+			'limit': pref.limitResults,
+			'field': pref.field,
+			'table':pref.table,
+			'valor': valor
+		};
+		return msg;
 	}
+
 	/*
 	* Plugin principal
 	* @param pJ objeto JSON con las preferencias del buscador dinámico
 	*/
+	var preferencias;
 	$.fn.CBPBusquedaDinamica = function(pJ) {
+		preferencias = pJ;
 		var path = '';
-		if(pJ.path != '') path = pJ.path; else  plotError(1);
 	   	//Ponemos un place holder
 		if (pJ.placeHolder != '') $(this).attr('placeholder',pJ.placeHolder);
+		
 		//Creamos un id de holder:
 		var inId =  $(this).attr('id');
 		var holdName = 'busc' + $(this).attr('id');
-		var buscHtml = '<div class="buscador" id="'+holdName+'"></div>';
-		$(this).closest('div').append(buscHtml);
+		var buscHtml = '<div class="buscador" id="'+holdName+'"><ul></ul></div>';
+		$('body').append(buscHtml);
 		$('#' + holdName).css('width',$(this).width()+3+'px' );
-		
+		$('#' + holdName).css({
+			left: $(this).position().left,
+			top: $(this).position().top + $(this).height() + 5 +'px',
+			width: $(this).width()+3+'px'
+		});
 
 		/**
-		*EVENTO: Controlamos que se introduzca texto, en caso de que se haya introducido mostramos la lista de
+		*[EVENTO]: Controlamos que se introduzca texto, en caso de que se haya introducido mostramos la lista de
 		* elementos.
 		*@param event
 		*/
@@ -66,21 +68,24 @@ $(document).ready(function(){
 			var valor=$(this).val().replace(/ /g,'');
 
 			//Transmitimos la información al servidor
-			TxRx(inId,path,valor);
+			
+			TxRx(inId,componMensaje(valor));
+			$('#' + holdName).append('<li>'+valor+'</li>');
 
 			if(valor !=''){
 				$('#' + holdName).slideDown('fast');
 			}else{
 				$('#' + holdName).slideUp('fast');	
 			}
+
 		});
 
-		//EVENTO: Escondemos el holder
+		//[EVENTO]: Escondemos el holder
 		$('body').click(function(event) {
 			$('#' + holdName).slideUp('fast');
 		});
 			
-		//SET y EVENTO: Click sobre palabra del desplegable 
+		//[SET y EVENTO]: Click sobre palabra del desplegable 
 		 $('body').on('click','#'+holdName+' li',function(event) {
 			$('#' + inId).val($(this).text());
 		});
@@ -89,3 +94,5 @@ $(document).ready(function(){
 	};//End plugin
 }(jQuery));//End function definitions
 });//FinJQUERY
+   
+   //
