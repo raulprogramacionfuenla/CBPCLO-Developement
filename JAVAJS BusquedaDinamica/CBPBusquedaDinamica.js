@@ -6,7 +6,6 @@
 **/
 $(document).ready(function(){	
 (function ($) {
-	
 	/**
 	* Conexión AJAX con el servidor. Realiza las consultas al servidor
 	* @param id id: del recuadro de la lista de elementos que se muestra
@@ -15,9 +14,11 @@ $(document).ready(function(){
 	function TxRx(id, info){
 		//Obtiene información de la base de datos.
 		//DirectoryPath representa la página donde se gestiona la petición
-		$.post(preferencias.path,info, function(data) {
-			$('body').append(data);
-		});
+		if(info.valor.length > preferencias.minInput){
+			$.post(preferencias.path,{msg:JSON.stringify(info)}, function(data) {
+				$('#' + holdName).html(data);
+			});
+		}
 	}
 
 	/**
@@ -27,10 +28,10 @@ $(document).ready(function(){
 	function componMensaje(valor){
 		pref = preferencias;
 		msg = {
-			'limit': pref.limitResults,
-			'field': pref.field,
-			'table':pref.table,
-			'valor': valor
+			limit : pref.limitResults,
+			field : pref.field,
+			table :pref.table,
+			valor : valor
 		};
 		return msg;
 	}
@@ -40,6 +41,7 @@ $(document).ready(function(){
 	* @param pJ objeto JSON con las preferencias del buscador dinámico
 	*/
 	var preferencias;
+	var holdName; 
 	$.fn.CBPBusquedaDinamica = function(pJ) {
 		preferencias = pJ;
 		var path = '';
@@ -48,13 +50,14 @@ $(document).ready(function(){
 		
 		//Creamos un id de holder:
 		var inId =  $(this).attr('id');
-		var holdName = 'busc' + $(this).attr('id');
+		$(this).attr('autocomplete','off');
+		holdName = 'busc' + $(this).attr('id');
 		var buscHtml = '<div class="buscador" id="'+holdName+'"><ul></ul></div>';
 		$('body').append(buscHtml);
 		$('#' + holdName).css('width',$(this).width()+3+'px' );
 		$('#' + holdName).css({
 			left: $(this).position().left,
-			top: $(this).position().top + $(this).height() + 5 +'px',
+			top: $(this).position().top + $(this).height() + 10 +'px',
 			width: $(this).width()+3+'px'
 		});
 
@@ -70,8 +73,6 @@ $(document).ready(function(){
 			//Transmitimos la información al servidor
 			
 			TxRx(inId,componMensaje(valor));
-			$('#' + holdName).append('<li>'+valor+'</li>');
-
 			if(valor !=''){
 				$('#' + holdName).slideDown('fast');
 			}else{
