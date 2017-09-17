@@ -1,4 +1,5 @@
-//----------------------------------
+$(document).ready(function(){
+	//----------------------------------
 	//LaCaixa / Everis 2017 ÁlvaroPeris
 	//----------------------------------
 	/*============== PLUGIN PAGINADOR ===================*/
@@ -27,8 +28,9 @@
 		numPags: 0,
 		stackC: 0, //Cuenta el numero de elementos que tenemos por encima de la pila
 		canvas: '', //Donde se cargan los elementos
-		debug: false,
+		debug: true,
 		state: 'init', //Controla el estado del pasador de paginas 
+		inputMSG:{},
 		//-----> Public functions
 		//Función constructora o de inicio
 		start: function(entrada){
@@ -39,11 +41,9 @@
 			 this.canvas = entrada.canvas;
 			 this.directorio = entrada.directorio;
 			 
-			 this.stringMsg =this.prepareIn(entrada.msgBase);
-			 
-			 
 			 this.debug = entrada.debug;
-
+			 
+			 this.inputMSG = entrada.msgBase;
 			 //Printamos el indice de páginas Ej: 1/10
 			 this.printIndex();
 		},
@@ -55,12 +55,10 @@
 				this.state = 'pass';
 				//->Actualizamos el stack
 				this.stackC += this.paso;
-				
 				//Cambiamos de estado
 				if(this.stackC == this.numElementos - this.paso){
-					this.final();
+					this.finall();
 				}//End 
-
 				//Transmitimos la información al servidor
 				this.ajaxCom();
 
@@ -81,8 +79,6 @@
 					this.state = 'init';
 					this.inicio();
 				}
-
-
 				//Transmitimos la información al servidor
 				this.ajaxCom();
 
@@ -101,7 +97,7 @@
 			if(this.debug) this.DebugInfo();
 		},
 		
-		final: function (){
+		finall: function (){
 			this.pagActual = this.numPags;
 			this.stackC = this.numElementos - this.paso;
 			this.printIndex();
@@ -122,18 +118,14 @@
 			
 				case 'final':
 					var st = this.numElementos - this.paso;
-					return this.appendSP('"'+st.toString()+'"','"'+this.paso.toString()+'"');
 				break;
 
 				case 'pass':
 					if(this.stackC <= (this.numElementos - this.paso)){
 						var sc = this.stackC+ 1;
-						return this.appendSP((sc).toString(),this.paso.toString())
 					}
 				break;	
 			}//End switch
-
-
 		},
 
 		//-----> "Private" functions
@@ -157,160 +149,79 @@
 			console.log(this.componMensaje(this.state));
 			console.log(":::::::::::::::::::::::::::::::::::::\n\n");
 		},
-
-		objToString: function (obj) {
-    		var str = '';
-		    for (var p in obj) {
-		        if (obj.hasOwnProperty(p)) {
-		            str += '\t' + p + ':' + obj[p] + '\n' ;
-		        }
-		    }
-
-		    if(str != '') return str;
-		    else return 'No se transmite nada';
-		},
-
 		//Obtiene información de la base de datos.
 		//DirectoryPath representa la página donde se gestiona la petición
-		ajaxCom: function(elemento){
-			$.ajax({
-            type: "GET",
-        	url: this.directorio+'/'+this.componMensaje(this.state),
-        	dataType: 'text',
-            success : function (contenido) {
-                //Cargamos la nueva información información en el DOM
-                $(this.canvas).html(contenido);
-            	}
-			});//End AJAX
+		ajaxCom: function(elemento){			
+			//Versión POST de alta tipificación orientado a JAVA
+			var formulario = {
+					aplicacion:String(this.inputMSG.aplicacion) == "" ? "null": String(this.inputMSG.aplicacion),
+					version:String(this.inputMSG.version)== "" ? "null":String(this.inputMSG.version),
+					componente:String(this.inputMSG.componente)== "" ? "null":String(this.inputMSG.componente),
+					proveedor:String(this.inputMSG.prov)== "--" ? "null":String(this.inputMSG.prov),
+					TipoConsulta:String(this.inputMSG.componente)== "" ? "null":String(this.inputMSG.tipoConsulta),				
+					Resultado:String(this.inputMSG.resultado)== "" ? "null":String(this.inputMSG.resultado),
+					PeriodoInicial:String(this.inputMSG.periodoInicial)== "" ? "null":String(this.inputMSG.periodoInicial),
+					PeriodoFinal:String(this.inputMSG.periodoFinal)== "" ? "null":String(this.inputMSG.periodoFinal),
+					bloqueados:String(this.inputMSG.bloqueados)== 0 ? "null":String(this.inputMSG.bloqueados),
+					susceptibles:String(this.inputMSG.susceptibles)== 0 ? "null":String(this.inputMSG.susceptibles),
+					stack:this.stackC,
+					offset:this.paso
+				};
+			console.log("JSON: " + JSON.stringify(formulario));
+			$.post(this.directorio,formulario,function(contenido){
+				$('tbody').html(contenido);
+			});
+
 		},//End refrescador
 		
-		//Pasa un json de entrada a un string quitando el último bracket y añadiendo una coma.
-		prepareIn: function(jso){
-			var stringform = JSON.stringify(jso);
-			return stringform.slice(0, -1) + ',';
-		},
-		
-		//Añade los campos de stack y paso a la información base proporcionada
-		appendSP: function(stack, paso){
-			var tmpStr = this.stringMsg;
-			tmpStr += '"stack": ' + stack + ', "paso": ' + paso + '}';
-			return tmpStr;
-		}
+	};//End paginador
 
-	}//End paginador
+	/*============= CONTROL DE EVENTOS ==================*/
+	
+	//---------------------------------------------------
+	//-------------------- INICIO -----------------------
+	//---------------------------------------------------
+	//Iniciamos el paginador
+	//Tomamos el número de elementos que tiene la página
+	var numElementos = $('.leftElement b').text();
+	
+	//Recuperamos la cookie que contiene la información del formulario
+	var formularioSeleccionado = new cookieJSONString("consultaHost");
+	
+	Paginador.start({
+		paso: 10, //Marca el número de elementos que se mostrarán
+		numElementos: numElementos, //Marca el número de elementos totales que contiene la peticion
+		directorio: '/ResultadosBusqueda/hello', //Determina la página a donde se realizarán las peticiones de información
+		canvas: 'tbody', //Determina el punto donde se mostrará la información (.clase #ide) que se ha obtenido den el DOM web
+		msgBase: formularioSeleccionado.getJSON(),//Cookie de la que leemos las preferencias de busqueda.  
+		debug: false //Muestra información de depuracion por la consola javaScript
+	});
+	
+	
+	
+	$('.btt').click(function(event) {
+		//Tomamos el valor del indentificador
+		var id = $(this).attr('id');
 
-				//Transmitimos la información al servidor
-				this.ajaxCom();
+		switch(id) {
+    		case 'inicio':
+        		Paginador.inicio();
+        	break;
+   			
+   			case 'anterior':
+   				Paginador.retornaPag();
+   		
+        	break;
 
-				if(this.debug) this.DebugInfo();
-			}//End if		
-		},
+        	case 'siguiente':
+        		Paginador.avanzaPag();
+     
+        	break;
 
-		inicio: function (){
-			this.pagActual = 1;
-			this.stackC = 0;
-			this.printIndex();
-			this.state = 'init';
+        	case 'final':
+        		Paginador.finall();
+        	break;
+    	}//End click
+	});//End función de click
 
-			//Transmitimos la información al servidor
-			this.ajaxCom();
-			if(this.debug) this.DebugInfo();
-		},
-		
-		final: function (){
-			this.pagActual = this.numPags;
-			this.stackC = this.numElementos - this.paso;
-			this.printIndex();
-			this.state = 'final';
-
-			//Transmitimos la información al servidor
-			this.ajaxCom();
-			if(this.debug) this.DebugInfo();
-		},
-
-
-		//Controla las peticiones al servidor
-		componMensaje: function(status){
-			switch (status){
-				case 'init':	
-					return this.appendSP("0",this.paso);
-				break;
-			
-				case 'final':
-					var st = this.numElementos - this.paso;
-					return this.appendSP('"'+st.toString()+'"','"'+this.paso.toString()+'"');
-				break;
-
-				case 'pass':
-					if(this.stackC <= (this.numElementos - this.paso)){
-						var sc = this.stackC+ 1;
-						return this.appendSP((sc).toString(),this.paso.toString())
-					}
-				break;	
-			}//End switch
-
-
-		},
-
-		//-----> "Private" functions
-		printIndex: function(){
-			$('.rightElement b:nth-child(1)').html(this.pagActual);
-			$('.rightElement b:nth-child(2)').html(this.numPags);			
-		},
-
-		RoundNumElement: function(num){
-			 return Math.ceil(num / this.paso)*this.paso;
-		},
-
-		DebugInfo: function (){
-			console.log(":::::::::::::::::::::::::::::::::::::");
-			console.log("-> Página pagActual: " + this.pagActual);
-			console.log("-> Numero de pags: " + this.numPags);
-			console.log("---------------------------------");
-			console.log("-> Status: " + this.state);
-			console.log("-> Stack Counter: " + this.stackC);
-			console.log("-> Msg JSON Transmisión a backend: ");
-			console.log(this.componMensaje(this.state));
-			console.log(":::::::::::::::::::::::::::::::::::::\n\n");
-		},
-
-		objToString: function (obj) {
-    		var str = '';
-		    for (var p in obj) {
-		        if (obj.hasOwnProperty(p)) {
-		            str += '\t' + p + ':' + obj[p] + '\n' ;
-		        }
-		    }
-
-		    if(str != '') return str;
-		    else return 'No se transmite nada';
-		},
-
-		//Obtiene información de la base de datos.
-		//DirectoryPath representa la página donde se gestiona la petición
-		ajaxCom: function(elemento){
-			$.ajax({
-            type: "GET",
-        	url: this.directorio+'/'+this.componMensaje(this.state),
-        	dataType: 'text',
-            success : function (contenido) {
-                //Cargamos la nueva información información en el DOM
-                $('tbody').html(contenido);
-            	}
-			});//End AJAX
-		},//End refrescador
-		
-		//Pasa un json de entrada a un string quitando el último bracket y añadiendo una coma.
-		prepareIn: function(jso){
-			var stringform = JSON.stringify(jso);
-			return stringform.slice(0, -1) + ',';
-		},
-		
-		//Añade los campos de stack y paso a la información base proporcionada
-		appendSP: function(stack, paso){
-			var tmpStr = this.stringMsg;
-			tmpStr += '"stack": ' + stack + ', "paso": ' + paso + '}';
-			return tmpStr;
-		}
-
-	}//End paginador
+});//End jQuery

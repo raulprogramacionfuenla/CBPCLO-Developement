@@ -1,12 +1,16 @@
 package es.lacaixa.absiscloud.[nombreProyecto].common.util;
 
 
+
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
-import java.util.TreeMap;
+
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
@@ -16,7 +20,8 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.util.CellRangeAddress;
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 /**
  * Clase libreria para la gestión de archivos excel
@@ -206,7 +211,7 @@ public class CBPExlMaker {
 	
 	
 	/**
-	 *Crea una fila de información a partir de los datos presentes en
+	 Crea una fila de información a partir de los datos presentes en
 	 * un toString() "generado automáticamente con Eclipse" de un DTO.
 	 * Eclipse > Source > Generate toString()
 	 * data -> El toString() de un DTO
@@ -325,8 +330,32 @@ public class CBPExlMaker {
 		this.rowC++;	
 	}//End makeDTOTableRow
 	
-	
-	
+	//Transmisor
+	/**
+	 * Transmite la información de la plantilla al cliente
+	 * @param filename String
+	 * @param response HttpServletResponse
+	 */
+	public Object send(String filename,HttpServletResponse response)throws IOException {
+		response.setContentType("application/vnd.ms-excel");
+		response.setHeader("Content-Disposition","attachment; filename="+filename+".xls");
+		try{
+			HSSFWorkbook wib = new HSSFWorkbook();
+			wib = this.getWorkBook();
+			
+			response.getOutputStream();
+			response.flushBuffer();
+			
+			//3.3- Transmitimos la informacion al cliente
+			wib.write(response.getOutputStream());
+			wib.close();
+			System.out.println("Sending...");
+		}catch (Exception e){
+			System.out.println("ERROR EXCEL: " + e);
+		}
+		return null;
+		
+	}
 	
 	//Utiles =====================================
 	/**
