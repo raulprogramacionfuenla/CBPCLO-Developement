@@ -1,4 +1,5 @@
-package com.comp;
+package es.lacaixa.absiscloud.[nombreProyecto].common.util;
+
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -66,7 +67,6 @@ public class CBPExlMaker {
 		estiloAppName.setFillPattern(CellStyle.SOLID_FOREGROUND);
 		
 		HSSFFont fuenteCabecera = this.wb.createFont();
-		fuenteCabecera.setBold(true);
 		fuenteCabecera.setFontHeight((short) (7.5*35));
 		fuenteCabecera.setFontName("Calibri");
         estiloAppName.setFont(fuenteCabecera);
@@ -80,7 +80,6 @@ public class CBPExlMaker {
 		estiloCeldaTitle.setFillForegroundColor(HSSFColor.SKY_BLUE.index);
 		estiloCeldaTitle.setFillPattern(CellStyle.SOLID_FOREGROUND);
 	    HSSFFont fuenteCeldaTitle = this.wb.createFont();
-	    fuenteCeldaTitle.setBold(true);
 	    fuenteCeldaTitle.setColor(HSSFColor.WHITE.index);
 	    fuenteCeldaTitle.setFontHeight((short) (7.5*40));
 	    fuenteCeldaTitle.setFontName("Calibri");
@@ -108,7 +107,6 @@ public class CBPExlMaker {
 		estiloCeldaTitle.setFillForegroundColor(HSSFColor.GREY_50_PERCENT.index);
 		estiloCeldaTitle.setFillPattern(CellStyle.SOLID_FOREGROUND);
 	    HSSFFont fuenteCeldaTitle = this.wb.createFont();
-	    fuenteCeldaTitle.setBold(true);
 	    fuenteCeldaTitle.setColor(HSSFColor.WHITE.index);
 	    fuenteCeldaTitle.setFontHeight((short) (7.5*31));
 	    fuenteCeldaTitle.setFontName("Calibri");
@@ -118,7 +116,6 @@ public class CBPExlMaker {
 		estiloCeldaCont.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
 		estiloCeldaCont.setFillPattern(CellStyle.SOLID_FOREGROUND);
 	    HSSFFont fuenteCeldaCont = this.wb.createFont();
-	    fuenteCeldaCont.setBold(true);
 	    fuenteCeldaCont.setColor(HSSFColor.BLACK.index);
 	    fuenteCeldaCont.setFontHeight((short) (7.5*31));
 	    fuenteCeldaCont.setFontName("Calibri");
@@ -159,7 +156,6 @@ public class CBPExlMaker {
 		estiloCeldaTitulo.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
 		estiloCeldaTitulo.setFillPattern(CellStyle.SOLID_FOREGROUND);
 	    HSSFFont fuenteCeldaTitle = this.wb.createFont();
-	    fuenteCeldaTitle.setBold(true);
 	    fuenteCeldaTitle.setFontHeight((short) (7.5*30));
 	    fuenteCeldaTitle.setFontName("Calibri");
 	    estiloCeldaTitulo.setFont(fuenteCeldaTitle);
@@ -190,7 +186,6 @@ public class CBPExlMaker {
 		estiloCeldaCont.setFillForegroundColor(HSSFColor.SKY_BLUE.index);
 		estiloCeldaCont.setFillPattern(CellStyle.SOLID_FOREGROUND);
 	    HSSFFont fuenteCeldaCont = this.wb.createFont();
-	    fuenteCeldaCont.setBold(true);
 	    fuenteCeldaCont.setColor(HSSFColor.BLACK.index);
 	    fuenteCeldaCont.setFontHeight((short) (7.5*27));
 	    fuenteCeldaCont.setFontName("Calibri");
@@ -211,7 +206,7 @@ public class CBPExlMaker {
 	
 	
 	/**
-	 Crea una fila de información a partir de los datos presentes en
+	 *Crea una fila de información a partir de los datos presentes en
 	 * un toString() "generado automáticamente con Eclipse" de un DTO.
 	 * Eclipse > Source > Generate toString()
 	 * data -> El toString() de un DTO
@@ -227,7 +222,6 @@ public class CBPExlMaker {
 		 estiloCeldaCont.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
 		 estiloCeldaCont.setFillPattern(CellStyle.SOLID_FOREGROUND);
 		 HSSFFont fuenteCeldaCont = this.wb.createFont();
-		 fuenteCeldaCont.setBold(false);
 		 fuenteCeldaCont.setColor(HSSFColor.BLACK.index);
 		 fuenteCeldaCont.setFontName("Calibri");
 		 estiloCeldaCont.setFont(fuenteCeldaCont);
@@ -299,7 +293,6 @@ public class CBPExlMaker {
 		 estiloCeldaCont.setFillForegroundColor(HSSFColor.AQUA.index);
 		 estiloCeldaCont.setFillPattern(CellStyle.SOLID_FOREGROUND);
 		 HSSFFont fuenteCeldaCont = this.wb.createFont();
-		 fuenteCeldaCont.setBold(false);
 		 fuenteCeldaCont.setColor(HSSFColor.WHITE.index);
 		 fuenteCeldaCont.setFontName("Calibri");
 		 estiloCeldaCont.setFont(fuenteCeldaCont);
