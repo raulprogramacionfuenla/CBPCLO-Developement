@@ -186,10 +186,6 @@ CREATE TABLE IF NOT EXISTS `control_x_tipus_component` (
   `id_relacio` INT NOT NULL,
   `id_tipus_comp` INT NULL,
   `id_control` INT NULL,
-  `estat` INT NULL,
-  `dataAlta` DATE NULL,
-  `dataBaixa` DATE NULL,
-  `dataModif` DATE NULL,
   PRIMARY KEY (`id_relacio`))
 ENGINE = InnoDB;
 
@@ -197,14 +193,11 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `control_literal` (
  `id_control_literal` int(11) NOT NULL,
+ `id_clase_control` varchar(30) NOT NULL, 
   `id_control` int(11) DEFAULT NULL,
   `expresioRegular` varchar(200) DEFAULT NULL,
   `ordre` int(11) DEFAULT NULL,
   `descripcio` varchar(45) DEFAULT NULL,
-  `estat` int(11) DEFAULT NULL,
-  `dataAlta` date DEFAULT NULL,
-  `dataBaixa` date DEFAULT NULL,
-  `dataModif` date DEFAULT NULL,
   PRIMARY KEY (`id_control_literal`),
   UNIQUE KEY `ControlOrdre` (`id_control`,`ordre`,`estat`)
 ) ENGINE = InnoDB;
@@ -218,12 +211,6 @@ CREATE TABLE IF NOT EXISTS `excepcio` (
   `id_tipus_comp` INT NULL,
   `id_control` INT NULL,
   `id_tipus_control` INT NULL,
-  `estat` INT NULL,
-  `dataAlta` DATE NULL,
-  `dataBaixa` DATE NULL,
-  `dataModif` DATE NULL,
-  `dataCaduc` DATE NULL,
-  `dataVigen` DATE NULL,
   PRIMARY KEY (`id_excepcio`))
 ENGINE = InnoDB;
 
