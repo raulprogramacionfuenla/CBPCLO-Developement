@@ -158,7 +158,6 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `tipus_control` (
   `id_tipus_control` INT NOT NULL AUTO_INCREMENT,
-  `origen` VARCHAR(10) NULL,
   `nom` VARCHAR(10) NULL,
   `descripcio` VARCHAR(50) NULL,
   `dataAlta` DATE NULL,
@@ -322,6 +321,7 @@ CREATE TABLE IF NOT EXISTS `info_aplicacio` (
   `ia_centre` VARCHAR(100) NOT NULL,
   `ia_area_dep` VARCHAR(100) NOT NULL,
   `ia_proveidor` VARCHAR(100) NOT NULL,
+  `ia_origen` VARCHAR(20) NOT NULL,
   `ia_mailResp` VARCHAR(500) NOT NULL,
   `ia_mailRespCaixa` VARCHAR(200) NOT NULL,
   `ia_numComponentsHOST` INT NOT NULL,
