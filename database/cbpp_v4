@@ -23,11 +23,6 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des` (
   UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
   ) ENGINE = InnoDB;
 
-CREATE index `index_id_aplicacio_des` ON resultat_x_component_des (component,apl_agrup, dataProces);
-CREATE index `index_id_component_des` ON resultat_x_component_des (component, dataProces);
-CREATE index `index_id_versio_des` ON resultat_x_component_des (component, versio, dataProces);
-
-
 
 
 CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
@@ -55,9 +50,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
   UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
   ) ENGINE = InnoDB;
 
-CREATE index `index_id_aplicacio_pro` ON resultat_x_component_pro (component,apl_agrup, dataProces);
-CREATE index `index_id_component_pro` ON resultat_x_component_pro (component, dataProces);
-CREATE index `index_id_versio_pro` ON resultat_x_component_pro (component, versio, dataProces);
+
 
 
 
@@ -87,9 +80,6 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
   UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
   ) ENGINE = InnoDB;
 
-CREATE index `index_id_aplicacio_desh` ON resultat_x_component_des_historic (component,apl_agrup, dataProces);
-CREATE index `index_id_component_desh` ON resultat_x_component_des_historic (component, dataProces);
-CREATE index `index_id_versio_desh` ON resultat_x_component_des_historic (component, versio, dataProces);
 
 
 
@@ -118,9 +108,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
   UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
   ) ENGINE = InnoDB;
 
-CREATE index `index_id_aplicacio_proh` ON resultat_x_component_pro_historic (component,apl_agrup, dataProces);
-CREATE index `index_id_component_proh` ON resultat_x_component_pro_historic (component, dataProces);
-CREATE index `index_id_versio_proh` ON resultat_x_component_pro_historic (component, versio, dataProces);
+
 
 
 CREATE TABLE IF NOT EXISTS `incompliments` (
@@ -198,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `control_literal` (
   `ordre` int(11) DEFAULT NULL,
   `descripcio` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_control_literal`),
-  UNIQUE KEY `ControlOrdre` (`id_control`,`ordre`,`estat`)
+  UNIQUE KEY `ControlOrdre` (`id_control`,`ordre`)
 ) ENGINE = InnoDB;
 
 
@@ -331,6 +319,24 @@ CREATE TABLE IF NOT EXISTS `info_aplicacio` (
 ENGINE = InnoDB;
 
 
+/*ÍNDICES PARA PRE/PRO*/
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+CREATE index `index_id_aplicacio_proh` ON resultat_x_component_pro_historic (component,apl_agrup, dataProces);
+CREATE index `index_id_component_proh` ON resultat_x_component_pro_historic (component, dataProces);
+CREATE index `index_id_versio_proh` ON resultat_x_component_pro_historic (component, versio, dataProces);
+
+CREATE index `index_id_aplicacio_desh` ON resultat_x_component_des_historic (component,apl_agrup, dataProces);
+CREATE index `index_id_component_desh` ON resultat_x_component_des_historic (component, dataProces);
+CREATE index `index_id_versio_desh` ON resultat_x_component_des_historic (component, versio, dataProces);
+
+CREATE index `index_id_aplicacio_pro` ON resultat_x_component_pro (component,apl_agrup, dataProces);
+CREATE index `index_id_component_pro` ON resultat_x_component_pro (component, dataProces);
+CREATE index `index_id_versio_pro` ON resultat_x_component_pro (component, versio, dataProces);
+
+CREATE index `index_id_aplicacio_des` ON resultat_x_component_des (component,apl_agrup, dataProces);
+CREATE index `index_id_component_des` ON resultat_x_component_des (component, dataProces);
+CREATE index `index_id_versio_des` ON resultat_x_component_des (component, versio, dataProces);
