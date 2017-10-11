@@ -129,6 +129,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `control` (
   `id_control` INT NOT NULL AUTO_INCREMENT,
   `id_tipus_control` INT NULL,
+  `id_clase_control` varchar(30) NOT NULL, 
   `nom` VARCHAR(500) NULL,
   `factorRisc` INT NULL,
   `descripcioIncompliment` VARCHAR(500) NULL,
@@ -180,7 +181,6 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `control_literal` (
  `id_control_literal` int(11) NOT NULL,
- `id_clase_control` varchar(30) NOT NULL, 
   `id_control` int(11) DEFAULT NULL,
   `expresioRegular` varchar(200) DEFAULT NULL,
   `ordre` int(11) DEFAULT NULL,
