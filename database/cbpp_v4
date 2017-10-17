@@ -133,7 +133,6 @@ CREATE TABLE IF NOT EXISTS `control` (
   `nom` VARCHAR(500) NULL,
   `factorRisc` INT NULL,
   `descripcioIncompliment` VARCHAR(500) NULL,
-  `estat` INT NULL,
   `dataAlta` DATE NULL,
   `dataBaixa` DATE NULL,
   `dataModif` DATE NULL,
@@ -142,6 +141,7 @@ CREATE TABLE IF NOT EXISTS `control` (
   `classeJava` VARCHAR(500) NULL,
   PRIMARY KEY (`id_control`))
 ENGINE = InnoDB;
+
 
 
 
@@ -166,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `tipus_component` (
   `dataAlta` DATE NULL,
   `dataBaixa` DATE NULL,
   `dataModif` DATE NULL,
+  `usadb2` VARCHAR(1) NULL,
   PRIMARY KEY (`id_tipus_component`))
 ENGINE = InnoDB;
 
@@ -185,9 +186,12 @@ CREATE TABLE IF NOT EXISTS `control_literal` (
   `expresioRegular` varchar(200) DEFAULT NULL,
   `ordre` int(11) DEFAULT NULL,
   `descripcio` varchar(45) DEFAULT NULL,
+  `tipo_accion` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_control_literal`),
   UNIQUE KEY `ControlOrdre` (`id_control`,`ordre`)
 ) ENGINE = InnoDB;
+
+
 
 
 

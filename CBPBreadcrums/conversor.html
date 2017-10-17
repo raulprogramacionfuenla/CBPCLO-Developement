@@ -1,0 +1,217 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<style type="text/css">
+	
+	textarea{
+		border: solid 0px;
+		font-style: courier;
+	}
+	
+	.cop{
+		padding: 3px;
+		border-radius: 4px;
+		border:solid 1px grey;
+		display: inline-block;
+		font-size: 9px;
+		float: right;
+		cursor: pointer;
+	}
+
+	.cop:hover{
+		background: black;
+		color:white;
+	}
+
+	#output{
+		display: none;
+	}
+	
+
+	.edit{
+		height: 200px;
+		overflow-y:scroll; 
+	}
+</style>
+
+
+	
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Conversor de caracteres</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Unicode encoder</h1>
+		<div class="row">
+			<div class="col">
+				<!--Card-->
+				<div class="card">
+					  <div class="card-header">
+					    Entrada de texto
+					  </div>
+					  <div class="card-body">
+					   			<textarea id="entrada" rows="28" cols="60" placeholder="Introduza el texto"></textarea>
+					  </div>
+				</div><!--End card-->
+			</div><!--End col-->
+
+		<div class="col">
+				<!--Card-->
+				<div class="card">
+					  <div class="card-header">
+					    Salida <strong>codificada</strong>
+					    	<div class="cop" id="cop">
+         					 <span class="glyphicon glyphicon-download-alt"></span> Copiar
+         					 </div>
+					  </div>
+					  <div class="card-body">
+					   			<div class="edit" contenteditable="true" id="salida" rows="12" cols="60"></div>
+					  </div>
+				</div><!--End card-->
+
+				<!--Card-->
+				<div class="card">
+					  <div class="card-header">
+					    Salida <strong><i>labeled</i></strong>
+					    	<div class="cop" id="coplab">
+         					 <span class="glyphicon glyphicon-download-alt"></span> Copiar
+         					 </div>
+					  </div>
+					  <div class="card-body">
+					   			<div class="edit" contenteditable="true" id="slabeled" rows="12" cols="60"></div>
+					  </div>
+				</div><!--End card-->
+
+
+			</div><!--End col-->
+		
+	</div><!--End row-->
+		
+	
+	<div class="row">
+		<div class="col">
+			<br><br>
+			<div class="alert alert-success" id="output">
+	  			<strong>Salida copiada !</strong> en el portapapeles :).
+			</div>
+		</div>
+	</div>
+
+</div><!--End container-->
+</body>
+</html>
+
+
+<script>
+	tokens ={
+		'á':'u00e1',
+        'é':'u00e9',
+        'í':'u00ed',
+        'ó':'u00f3',
+        'ú':'u00fa',
+        'Á':'u00c1',
+        'É':'u00c9',
+        'Í':'u00cd',
+        'Ó':'u00d3',
+        'Ú':'u00da',
+        'ñ':'u00f1',
+        'Ñ':'u00d1',
+        'ï':'u00cf',
+        'ç':'u00e7',
+        'Ï':'u00cf'
+	}
+
+
+	$('body').on('input', '#entrada', function(event) {
+		event.preventDefault();
+		var ent = $(this).text();
+		var salida = parser(ent);
+		$('#salida').html(salida[1]);
+		$('#slabeled').html(salida[0]);
+		$('#output').hide('400', function() {});
+	
+	});
+
+
+	function parser(cadena){
+		var salida = '';
+		var slabeled = '';
+		var tmp = '';
+		var palabra = '';
+		//Pasamos a bloques
+		var lista = cadena.split('\n');
+		//recorremos la lista
+		for(el in lista){
+			var tmpL = lista[el];
+			tmp += '<b style="color:#9b59b6;"> label.' + tmpL.replace(/ /g,'') + '</b>';
+			//recorremos el string
+			for(cc = 0;cc < lista[el].length; cc++){
+				console.log('pasamos el car: ' + lista[el][cc] );
+				palabra += returnChar(lista[el][cc]);
+			}//end for
+			salida += palabra + '<br>';
+			slabeled += tmp + ' = ' + palabra + '<br>';
+			palabra = '';
+			tmp = '';
+
+		}
+		return [slabeled, salida];
+	}
+
+
+	function returnChar(chara){
+		var found = false;
+		var fc = '';
+		$.each(tokens, function(k, v) {
+    		if(chara == k){
+    			fc = '<span style="color:#2980b9">\\' + v + '</span>';
+    			found = true;
+    			console.log('Detectado: ' + k + ' -> ' + v);
+    		} 
+    		console.log('no coincide ' + chara + ' -> ' + k);
+		});
+		if(found) return fc;
+		else return chara;
+	}
+
+
+	$('#cop').click(function(event) {
+		copyToClipboard('#salida');
+		$('#output').show('400', function() {});
+	});
+
+	$('#coplab').click(function(event) {
+		copyToClipboard('#slabeled');
+		$('#output').show('400', function() {});
+	});
+	
+
+	function copyToClipboard(element) {
+	    var $temp = $("<input>");
+	    $("body").append($temp);
+	    $temp.val($(element).text()).select();
+	    document.execCommand("copy");
+	    $temp.remove();
+
+	    $('body').on('click', '#bloqueados', function(event) {
+	    	event.preventDefault();
+	    	/* Act on the event */
+	    });
+
+	}
+
+
+
+</script>
+
+

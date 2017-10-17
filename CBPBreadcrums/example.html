@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Breadcrums</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="../Cookies/cookieJSONString.js">
+
+</head>
+
+<style>
+	li{
+		list-style: none;
+		display: inline-block;
+	}
+</style>
+
+<body>
+	
+
+
+</body>
+</html>
+
+
+<script>
+$(document).ready(function(){
+	(function ($){
+		var preferencias={};
+		var cookJSON = {}; //Almacena en formato json el contenido de la cookie
+		
+
+
+		$.fn.CBPBreadCrums = function(bread) {
+			var str = '<ul>';
+			$.each( bread.breadcrums, function( key, value ) {
+  				str += '<li><a = href="'+value.url+'">   '+value.name+'  >  </a></li>';
+			});
+			str += '</ul>';
+
+			$('body').html(str);
+
+
+		};//Fin del Pluguin
+	}(jQuery));//End function container
+
+
+	var Breadcrums = {
+			"breadcrums":[
+		        {"url":"one", "name":"Enlace  1"  ,"method":"get"},
+		        {"url":"two", "name":"Enlace  2"  ,"method":"get"},
+		        {"url":"trhee","name":"Enlace 3" ,"method":"get"}
+		    ]
+		};
+	$('body').CBPBreadCrums(Breadcrums);
+
+
+
+
+});
+
+
+
+
+
+
+
+</script>

@@ -1,5 +1,5 @@
 //----------------------------------
-//LaCaixa / Everis 2017 ÁlvaroPeris
+//Everis 2017 ÁlvaroPeris
 //----------------------------------
 // Se encarga de transmitir una cookie por medio de POST sin AJAX
 $(document).ready(function(){
