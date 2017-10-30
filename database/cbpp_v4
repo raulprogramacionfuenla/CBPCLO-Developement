@@ -118,7 +118,8 @@ CREATE TABLE IF NOT EXISTS `incompliments` (
   `sentenciaAfectada` VARCHAR(500) NULL,
   `linea` INT NULL,
   `justificat` INT NULL,
-  `descripcioJustificacio` VARCHAR(500) NULL,
+  `descripcioJustificacio_CA` VARCHAR(500) NULL,
+  `descripcioJustificacio_ES` VARCHAR(500) NULL,
   `vides` INT NULL,
   `videsPro` INT NULL,
   PRIMARY KEY (`id_incompliments`))
@@ -143,8 +144,6 @@ CREATE TABLE IF NOT EXISTS `control` (
   `classeJava` VARCHAR(500) NULL,
   PRIMARY KEY (`id_control`))
 ENGINE = InnoDB;
-
-
 
 
 CREATE TABLE IF NOT EXISTS `tipus_control` (
@@ -213,8 +212,7 @@ CREATE TABLE IF NOT EXISTS `fr_global_informe` (
   `id_frGlobal` INT NOT NULL,
   `origen` VARCHAR(10) NULL,
   `dataProces` DATE NULL,
-  `aplicacio` VARCHAR(45) NULL,
-  `agrupacio` VARCHAR(45) NULL,
+  `apl_agrup` VARCHAR(45) NULL,
   `linies` INT NULL,
   `numComponents` INT NULL,
   `fr9` INT NULL,
@@ -325,7 +323,7 @@ CREATE TABLE IF NOT EXISTS `info_aplicacio` (
 ENGINE = InnoDB;
 
 
-/*ÍNDICES PARA PRE/PRO*/
+/*ÍNDICES PARA PRE/PRO, no son necesarios para local*/
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
