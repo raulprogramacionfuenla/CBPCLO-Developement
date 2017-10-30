@@ -1,0 +1,51 @@
+<style> *{font-family: helvetica;}</style>
+<h1>Test de cookies</h1>
+<hr>
+
+<!--Incluimos jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--Incluimos jquery.cookie.js-->
+<script src="../jquery.cookie.js"></script>
+<!--Incluimos los gestores de cookie-->
+<script src="../cookieArray.js"></script>
+<script src="../cookieJSONSting.js"></script>
+
+<div class="field">
+	Creamos una cookie con el nombre de <i>testCookie</i>
+	<br>
+	<b>Abra la consola del navegador</b>
+	<br><br><br>
+
+	Nombre: <input type="text" id="nombre">   Apellido: <input type="text" id="apellido">   Email: <input type="text" id="email">
+	<br><br>
+	<button> Almacenar Información </button>
+
+</div>
+
+<script>
+$(document).ready(function(){
+	$('button').click(function(event) {
+		console.log('Creando cookie ...');
+		var cook = new cookieJSONString('testCookie');
+
+		console.log('Leemos el contenido del formulario ...');
+
+		var usuario = {
+			nombre: $('#nombre').val(),
+			apellido: $('#apellido').val(),
+			email: $('#email').val()
+		};
+
+		console.log('Almacenamos la información en la cookie ...');
+		cook.set(usuario);
+
+		console.log('Ploteamos el contenido de la cookie ...');
+		cook.log();
+
+		alert('Cambiar Página');
+		//window.location.href = "../complementTest.html";
+
+	});
+});
+
+</script>
