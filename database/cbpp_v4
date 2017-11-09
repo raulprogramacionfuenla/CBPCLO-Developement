@@ -1,3 +1,14 @@
+
+CREATE TABLE IF NOT EXISTS `constantes` (
+  `id_constante` int(11) NOT NULL AUTO_INCREMENT,
+  `softwareNou` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id_ constante `),
+  UNIQUE KEY `id_constante` (`id_constante`)
+  ) ENGINE = InnoDB;
+
+
+
+
 CREATE TABLE IF NOT EXISTS `resultat_x_component_des` (
   `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipus_comp` int(11) DEFAULT NULL,
@@ -31,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
   `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
   `entorno_origen` varchar(5) DEFAULT NULL,
-  `dataFont` timestamp NULL DEFAULT NULL,
+  `dataFont ` timestamp NULL DEFAULT NULL,
   `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
@@ -57,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
   `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
   `entorno_origen` varchar(5) DEFAULT NULL,
-  `dataFont` timestamp NULL DEFAULT NULL,
+  ` dataFont` timestamp NULL DEFAULT NULL,
   `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
@@ -71,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
   `borrar` int(11) DEFAULT NULL,
   `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`)
+ UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,` dataFont `,`dataProces`)
   ) ENGINE = InnoDB;
 
 
@@ -84,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
   `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
   `entorno_origen` varchar(5) DEFAULT NULL,
-  `dataFont` timestamp NULL DEFAULT NULL,
+  ` dataFont` timestamp NULL DEFAULT NULL,
   `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
@@ -98,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
   `borrar` int(11) DEFAULT NULL,
   `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`)
+  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,` dataFont `,`dataProces`)
   ) ENGINE = InnoDB;
 
 
@@ -124,11 +135,11 @@ CREATE TABLE IF NOT EXISTS `control` (
   `id_control` INT NOT NULL AUTO_INCREMENT,
   `id_tipus_control` INT NULL,
   `clase_control` varchar(30) NOT NULL,
-  `desc_control_CAS` VARCHAR(500) NULL,
-  `desc_control_CAT` VARCHAR(500) NULL,
+  `desc_control_CA` VARCHAR(500) NULL,
+  `desc_control_ES` VARCHAR(500) NULL,
   `factorRisc` INT NULL,
-  `descripcioIncompliment_CAS` VARCHAR(500) NULL,
-  `descripcioIncompliment_CAT` VARCHAR(500) NULL,
+  `descripcioIncompliment_CA` VARCHAR(500) NULL,
+  `descripcioIncompliment_ES` VARCHAR(500) NULL,
   `dataAlta` DATE NULL,
   `dataBaixa` DATE NULL,
   `dataModif` DATE NULL,
@@ -156,12 +167,12 @@ CREATE TABLE IF NOT EXISTS `tipus_component` (
   `origen` VARCHAR(10) NULL,
   `tipus` VARCHAR(45) NULL,
   `subtipus` VARCHAR(45) NULL,
+  `usadb2` VARCHAR(1) NULL,
   `descripcio` VARCHAR(45) NULL,
   `llenguatge` VARCHAR(10) NULL,
   `dataAlta` DATE NULL,
   `dataBaixa` DATE NULL,
   `dataModif` DATE NULL,
-  `usadb2` VARCHAR(1) NULL,
   PRIMARY KEY (`id_tipus_component`))
 ENGINE = InnoDB;
 
@@ -176,7 +187,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `control_literal` (
- `id_control_literal` int(11) NOT NULL,
+`id_control_literal` int(11) NOT NULL,
   `id_control` int(11) DEFAULT NULL,
   `expresioRegular` varchar(200) DEFAULT NULL,
   `ordre` int(11) DEFAULT NULL,
@@ -185,9 +196,6 @@ CREATE TABLE IF NOT EXISTS `control_literal` (
   PRIMARY KEY (`id_control_literal`),
   UNIQUE KEY `ControlOrdre` (`id_control`,`ordre`)
 ) ENGINE = InnoDB;
-
-
-
 
 
 CREATE TABLE IF NOT EXISTS `excepcio` (
@@ -199,7 +207,6 @@ CREATE TABLE IF NOT EXISTS `excepcio` (
   `id_tipus_control` INT NULL,
   PRIMARY KEY (`id_excepcio`))
 ENGINE = InnoDB;
-
 
 
 CREATE TABLE IF NOT EXISTS `fr_global_informe` (
@@ -243,7 +250,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `seguim_incomp_resum` (
-  `id_seg_inc_res` INT NOT NULL,
+ `id_seg_inc_res` INT NOT NULL,
   `origen` VARCHAR(45) NULL,
   `aplicacio` VARCHAR(45) NULL,
   `num_components` INT NULL,
@@ -252,16 +259,6 @@ CREATE TABLE IF NOT EXISTS `seguim_incomp_resum` (
   `tipusPeriode` INT NULL,
   PRIMARY KEY (`id_seg_inc_res`))
 ENGINE = InnoDB;
-
-
-CREATE TABLE IF NOT EXISTS `baixa_component` (
-  `id_baixa_component` INT NOT NULL,
-  `component` VARCHAR(45) NULL,
-  `aplicacio` VARCHAR(45) NULL,
-  `dataProces` DATE NULL,
-  PRIMARY KEY (`id_baixa_component`))
-ENGINE = InnoDB;
-
 
 
 CREATE TABLE IF NOT EXISTS `germanar` (
