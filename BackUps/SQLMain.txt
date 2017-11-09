@@ -1,0 +1,261 @@
+package es.lacaixa.absiscloud.cbpclo.common.util;
+
+import es.lacaixa.absiscloud.cbpclo.common.domain.FormularioConsultaHostPOJO;
+
+/**
+ * Módulo encargado de montar dinámicamente las consultas a
+ * base de datos.
+ * Retorna un string con la Query seleccionada.
+ * @author aperisza
+ *
+ */
+public class SQLMain{
+	/**
+	 * Almacena el formulario de preferencias de búsqueda del usuario
+	 */
+	private FormularioConsultaHostPOJO preferencias;
+	
+	
+	private String TablaActual;
+	private String TablaHistorico;
+	private String tipoDeConsulta;
+	
+	/**
+	 * 	<!-- CONSTRUCTOR -->
+	 * <ul>
+	 * <li><b>Preferencias:</b> Marca las preferencias seleccionadas por el usuario</li>
+	 * <li><b>Tipo:</b> Designa si viene de:
+	 * 		<ul>
+	 * 			<li><b>export</b> La parte de exportación</li>
+	 * 			<li><b>pag</b> La parte de paginación</li>
+	 * 			<li><b>nresul</b> La parte de número de resultados</li>
+	 * 			<li><b>componenteActual</b>Si se trata del componente actual, que solo saca un resultado</li>
+	 * 		</ul>
+	 * </li>
+	 * <li><b>Entorno</b>: Designa el entorno de la consulta
+	 * <ul>
+	 * 		<li><b>Pre</b> Vienen del entorno de preproducción/desarrollo</li>
+	 * 		<li><b>Pro</b> Vienen del entorno de producción</li>
+	 * </ul>
+	 * <li><b>Estado</b>: Designa el entorno de la consulta
+	 * <ul>
+	 * 		<li><b>Pre</b> Vienen del entorno de preproducción/desarrollo</li>
+	 * 		<li><b>Pro</b> Vienen del entorno de producción</li>
+	 * </ul>
+	 * </li>
+	 * </ul>
+	 * @param preferencias FormularioConsultaHostPOJO
+	 * @param tipo String
+	 * @param entorno String
+	 */
+	public SQLMain(FormularioConsultaHostPOJO preferencias, String entorno){
+			/*Hacemos un set de la tabla a seleccionar según las preferencias del usuario:*/
+			if(entorno.equals("pre")){
+				this.TablaActual = 	   	"resultat_x_component_des";
+				this.TablaHistorico = 	"resultat_x_component_des_historic";
+			}else if(entorno.equals("pro")){
+				this.TablaActual = 		"resultat_x_component_pro";
+				this.TablaHistorico = 	"resultat_x_component_pro_historic"; 
+			}
+			//Las preferencias de la consulta 
+			this.preferencias = preferencias;
+	}
+	
+	public SQLMain(){}
+	
+	/**
+	 * Retorna el <b>número entero</b> de registros en la base de datos 
+	 * para unas determinadas preferencias en el formulario 
+	 * <li><b>export</b> La parte de exportación</li>
+	 * 			<li><b>pag</b> La parte de paginación</li>
+	 * 			<li><b>nresul</b> La parte de número de resultados</li> 
+	 * @return sql String
+	 * 
+	 */
+	public String makeLeeNumeroDeRespuestas(){
+		this.tipoDeConsulta = "nresul";
+		return this.commonQueryExportAndScreen();
+	}
+	
+	/**
+	 * Retorna la <b>vista</b> de la consulta de la base de datos 
+	 * a partir de las preferencias. 
+	 * @return sql String 
+	 */
+	public String makeLeeVistaConsulta(){
+		this.tipoDeConsulta = "pag";
+		String sql = " SELECT id_resultat, ia_proveidor, versio, component, tipus, dataProces, resultat, fr_max, traspas";
+		sql = this.ejecutaQuery(sql);
+		return sql;
+	}
+	
+	/**
+	 * Hace la conexión con la tabla info_aplicacio
+	 * @return
+	 */
+	public String getProveedor(){
+		return null;
+	}
+	
+	/**
+	 * Retorna la <b>vista</b> de la consulta de la base de datos 
+	 * a partir de las preferencias. 
+	 * @return sql String 
+	 */
+	public String makeLeeVistaConsultaHostExportar() {
+		this.tipoDeConsulta = "export";
+		String sql = " SELECT id_resultat, ia_proveidor, versio, component, tipus, dataProces, resultat, fr_max, traspas";
+		sql = this.ejecutaQuery(sql);
+		return sql;
+	}
+	
+	
+	private String commonQueryExportAndScreen(){
+		String sql = "";
+		//En el caso historico se ha de tener en cuenta el actual + historico
+		if(preferencias.getTipoConsulta() != null){
+			if(preferencias.getTipoConsulta().equals("historico")){
+				sql += " SELECT A.SUMAP + A.SUMAH AS MISUMA FROM (";
+				sql += " select";
+				sql += " (select count(*) "+mainBaseProgram("",this.TablaActual,false)+") AS SUMAP,";
+				sql += " (select count(*) "+mainBaseProgram("",this.TablaHistorico,true)+") AS SUMAH";
+				sql += " FROM DUAL";
+				sql += " ) as A;";
+			}else sql = this.mainBaseProgram("SELECT count(*)",this.TablaActual,true);
+		}else sql = this.mainBaseProgram("SELECT count(*)",this.TablaActual,true);
+		return sql;
+	}
+	
+	/**
+	 * Se encarga de realizar la primera criva ACTUAL/HISTORICO
+	 * @return sql String
+	 */
+	private String ejecutaQuery(String sql){
+		String cabecera = sql;
+		if(preferencias.getTipoConsulta()!= null){
+			//Control por formulario
+			if(preferencias.getTipoConsulta().equals("historico")){
+				sql = this.mainBaseProgram(sql,this.TablaActual,false);
+				sql += " UNION ALL";
+				sql += cabecera;
+				sql = this.mainBaseProgram(sql,this.TablaHistorico,true);
+		    }else sql = this.mainBaseProgram(sql,this.TablaActual,true);
+		//Control por cookie
+		}else sql = this.mainBaseProgram(sql,this.TablaActual,true);
+		
+		return sql;
+	}
+	
+	/**
+	 * Se trata del miniprograma base que se llama para todas las consultas
+	 */
+	private String mainBaseProgram(String sql, String tabla, Boolean order){
+		sql +=" FROM `"+ tabla +"`"; 
+		sql +=" LEFT JOIN  `tipus_component`  ON  id_tipus_component = id_tipus_comp";
+		sql +=" LEFT JOIN  `info_aplicacio`  ON  apl_agrup = ia_apl_agrup";
+		sql +=setSusceptiblesJOIN();
+		sql += this.setWHEREprincipal();
+		sql += this.setOKKO();
+		sql += this.setDataProces();
+		sql += this.setSusceptibles();
+		if(order){
+			sql += " ORDER BY dataProces DESC";
+			sql += this.setLimites();
+		} 
+		return sql;
+	}
+	
+	/**
+	 * El limit se pone en función del tipo de consulta
+	 * <li><b>Tipo:</b> Designa si viene de:
+	 * 		<ul>
+	 * 			<li><b>export</b> La parte de exportación</li>
+	 * 			<li><b>pag</b> La parte de paginación</li>
+	 * 			<li><b>nresul</b> La parte de número de resultados</li>
+	 * 			<li><b>componenteActual</b>Si se trata del componente actual, que solo saca un resultado</li>
+	 * 		</ul>
+	 * </li>
+	 * @return
+	 */
+	private String setLimites() {
+		String val = new String();
+		if(this.tipoDeConsulta.equals("export")){
+			val = "";
+		}else if(this.tipoDeConsulta.equals("pag")){
+			val = " LIMIT "+this.preferencias.getStack()+" , "+this.preferencias.getNum();
+		}else if(this.tipoDeConsulta.equals("nresul")){
+			val = "";
+		}else if(this.tipoDeConsulta.equals("componenteActual")){
+			val = " LIMIT 1";
+		}
+		return val;
+	}
+
+	private String setSusceptibles() {
+		String val = "";
+		if(this.preferencias.getBloqueados() != null){
+			val = " AND cnpVides = 0";
+		}
+		if(this.preferencias.getSusceptibles() != null){
+			val = " AND cnpVides = 3";
+		}
+		return val;
+	}
+	
+	private String setSusceptiblesJOIN(){
+		String val = new String();
+		if(this.preferencias.getBloqueados() != null || this.preferencias.getSusceptibles() != null)
+			if(this.preferencias.getAplicacion() != null)
+				val = " LEFT JOIN  `components_no_promo` ON aplicacio = cnpAplicacio";
+			else if(this.preferencias.getComponente() != null)
+				val = " LEFT JOIN  `components_no_promo` ON component = cnpComponent";
+		else val = "";
+		return val;
+
+	}
+
+	private String setDataProces() {
+		String val = "";
+		if(this.preferencias.getPeriodoFinal() != null && this.preferencias.getPeriodoInicial() != null ){
+			String perIni = this.preferencias.getPeriodoInicial();
+			String perFin = this.preferencias.getPeriodoFinal();
+			val = " AND dataProces >= '"+perIni+"'  AND dataProces <= '"+perFin+"'";
+		}
+		return val;
+	}
+
+	private String setOKKO() {
+		String val = new String();
+		if(!this.preferencias.getResultado().equals("todos")){
+			String okko = this.preferencias.getResultado();
+			val =" AND resultat = '"+okko+"'" ;
+		}else val = "";
+		return val;
+	}
+
+
+	private String setWHEREprincipal() {
+		String rc = new String();
+		String bus = new String();
+		
+		if (this.preferencias.getAplicacion() != null){
+			rc = "apl_agrup"; 
+			bus = this.preferencias.getAplicacion();
+		}else if (this.preferencias.getVersion() != null){
+			rc = "versio"; 
+			bus = this.preferencias.getVersion();
+			
+		}else if (this.preferencias.getComponente() != null){
+			rc = "component"; 
+			bus = this.preferencias.getComponente();
+			
+		}else if (this.preferencias.getIa_proveedor() != null){
+			rc = "ia_proveidor"; 
+			bus = this.preferencias.getIa_proveedor();
+		}
+		
+		String val = " WHERE "+rc+" = " +"'"+bus+"'";
+		return val;
+	}
+
+}

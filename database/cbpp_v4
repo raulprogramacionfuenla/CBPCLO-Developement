@@ -2,25 +2,24 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des` (
   `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
+  `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
-  `dataVersio` timestamp NULL DEFAULT NULL,
-  `apl_agrup` varchar(45) DEFAULT NULL, 
+  `entorno_origen` varchar(5) DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
+  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
   `numIncompliments` int(11) DEFAULT NULL,
   `factorRisc` int(11) DEFAULT NULL,
   `fr_max` int(11) DEFAULT NULL,
   `linies` int(11) DEFAULT NULL,
-  `dataAlta` date DEFAULT NULL,
-  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `traspas` int(11) DEFAULT NULL,
   `scratch` int(11) DEFAULT NULL,
   `dataScratch` date DEFAULT NULL,
   `borrar` int(11) DEFAULT NULL,
-  `softwareNou` int(1) DEFAULT NULL,  
-  `entorno_origen` varchar(5) DEFAULT NULL,
+  `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
+  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`)
   ) ENGINE = InnoDB;
 
 
@@ -29,29 +28,25 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
   `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
-  `versio` varchar(45) DEFAULT NULL,
-  `dataVersio` timestamp NULL DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
+  `versio` varchar(45) DEFAULT NULL,
+  `entorno_origen` varchar(5) DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
+  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
   `numIncompliments` int(11) DEFAULT NULL,
   `factorRisc` int(11) DEFAULT NULL,
   `fr_max` int(11) DEFAULT NULL,
   `linies` int(11) DEFAULT NULL,
-  `dataAlta` date DEFAULT NULL,
-  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `traspas` int(11) DEFAULT NULL,
   `scratch` int(11) DEFAULT NULL,
   `dataScratch` date DEFAULT NULL,
   `borrar` int(11) DEFAULT NULL,
-  `softwareNou` int(1) DEFAULT NULL,  
-  `entorno_origen` varchar(5) DEFAULT NULL,
+  `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
+  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`)
   ) ENGINE = InnoDB;
-
-
-
 
 
 
@@ -59,25 +54,24 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
   `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
-  `versio` varchar(45) DEFAULT NULL,
-  `dataVersio` timestamp NULL DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
+  `versio` varchar(45) DEFAULT NULL,
+  `entorno_origen` varchar(5) DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
+  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
   `numIncompliments` int(11) DEFAULT NULL,
   `factorRisc` int(11) DEFAULT NULL,
   `fr_max` int(11) DEFAULT NULL,
   `linies` int(11) DEFAULT NULL,
-  `dataAlta` date DEFAULT NULL,
-  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `traspas` int(11) DEFAULT NULL,
   `scratch` int(11) DEFAULT NULL,
   `dataScratch` date DEFAULT NULL,
   `borrar` int(11) DEFAULT NULL,
-  `softwareNou` int(1) DEFAULT NULL,  
-  `entorno_origen` varchar(5) DEFAULT NULL,
+  `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
+  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`)
   ) ENGINE = InnoDB;
 
 
@@ -87,25 +81,24 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
   `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
-  `versio` varchar(45) DEFAULT NULL,
-  `dataVersio` timestamp NULL DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
+  `versio` varchar(45) DEFAULT NULL,
+  `entorno_origen` varchar(5) DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
+  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
   `numIncompliments` int(11) DEFAULT NULL,
   `factorRisc` int(11) DEFAULT NULL,
   `fr_max` int(11) DEFAULT NULL,
   `linies` int(11) DEFAULT NULL,
-  `dataAlta` date DEFAULT NULL,
-  `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `traspas` int(11) DEFAULT NULL,
   `scratch` int(11) DEFAULT NULL,
   `dataScratch` date DEFAULT NULL,
   `borrar` int(11) DEFAULT NULL,
-  `softwareNou` int(1) DEFAULT NULL,  
-  `entorno_origen` varchar(5) DEFAULT NULL,
+  `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataVersio`)
+  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`)
   ) ENGINE = InnoDB;
 
 
@@ -130,7 +123,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `control` (
   `id_control` INT NOT NULL AUTO_INCREMENT,
   `id_tipus_control` INT NULL,
-  `id_clase_control` varchar(30) NOT NULL, 
+  `clase_control` varchar(30) NOT NULL,
   `desc_control_CAS` VARCHAR(500) NULL,
   `desc_control_CAT` VARCHAR(500) NULL,
   `factorRisc` INT NULL,
@@ -140,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `control` (
   `dataBaixa` DATE NULL,
   `dataModif` DATE NULL,
   `dataIniciVigencia` DATE NULL,
-  `bloqueantPre` INT NULL,
+  `vidas` INT NULL,
   `classeJava` VARCHAR(500) NULL,
   PRIMARY KEY (`id_control`))
 ENGINE = InnoDB;
@@ -149,7 +142,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tipus_control` (
   `id_tipus_control` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(10) NULL,
-  `descripcio` VARCHAR(50) NULL,
+  `descripcio_CA` VARCHAR(50) NULL,
+  `descripcio_ES` VARCHAR(50) NULL,
   `dataAlta` DATE NULL,
   `dataBaixa` DATE NULL,
   `dataModif` DATE NULL,

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exemple validació engine</title>
+</head>
+<body>
+  <link rel="stylesheet" href="validationEngine.jquery.css" type="text/css"/>
+  <link rel="stylesheet" href="template.css" type="text/css"/>
+  <link rel="stylesheet" href="example.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  </script>
+  <script src="jquery.validationEngine-ca.js" type="text/javascript" charset="utf-8">
+  </script>
+  <script src="jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+  </script>
+  <script>
+    jQuery(document).ready(function(){
+      // binds form submission and fields to the validation engine
+      jQuery("#formulariID").validationEngine();
+    });
+
+  </script>
+<div class="bod" align="center">
+<div class="container" align="left">
+  <h1>Exemples validació</h1>
+
+
+
+  <form action="" id="formulariID">
+      <!--Lletres-->
+      <div class="sec">
+      <h3>Caracters</h3>
+      <p>Validació de lletres i nombres</p>
+      <div class="cod"> validate[required,custom[onlyLetterNumber]] text-input</div>
+      <br>
+      <div class="fo">
+        <label>LletresINombres</label> <input type="text" class="validate[required,custom[onlyLetterNumber]] text-input" name="" value="">
+      </div>
+      </div>
+
+      <!--Dates-->
+      <div class="sec">
+      <h3>Dates</h3>
+
+      <h4>Data coherent</h4>
+      <p>Validació de dates coherents</p>
+        <div class="cod">validate[required,custom[date]] text-input</div>
+      <br>
+      <div class="fo">
+        <label>Data</label> <input type="text" class="validate[required,custom[date]] text-input" name="" value="">
+      </div>
+
+      <h4>Data inici fi</h4>
+      <p>Validació de dates coherents</p>
+        <div class="cod">validate[required,custom[date]] text-input</div>
+      <br>
+      <div class="fo">
+        <ul>
+          <li class="inl"><label>Inici: </label> <input type="text" class="validate[dateRange[grp1]] text-input" name="" value=""></li>
+          <li class="inl"><label>Fi: </label> <input type="text" class="validate[dateRange[grp1]] text-input" name="" value=""></li>
+        </ul>
+
+      </div>
+
+      </div>
+
+  </form><!--Fi formulari-->
+
+</div><!--End container-->
+</div>
+</body>
+</html>
