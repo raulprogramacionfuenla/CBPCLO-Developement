@@ -1,13 +1,9 @@
-
 CREATE TABLE IF NOT EXISTS `constantes` (
   `id_constante` int(11) NOT NULL AUTO_INCREMENT,
   `softwareNou` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_ constante `),
-  UNIQUE KEY `id_constante` (`id_constante`)
+  PRIMARY KEY (`id_constante`),
+  UNIQUE KEY `constante` (`id_constante`)
   ) ENGINE = InnoDB;
-
-
-
 
 CREATE TABLE IF NOT EXISTS `resultat_x_component_des` (
   `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
@@ -42,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
   `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
   `entorno_origen` varchar(5) DEFAULT NULL,
-  `dataFont ` timestamp NULL DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
   `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
@@ -68,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
   `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
   `entorno_origen` varchar(5) DEFAULT NULL,
-  ` dataFont` timestamp NULL DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
   `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
@@ -82,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
   `borrar` int(11) DEFAULT NULL,
   `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
- UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,` dataFont `,`dataProces`)
+UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataFont`,`dataProces`)
   ) ENGINE = InnoDB;
 
 
@@ -95,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
   `apl_agrup` varchar(45) DEFAULT NULL,
   `versio` varchar(45) DEFAULT NULL,
   `entorno_origen` varchar(5) DEFAULT NULL,
-  ` dataFont` timestamp NULL DEFAULT NULL,
+  `dataFont` timestamp NULL DEFAULT NULL,
   `dataCreacioComponent` timestamp NULL DEFAULT NULL,
   `dataProces` timestamp NULL DEFAULT NULL,
   `resultat` varchar(2) DEFAULT NULL,
@@ -109,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
   `borrar` int(11) DEFAULT NULL,
   `softwareNou` int(1) DEFAULT NULL,
   PRIMARY KEY (`id_resultat`),
-  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,` dataFont `,`dataProces`)
+  UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataFont`,`dataProces`)
   ) ENGINE = InnoDB;
 
 
@@ -205,6 +201,10 @@ CREATE TABLE IF NOT EXISTS `excepcio` (
   `id_tipus_comp` INT NULL,
   `id_control` INT NULL,
   `id_tipus_control` INT NULL,
+   `dataAlta` DATE NULL,
+  `dataBaixa` DATE NULL,
+  `dataModif` DATE NULL,
+  `dataIniciVigencia` DATE NULL,
   PRIMARY KEY (`id_excepcio`))
 ENGINE = InnoDB;
 
@@ -250,7 +250,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `seguim_incomp_resum` (
- `id_seg_inc_res` INT NOT NULL,
+`id_seg_inc_res` INT NOT NULL,
   `origen` VARCHAR(45) NULL,
   `aplicacio` VARCHAR(45) NULL,
   `num_components` INT NULL,
@@ -313,12 +313,6 @@ CREATE TABLE IF NOT EXISTS `info_aplicacio` (
   UNIQUE INDEX `index_info_apl` (`ia_apl_agrup` ASC))
 ENGINE = InnoDB;
 
-
-/*ÍNDICES PARA PRE/PRO, no son necesarios para local*/
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 CREATE index `index_id_aplicacio_proh` ON resultat_x_component_pro_historic (component,apl_agrup, dataProces);
 CREATE index `index_id_component_proh` ON resultat_x_component_pro_historic (component, dataProces);
