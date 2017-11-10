@@ -209,8 +209,11 @@ CREATE TABLE IF NOT EXISTS `excepcio` (
 ENGINE = InnoDB;
 
 
+
+
+
 CREATE TABLE IF NOT EXISTS `fr_global_informe` (
-  `id_frGlobal` INT NOT NULL,
+  `id_frGlobal`  INT NOT NULL AUTO_INCREMENT,
   `origen` VARCHAR(10) NULL,
   `dataProces` DATE NULL,
   `apl_agrup` VARCHAR(45) NULL,
@@ -237,7 +240,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `seguim_incomp_detall` (
-  `id_seg_inc_det` INT NOT NULL,
+  `id_seg_inc_det` INT NOT NULL AUTO_INCREMENT,
   `id_seg_inc_res` INT NULL,
   `component` VARCHAR(45) NULL,
   `incompliments` INT NULL,
@@ -250,7 +253,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `seguim_incomp_resum` (
-`id_seg_inc_res` INT NOT NULL,
+`id_seg_inc_res` INT NOT NULL AUTO_INCREMENT,
   `origen` VARCHAR(45) NULL,
   `aplicacio` VARCHAR(45) NULL,
   `num_components` INT NULL,
