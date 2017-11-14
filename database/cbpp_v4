@@ -130,7 +130,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `control` (
   `id_control` INT NOT NULL AUTO_INCREMENT,
   `id_tipus_control` INT NULL,
-  `clase_control` varchar(30) NOT NULL,
+  `clase_control_CA` varchar(30) NOT NULL,
+  `clase_control_ES` varchar(30) NOT NULL,
   `desc_control_CA` VARCHAR(500) NULL,
   `desc_control_ES` VARCHAR(500) NULL,
   `factorRisc` INT NULL,
@@ -208,10 +209,6 @@ CREATE TABLE IF NOT EXISTS `excepcio` (
   PRIMARY KEY (`id_excepcio`))
 ENGINE = InnoDB;
 
-
-
-
-
 CREATE TABLE IF NOT EXISTS `fr_global_informe` (
   `id_frGlobal`  INT NOT NULL AUTO_INCREMENT,
   `origen` VARCHAR(10) NULL,
@@ -236,9 +233,6 @@ CREATE TABLE IF NOT EXISTS `fr_global_informe` (
   PRIMARY KEY (`id_frGlobal`))
 ENGINE = InnoDB;
 
-
-
-
 CREATE TABLE IF NOT EXISTS `seguim_incomp_detall` (
   `id_seg_inc_det` INT NOT NULL AUTO_INCREMENT,
   `id_seg_inc_res` INT NULL,
@@ -249,8 +243,6 @@ CREATE TABLE IF NOT EXISTS `seguim_incomp_detall` (
   `modificat` INT NULL,
   PRIMARY KEY (`id_seg_inc_det`))
 ENGINE = InnoDB;
-
-
 
 CREATE TABLE IF NOT EXISTS `seguim_incomp_resum` (
 `id_seg_inc_res` INT NOT NULL AUTO_INCREMENT,
@@ -315,6 +307,16 @@ CREATE TABLE IF NOT EXISTS `info_aplicacio` (
   PRIMARY KEY (`id_info_apl`),
   UNIQUE INDEX `index_info_apl` (`ia_apl_agrup` ASC))
 ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `modulos_idea` (
+  `id_modulo` int(11) NOT NULL AUTO_INCREMENT,
+  `nomMod` varchar(08) NULL DEFAULT NULL,
+  `subtipus` varchar(40) NULL DEFAULT NULL,
+  `lenguaje` varchar(40) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_modulo`),
+  UNIQUE KEY `modulos_idea` (`id_modulo`)
+  ) ENGINE = InnoDB;
+
 
 
 CREATE index `index_id_aplicacio_proh` ON resultat_x_component_pro_historic (component,apl_agrup, dataProces);
