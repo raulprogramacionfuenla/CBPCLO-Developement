@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `control_literal` (
 
 
 CREATE TABLE IF NOT EXISTS `excepcio` (
-  `id_excepcio` INT NOT NULL,
+  `id_excepcio` INT NOT NULL AUTO_INCREMENT,
   `componente` VARCHAR(45) NULL,
   `aplicacio` VARCHAR(45) NULL,
   `id_tipus_comp` INT NULL,
