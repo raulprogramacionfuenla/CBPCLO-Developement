@@ -207,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `excepcio` (
   `dataModif` DATE NULL,
   `dataIniciVigencia` DATE NULL,
   PRIMARY KEY (`id_excepcio`))
+  UNIQUE INDEX `ComponentControl` (`componente`, `id_control` ASC))
 ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `fr_global_informe` (
@@ -302,7 +303,7 @@ CREATE TABLE IF NOT EXISTS `info_aplicacio` (
   `ia_origen` VARCHAR(20) NOT NULL,
   `ia_mailResp` VARCHAR(500) NOT NULL,
   `ia_mailRespCaixa` VARCHAR(200) NOT NULL,
-  `ia_numComponentsHOST` INT NOT NULL,
+  `ia_numComponents` INT NOT NULL,
 
   PRIMARY KEY (`id_info_apl`),
   UNIQUE INDEX `index_info_apl` (`ia_apl_agrup` ASC))
@@ -316,6 +317,16 @@ CREATE TABLE IF NOT EXISTS `modulos_idea` (
   PRIMARY KEY (`id_modulo`),
   UNIQUE KEY `modulos_idea` (`id_modulo`)
   ) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `excepcio_codi_harcode`(
+  `id_codi` INT NOT NULL AUTO_INCREMENT,
+  `tipus` VARCHAR(20) NOT NULL,
+  `excepcio` VARCHAR(100) NOT NULL,
+  `component` VARCHAR(8) NOT NULL,
+  `descripcio` VARCHAR(200),
+   PRIMARY KEY (`id_codi`),
+   UNIQUE INDEX `id_codi` (`id_codi` ASC))
+  ENGINE = InnoDB;
 
 
 
@@ -334,3 +345,44 @@ CREATE index `index_id_versio_pro` ON resultat_x_component_pro (component, versi
 CREATE index `index_id_aplicacio_des` ON resultat_x_component_des (component,apl_agrup, dataProces);
 CREATE index `index_id_component_des` ON resultat_x_component_des (component, dataProces);
 CREATE index `index_id_versio_des` ON resultat_x_component_des (component, versio, dataProces);
+
+
+CREATE TRIGGER calculo_id_des BEFORE INSERT ON resultat_x_component_des
+   FOR EACH ROW SET new.id_resultat =  (select greatest(MAX(des.id_resultat) ,MAX(desh.id_resultat),MAX(pro.id_resultat),MAX(proh.id_resultat)) +1
+from resultat_x_component_des as des
+left join resultat_x_component_des_historic as desh
+on des.id_resultat <> desh.id_resultat
+left join resultat_x_component_pro as pro
+on des.id_resultat <> pro.id_resultat
+left join resultat_x_component_pro_historic as proh
+on des.id_resultat <> proh.id_resultat);
+
+CREATE TRIGGER calculo_id_des_hist BEFORE INSERT ON resultat_x_component_des_historic
+   FOR EACH ROW SET new.id_resultat =  (select greatest(MAX(des.id_resultat) ,MAX(desh.id_resultat),MAX(pro.id_resultat),MAX(proh.id_resultat)) +1
+from resultat_x_component_des as des
+left join resultat_x_component_des_historic as desh
+on des.id_resultat <> desh.id_resultat
+left join resultat_x_component_pro as pro
+on des.id_resultat <> pro.id_resultat
+left join resultat_x_component_pro_historic as proh
+on des.id_resultat <> proh.id_resultat);
+
+CREATE TRIGGER calculo_id_pro_hist BEFORE INSERT ON resultat_x_component_pro_historic
+   FOR EACH ROW SET new.id_resultat =  (select greatest(MAX(des.id_resultat) ,MAX(desh.id_resultat),MAX(pro.id_resultat),MAX(proh.id_resultat)) +1
+from resultat_x_component_des as des
+left join resultat_x_component_des_historic as desh
+on des.id_resultat <> desh.id_resultat
+left join resultat_x_component_pro as pro
+on des.id_resultat <> pro.id_resultat
+left join resultat_x_component_pro_historic as proh
+on des.id_resultat <> proh.id_resultat);
+
+CREATE TRIGGER calculo_id_pro BEFORE INSERT ON resultat_x_component_pro
+   FOR EACH ROW SET new.id_resultat =  (select greatest(MAX(des.id_resultat) ,MAX(desh.id_resultat),MAX(pro.id_resultat),MAX(proh.id_resultat)) +1
+from resultat_x_component_des as des
+left join resultat_x_component_des_historic as desh
+on des.id_resultat <> desh.id_resultat
+left join resultat_x_component_pro as pro
+on des.id_resultat <> pro.id_resultat
+left join resultat_x_component_pro_historic as proh
+on des.id_resultat <> proh.id_resultat);
