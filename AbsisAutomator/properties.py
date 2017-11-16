@@ -1,0 +1,12 @@
+properties={
+  "ProjectName":"cbpclo",
+  "Author":"aperisza",
+  "tableName":"pepe",
+  "ProcessName":"pepe",
+  "Model":[
+    {"name":"Nombre","type":"String"},
+    {"name":"Apellido","type":"String"},
+    {"name":"Edad","type":"int"},
+    {"name":"Fecha","type":"String"}
+  ]
+}
