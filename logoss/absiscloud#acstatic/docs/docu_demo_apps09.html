@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/fwk/styles/ac.css" rel="stylesheet"> 
+  
+  </head>
+
+  <body>
+
+	<div class="container-fluid">
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+		        	<a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_apps09.html" data-original-title="">Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+			<div class="row-fluid">
+			<div class="span12">
+		 	<div class="row-fluid">
+		 		 <div class="span9 container-fluid">
+					<div class="row-fluid">
+	            		<div class="span12">
+	             			<div class="control-group-inner">
+								<ul class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para APPS</a>
+										<span class="divider">&gt;</span></li>
+									<li class="active">Listados informativos</li>
+								</ul>
+								<h3  id="page-subtitle" class="content-title">Listados informativos</h3>
+
+	             				<h3 id = "pagination-title" class="content-title emphasized">Listado de noticias</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps09_widget01.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+								
+								
+								<div class="control-group-inner">
+										<p>El listado informativo permite mostrar anuncios breves, con un enlace.</p>
+                       		    		<p>Para definis un listado informativo, definimos un componente <code>div</code> que tenga como <code>class</code> el valor <code>news-list</code></p>
+                       		    		<p>Dicho componente será una lista de noticias, representadas en forma de bloques <code>div</code> con la clase <code>news-item</code></p>
+                       		    		<p>El contenido de este bloque dependerá de si queremos que la noticia tenga una imagen asociada o tan solo un texto </p>
+                       		    		<ul>
+                       		    			<li><b>Noticia sin imágenes:</b> Definiremos los siguientes 3 componentes</li>
+                       		    			<ul>
+                       		    				<li>Un bloque de tipo <code>a</code> con la clase <code>news-title</code>. Tiene las siguientes peculiaridades:
+                       		    				<ul>
+                       		    					<li>El atributo <code>href</code> debe contener el enlace de la noticia</li>
+                       		    					<li>El cuerpo del bloque debe contener el texto que queremos visualizar como título (en azul)</li>
+                       		    				</ul>
+                       		    				<li>Un bloque de tipo <code>p</code> con la clase <code>news-subtitle</code> que contiene el subtítulo.</li>
+                       		    				<li>Un bloque de tipo <code>p</code> con la clase <code>news-resume</code> con el cuerpo de la noticia.</li>
+                       		    			</ul>
+                       		    			<li><b>Noticia con imágenes:</b> Definiremos estos 2 componentes</li>
+                       		    			<ul>
+                       		    				<li>Un bloque de tipo <code>div</code> con la clase <code>news-image-container</code> con los siguientes elementos</li>
+                       		    				<ul>
+                       		    					<li>Un componente <code>img</code> con class <code>news-image</code> donde el atributo <code>src</code> apunte a la imagen que queremos mostrar</li>
+                       		    					<li>Un bloque <code>p</code> con class <code>news-image-footer</code> que contenga la nota a pie de imagen.
+                       		    				</ul>
+                       		    				<li>Un bloque de tipo <code>div</code> con la clase <code>news-content-container</code>. Este bloque debe contener exactamente los mismos tres componentes que contendría la noticia si no tuviera imágenes.
+                       		    				<ul>
+                       		    				<li>Un bloque de tipo <code>a</code> con la clase <code>news-title</code>. Tiene las siguientes peculiaridades:
+                       		    				<ul>
+                       		    					<li>El atributo <code>href</code> debe contener el enlace de la noticia</li>
+                       		    					<li>El cuerpo del bloque debe contener el texto que queremos visualizar como título (en azul)</li>
+                       		    				</ul>
+                       		    				<li>Un bloque de tipo <code>p</code> con la clase <code>news-subtitle</code> que contiene el subtítulo.</li>
+                       		    				<li>Un bloque de tipo <code>p</code> con la clase <code>news-resume</code> con el cuerpo de la noticia.</li>
+                       		    			</ul>
+                       		    			</ul>
+                      
+                       		    		</ul>
+										<pre>
+											<code>
+&lt;div class="news-list"&gt;
+	&lt;div class="news-item"&gt;
+		&lt;a class="news-title" href="#"&gt;Las nuevas pantallas de 22" contendrán Caixa Apps&lt;/a&gt;
+		&lt;p class="news-subtitle"&gt;Durante el proceso de migración de windows 7 y sustitución de pantallas 22" panorámicas.&lt;/p&gt;
+		&lt;p class="news-resume"&gt;También se añadirá en el nuevo espacio disponible pequeñas aplicaciones que servirán para hacer más accesible las herramientas del Terminal.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="news-item"&gt;
+		&lt;div class="news-image-container"&gt;
+			&lt;img class="news-image" src="img/pantalla.jpg"/&gt;
+			&lt;p class="news-image-footer"&gt;Sony EX308 720p LCD HDTV&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="news-content-container"&gt;
+			&lt;a class="news-title" href="#"&gt;Las nuevas pantallas de 22" contendrán Caixa Apps&lt;/a&gt;
+			&lt;p class="news-subtitle"&gt;Durante el proceso de migración de windows 7 y sustitución de pantallas 22" panorámicas.&lt;/p&gt;
+			&lt;p class="news-resume"&gt;También se añadirá en el nuevo espacio disponible pequeñas aplicaciones que servirán para hacer más accesible las herramientas del Terminal.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+										</pre>
+									</div> 
+								
+								
+          			
+								<h3 id = "pagination-title" class="content-title emphasized">Listado de incidencias</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps09_widget02.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+								
+								<div class="control-group-inner">
+										<p>El listado de incidencias nos permite visualizar de forma estructurada un conjunto de incidencias, tanto resueltas como pendientes de resolver.</p>
+										<p>Para definir distintos listados de incidencias (uno para las cerradas y otro para las pendientes, como en el ejemplo) podemos usar varios bloques de clase <code>widget-control-group</code>. Para incrustar un icono al lado del título, consultar el <a href="">muestrario de iconos</a></p>
+                       		    		<p>Dentro de cada bloque, definimos un componente <code>div</code> que tenga como <code>class</code> el valor <code>issue-list</code></p>
+                       		    		<p>Dicho componente será una lista de incidencias, representadas en forma de bloques <code>div</code> con la clase <code>issue-entry</code></p>
+                       		    		<p>Cada una de estas incidencias va a contener 2 elementos: </p>
+                       		    		<ul>
+                       		    			<li><b>Cabecera:</b> Consiste en un bloque de tipo <code>div</code> con la clase <code>issue-entry-header</code> que contiene lo siguiente:</li>
+                       		    			<ul>
+                       		    				<li>Un bloque de tipo <code>a</code> con la clase <code>issue-entry-title</code>. Tiene las siguientes peculiaridades:
+                       		    				<ul>
+                       		    					<li>El atributo <code>href</code> debe contener el enlace de la incidencia</li>
+                       		    					<li>El cuerpo del bloque debe contener el texto que queremos visualizar como título (en azul)</li>
+                       		    				</ul>
+                       		    				<li>Un bloque de tipo <code>span</code> con la clase <code>issue-entry-date</code> que contiene la fecha. Este campo es <u>opcional</u>.</li>
+                       		    			</ul>
+                       		    			<li><b>Cuerpo:</b> Consiste en un bloque de tipo <code>div</code> con la clase <code>issue-entry-abstract</code> que contiene el resumen de la incidencia:
+                      
+                       		    		</ul>
+										<pre>
+											<code>
+&lt;div class="widget-control-group"&gt;
+	&lt;div class="widget-control-group-title"&gt;
+		&lt;i class="icono-correcto"&gt;&lt;/i&gt;Incidencias cerradas
+	&lt;/div&gt;
+	&lt;div class="widget-control-group-content"&gt;
+		&lt;div class="issue-list"&gt;
+			&lt;div class="issue-entry"&gt;
+				&lt;div class="issue-entry-header"&gt;
+					&lt;a class="issue-entry-title"
+						href="#"&gt;
+						Contrato financiero atípico extructurado mixto 90/10 no disponible&lt;/a&gt;
+					&lt;span class="issue-entry-date"&gt;- 15-04-2010 12:04h&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;div class="issue-entry-abstract"&gt;
+					Disponible a partir de mañana. Los directores pueden solicitar las autorizaciones al delegado general.
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+										</pre>
+									</div>
+
+								
+							</div>
+						</div>
+					</div>
+		  
+				</div>
+				<!-- Menu -->
+		     	<div id="menu-apps-docu-right" class="span3"></div>
+  		  </div>
+  		  </div><!--/row-->
+		</div><!--/ .content-->
+	</div><!--/.fluid-container--> 
+	
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>       
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../static/fwk/components/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../static/fwk/js/acstatic.js"></script>
+	<script src="menu.js"></script>
+
+  </body>
+</html>

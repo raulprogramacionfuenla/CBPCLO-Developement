@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en"><head>
+  
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet"> 
+  
+  </head>
+
+  <body>
+
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+		        	<a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_apps08.html" data-original-title="">Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+			<div class="row">
+			<div class="col-sm-12 col-md-12">
+		 	<div class="row">
+		 		 <div class="col-sm-9 col-md-9">
+	             			<div class="form-group-inner">
+								<ol class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para APPS</a>
+										</li>
+									<li class="active">Lista de seleccion múltiple</li>
+								</ol>
+								<h3 id="page-subtitle" class="content-title">Lista de seleccion múltiple</h3>
+
+	             				<h3 id="pagination-title" class="content-title emphasized">Lista de seleccion múltiple</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps08_widget01.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+
+	             				<div class="form-group-inner">
+                       		    	<p>Los listados de selección múltiple permiten agrupar listados de checkboxes en una especie de <code>combo</code> simulado que muestra información sobre la selección. </p>
+                       		    	<p>Para poder implementar este componente necesitamos crear un <code>div</code> que tenga como <code>class</code> el valor <code>dropdown-link</code></p>
+                       		    	<p> El div principal deberá contener 3 elementos: </p>
+                       		    	<ul>
+                       		    		<li><b>Label:</b> Contiene la etiqueta visible para el usuario.</li>
+                       		    		<li><b>Combo:</b> 
+                       		    		Es un span con la metainformación del componente. 
+                       		    		Deberá tener la clase css <code>checklistflexdown-button</code>. 
+                       		    		El contenido del contenedor será un span con <code>class="selection"</code> y un tag de icono <code>i</code> con <code>class="icono-desplegable-simple-gran"</code>. La metainformación proporcionada por este componente será la siguiente: </li>
+                       		    		<ul>
+                       		    			<li><code>data-flexmenu</code> identificador del fieldset contenedor de la lista de checkboxes.</li>
+				      		    			<li><code>data-noselectiontext</code> texto que debe utilizar el componente cuando no haya elementos seleccionados.</li>
+				      		    			<li><code>data-fullselectiontext</code> texto que debe utilizar el componente cuando todos los elementos de la lista esten seleccionados.</li> 
+				      		    			<li><code>data-partselectiontext</code> texto que debe utilizar el componente cuando se selecciones más de un elemento pero menos que todos. Por ejemplo si le asignamos el valor "opciones", cuando seleccionemos 5 opciones de 10 tendremos el valor <i>5 opciones</i>.</li>
+				      		    			<li><code>data-unica</code> debe tener el valor y</li>
+				      		    			<li><code>data-offsets</code> debe tener el valor 0,-1</li>
+                       		    		</ul>
+                       		    		<li><b>Fieldset desplegable:</b> Listado de checkboxes que apareceran al desplegar el menu . Sus estilos vienen marcados por la css a nivel de fieldset <code>flexdropdownchecklist</code>. El identificador del fieldset deberá tener el mismo valor que el <code>data-flexmenu</code> del combo. Cada elemento de la lista de checkboxes estará contenido en un <code>label</code> que internamente se estructurará de la siguiente forma:</li>
+                       		    		<ul>
+                       		    			<li><b>Checkbox:</b> Input de tipo checkbox.</li>
+                       		    			<li><b>Etiqueta:</b> Formatearemos la etiqueta con un span con <code>class="label"</code>.</li>
+                       		    		</ul>
+                       		    	</ul>
+<pre><code>
+&lt;div class="dropdown-link"&gt;
+	&lt;label&gt;Categoría: &lt;/label&gt;
+	&lt;span class="checklistflexdown-button" 
+				data-flexmenu="checklistflexdown" 
+				data-noselectiontext="Ninguno" 
+				data-fullselectiontext="Todos" 
+				data-partselectiontext="seleccionados" 
+				data-unica="y" 
+				data-offsets="0,-1" &gt;
+			
+		&lt;span class="selection"&gt;Ninguno&lt;/span&gt;
+		&lt;i class="icono-desplegable-simple-gran"&gt;&lt;/i&gt;
+	&lt;/span&gt;	
+	&lt;fieldset id="checklistflexdown" class="flexdropdownchecklist"&gt;
+		&lt;label&gt;
+			&lt;input value="a" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;span class="label"&gt; Llamada&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="b" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;span class="label"&gt; Chat&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="c" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;span class="label"&gt; Lorem&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="d" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;span class="label"&gt; Ipsum&lt;/span&gt;
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="e" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;span class="label"&gt; dolor&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="f" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;span class="label"&gt; sit&lt;/span&gt; 
+		&lt;/label&gt; 
+	&lt;/fieldset&gt;
+&lt;/div&gt;   		    	
+</code></pre>
+	                       		</div>
+								
+								<h3 id="pagination-title" class="content-title emphasized">Checklist desplegable con iconos</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps08_widget02.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+	             				
+	             				<div class="form-group-inner">
+                       		    	<p>Los listados de selección múltiple permiten incluir iconos como parte de la presentación. Para ello lo único que debemos variar es el Fieldset desplegable.</p>
+                       		    	
+                       		    		<li><b>Fieldset desplegable:</b> Listado de checkboxes que apareceran al desplegar el menu. Sus estilos vienen marcados por la css a nivel de fieldset <code>flexdropdownchecklist</code>. El identificador del fieldset deberá tener el mismo valor que el <code>data-flexmenu</code> del combo. Cada elemento de la lista de checkboxes estará contenido en un <code>label</code> que internamente se estructurará de la siguiente forma:</li>
+                       		    		<ul>
+                       		    			<li><b>Checkbox:</b> Input de tipo checkbox.</li>
+                       		    			<li><b>Icono:</b> Icono que se desea incluir.</li>
+                       		    			<li><b>Etiqueta:</b> Formatearemos la etiqueta con un span con <code>class="label"</code>.</li>
+                       		    		</ul>
+                       		    	
+<pre><code>
+&lt;div class="dropdown-link"&gt;
+	&lt;label&gt;Categoría: &lt;/label&gt;
+	&lt;span class="checklistflexdown-button" 
+				data-flexmenu="checklistflexdown" 
+				data-noselectiontext="Ninguno" 
+				data-fullselectiontext="Todos" 
+				data-partselectiontext="seleccionados" 
+				data-unica="y" 
+				data-offsets="0,-1" &gt;
+			
+		&lt;span class="selection"&gt;Ninguno&lt;/span&gt;
+		&lt;i class="icono-desplegable-simple-gran"&gt;&lt;/i&gt;
+	&lt;/span&gt;	
+	&lt;fieldset id="checklistflexdown" class="flexdropdownchecklist"&gt;
+		&lt;label&gt;
+			&lt;input value="a" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;i class="icono-ico-lightblue"&gt;&lt;/i&gt;
+			&lt;span class="label"&gt; Llamada&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="b" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;i class="icono-ico-lightblue"&gt;&lt;/i&gt;
+			&lt;span class="label"&gt; Chat&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="c" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;i class="icono-ico-lightblue"&gt;&lt;/i&gt;
+			&lt;span class="label"&gt; Lorem&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="d" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;i class="icono-ico-lightblue"&gt;&lt;/i&gt;
+			&lt;span class="label"&gt; Ipsum&lt;/span&gt;
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="e" name="optionsCheckboxList1" type="checkbox"&gt;
+			&lt;i class="icono-ico-lightblue"&gt;&lt;/i&gt; 
+			&lt;span class="label"&gt; dolor&lt;/span&gt; 
+		&lt;/label&gt; 
+		&lt;label&gt;
+			&lt;input value="f" name="optionsCheckboxList1" type="checkbox"&gt; 
+			&lt;i class="icono-ico-lightblue"&gt;&lt;/i&gt;
+			&lt;span class="label"&gt; sit&lt;/span&gt; 
+		&lt;/label&gt; 
+	&lt;/fieldset&gt;
+&lt;/div&gt;   		    	
+</code></pre>
+	                       		</div>
+
+								
+							</div>
+				</div>
+				<!-- Menu -->
+		     	<div id="menu-apps-docu-right" class="col-sm-3 col-md-3"></div>
+  		  </div>
+  		  </div><!--/row-->
+		</div><!--/ .content-->
+	
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>       
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script src="menu.js"></script>
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+
+  
+</div></body></html>

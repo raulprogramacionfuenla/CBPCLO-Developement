@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en"><head>
+  
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet"> 
+  
+  </head>
+
+  <body>
+
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+		        	<a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_apps02.html" data-original-title="">Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+			<div class="row">
+			<div class="col-sm-12 col-md-12">
+		 	<div class="row">
+		 		 <div class="col-sm-9 col-md-9">
+	             			<div class="form-group-inner">
+								<ol class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para APPS</a>
+										</li>
+									<li class="active">Elementos básicos</li>
+								</ol>
+								<h3 id="page-subtitle" class="content-title">Elementos básicos</h3>
+
+	             				<h3 id="pagination-title" class="content-title emphasized">Subtítulo de contenido</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-2-4">
+											<iframe src="demo_apps02_widget01.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-2-4" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="form-group-inner">	 
+		                       		<p>
+		                       		En la página <a href="docu_demo_apps01.html" data-original-title="">Estructura del widget</a> se explica el lay-out que establece las
+									dimensiones del widget. El contenido específico de nuestra página debe entrarse dentro del <code>DIV</code> de clase <code>widget-body</code>.
+		                       		</p>
+									<p>
+									En dicho <code>DIV</code> crearemos uno o más <code>DIVs</code> de clase <code>widget-control-group</code>, cada uno de los cuales destinado a mostrar un
+									contenido, componente o control concreto dentro de un <code>DIV</code> de clase <code>widget-control-group-content</code>.
+		                       		</p>
+									Opcionalmente puede mostrarse por encima el subtítulo específico de dicho contenido indicándolo en un <code>DIV</code> de clase
+									<code>widget-control-group-title</code>.
+		                       		<p></p>
+									<p>
+									
+</p><pre><code>
+&lt;div class="widget-inner widget-inner-hpattern-4-4 widget-inner-vpattern-2-4"&gt;
+	&lt;div class="widget-header"&gt;
+	&lt;/div&gt;
+	&lt;div class="widget-body widget-body-vpattern-2-4"&gt;
+
+		<b>&lt;div class="widget-control-group"&gt;</b>
+			<b>&lt;div class="widget-control-group-title"&gt;</b>
+				Subtítulo de contenido
+			&lt;/div&gt;
+			<b>&lt;div class="widget-control-group-content"&gt;</b>
+				&lt;p&gt;Lorem ipsum dolor sit amet...
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+	&lt;/div&gt;
+	&lt;div class="widget-footer"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+		                		</div>
+
+	             				<h3 id="pagination-title" class="content-title emphasized">Enlaces</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps02_widget02.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="form-group-inner">	 
+		                       		<p>
+		                       		Para mostrar un enlace en cualquier lugar simplemente haremos uso del tag estándar <code>&lt;a&gt;</code> de HTML:
+		                       		</p>
+									
+<pre><code>
+&lt;div class="widget-control-group-content"&gt;
+	&lt;p&gt;<b>&lt;a href="#"&gt;Ejemplo de enlace&lt;/a&gt;</b>&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+		                       		<p>
+		                       		Para mostrar un lista de enlaces, usaremos el tag estándar <code>&lt;a&gt;</code> en una lista estándar HTML:
+		                       		</p>
+									
+<pre><code>
+&lt;div class="widget-control-group-content"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Elemento enlazable 1&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Elemento enlazable 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Elemento enlazable n&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+		                       		<p>
+		                       		Para mostrar un enlace con una viñeta, a la izquierda del mismo haremos aparecer un icono de clase <code>icono-bullet-fletxa-gran</code>:
+		                       		</p>
+									
+<pre><code>
+&lt;div class="widget-control-group-content"&gt;
+	&lt;p&gt;<b>&lt;i class="icono-bullet-fletxa-gran"&gt;&lt;/i&gt;</b> &lt;a href="#"&gt;Ejemplo de enlace navegacional&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+		                		</div>
+
+	             				<h3 id="pagination-title" class="content-title emphasized">Botones</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-8">
+											<iframe src="demo_apps02_widget03.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-8" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="form-group-inner">	 
+		                       		<p>
+		                       		Para mostrar un botón usaremos el tag <b>&lt;button&gt;</b> de tipo <b>submit</b> indicando clase <b>btnAPPS</b>:
+		                       		</p>
+									
+<pre><code>
+&lt;div class="widget-control-group-content"&gt;
+	&lt;button class="<b>btnAPPS</b>" type="submit"&gt;Guardar&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+		                		</div>
+
+	             				<h3 id="pagination-title" class="content-title emphasized">Texto mono-linea</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps02_widget04.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="form-group-inner">	 
+		                       		<p>
+		                       		Para mostrar un campo de entrada usaremos el tag <b>&lt;input&gt;</b> de tipo <b>text</b>. Si queremos mostrar un texto
+									indicativo o de ayuda, informaremos un atributo <b>default</b> en el tag:
+		                       		</p>
+
+<pre><code>
+&lt;div class="widget-control-group-content"&gt;
+	&lt;label for="input01" class="<b>control-label</b>"&gt;Texto:&lt;/label&gt;
+	&lt;input type="text" id="input01" <b>default</b>="Escriba una nueva nota..." /&gt;
+&lt;/div&gt;
+</code></pre>
+
+		                       		<p>
+		                       		Opcionalmente puede mostrarse a la izquierda del campo de entrada una etiqueta. Para ello usaremos el tag <b>label</b> indicando
+									clase <b>control-label</b>.
+		                       		</p>
+		                       		<p>
+		                       		Adicionalmente podemos añadir las clases css <code>error</code> o <code>disable</code> al div contenedor si queremos aplicar los estilos de error o deshabilitado.
+		                       		</p>
+<pre><code>
+&lt;div class="widget-control-group-content <b>error</b>"&gt;
+	&lt;label for="input01" class="control-label"&gt;Texto:&lt;/label&gt;
+	&lt;input type="text" id="input01" value="valor" /&gt;
+&lt;/div&gt;
+</code></pre>		                       		
+		                       		<p>
+		                       		Para que se aplique el comportamiento dinámico será necesario incorporar al cerrar el <code>body</code> de la página los ficheros javascript siguientes:
+		                       		</p>
+
+<pre><code>
+&lt;/body&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jquery/1.8.2/jquery-1.8.2.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="js/acstatic-apps.js"/&gt;
+</code></pre>
+		                		</div>
+
+								<h3 id="pagination-title6" class="content-title emphasized">Buscador</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-8">
+											<iframe src="demo_apps02_widget06.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-8" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+								<div class="form-group-inner">	 
+		                       		<p>
+		                       		Para mostrar un buscador, definiremos un bloque <code>form</code> en el cual especificaremos los siguientes atributos:</p>
+		                       		<ul>
+		                       			<li><code>class</code>: debe valer <code>search-form</code></li>
+		                       			<li><code>method</code>: debe valer <code>GET</code></li>
+		                       			<li><code>action</code>: debe contener la URL donde se procesará la búsqueda</li>
+		                       		</ul>
+		                       		<p>Además de definir estos atributos, el bloque contendrá los siguientes elementos:</p>
+		                       		
+		                       		<ul>
+		                       			<li>Un bloque de tipo <code>input</code> con los siguientes atributos:</li>
+		                       			<ul>
+		                       				<li><code>type</code> debe tener el valor <code>text</code></li>
+		                       				<li><code>id</code> debe tener un valor único, ya que se utilizará como identificador</li>
+		                       				<li><code>name</code> debe tener exactamente el mismo valor que el campo <code>id</code></li>
+		                       				<li><code>default</code> debe tener un valor de texto, que se mostrará cuando no haya texto escrito en el campo de búsqueda</li>
+		                       			</ul>
+		                       			<li>Un bloque de tipo <code>button</code> con los siguientes atributos:</li>
+		                       			<ul>
+		                       				<li><code>type</code> debe tener el valor <code>submit</code></li>
+		                       				<li><code>class</code> debe tener el valor <code>btnAPPS</code></li>
+		                       				<li><code>title</code> debe tener un valor de texto, que se mostrará en el botón de búsqueda</li>
+		                       				<li>El cuerpo del componente debe tener el mismo valor que el campo <code>title</code></li>
+		                       			</ul>
+		                       		</ul>
+
+<pre><code>
+&lt;form class="search-form" method="GET" action="#"&gt;
+	&lt;input type="text" id="input01" name="input01" default="Numero de norma o texto a buscar..." /&gt;
+	&lt;button title="Buscar" class="btnAPPS" type="submit"&gt;Buscar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>		                       		
+		                       		<p>
+		                       		Para que se aplique el comportamiento dinámico será necesario incorporar al cerrar el <code>body</code> de la página los ficheros javascript siguientes:
+		                       		</p>
+
+<pre><code>
+&lt;/body&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jquery/1.8.2/jquery-1.8.2.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="js/acstatic-apps.js"/&gt;
+</code></pre>
+		                		</div>
+	                        </div>
+					</div>
+
+				<!-- Menu -->
+		     	<div id="menu-apps-docu-right" class="col-sm-3 col-md-3"></div>
+                
+  			</div>
+  		  </div>
+  		  </div><!--/row-->
+		</div><!--/ .content-->
+	
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>       
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script src="menu.js"></script>
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+
+  
+</body></html>

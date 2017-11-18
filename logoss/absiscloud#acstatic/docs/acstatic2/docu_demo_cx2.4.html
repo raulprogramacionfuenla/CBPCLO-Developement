@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>ABSIS Cloud | ACStatic | La Caixa</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Styles -->
+<link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+<link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+		<div class="content">
+
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+					<a href="demo.html">Galería de componentes estáticos</a>
+				</h1>
+				<div class="align_right">
+					<a href="demo_cx2.4.html" data-original-title=""> Muestrario</a>
+				</div>
+			</div>
+
+			<!-- Content  -->
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+		 		<div class="row">
+				<div id="content" class="col-sm-9 col-md-9">
+						<div class="form-group-inner">
+							<ol class="breadcrumb">
+								<li><a href="demo.html">Componentes estáticos para TF7</a>
+									</li>
+								<li><a href="docu_demo_cx2.html">Formularios</a>
+									</li>
+								<li class="active">Text Area</li>
+							</ol>
+							<h3 class="content-title">Text Area</h3>
+							
+							
+							
+							<h3 id="form-style-title" class="content-title emphasized">Estilo de elementos de Área de texto</h3>
+							<div id="form-style" class="form-group-inner">
+	                                     <form class="form-horizontal">
+	                                         <fieldset>
+	                                             <div class="required form-group">
+													<label for="textarea-required" class="control-label">Área de texto*:</label>
+													<div class="controls col-md-4">
+														<textarea rows="3" id="textarea-required" class="input-xlarge"></textarea>
+													</div>	
+	                                             </div>
+	                       					  <div class="form-group-inner">
+	                       					<p>
+	                       					Para tener una entrada de área de texto obligatoria tendremos que añadir el estilo <i>required</i> al de <i>form-group</i> a una entrada de área de texto estándard.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="form-group required"&gt;
+&lt;label for="textarea-required" class="control-label"&gt;Área de texto*:&lt;/label&gt;
+  &lt;div class="controls col-md-4"&gt;
+	&lt;textarea rows="3" id="textarea-required" class="input-xlarge"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				<br><br>
+                                                 <div class="disabled form-group">
+                                                     <label for="textarea-disabled" class="control-label">Área de texto inhabilitada:</label>
+                                                     <div class="controls col-md-4">
+                                                         <textarea rows="3" id="textarea-disabled" disabled="disabled" class="input-xlarge"></textarea>
+                                                     </div>
+                                                 </div>
+	                       					<div class="form-group-inner">
+		                              	    <p>
+	                        				Para un campo de área de texto inhabilitado, a parte del atributo <i>disabled</i> en textarea, se deberá añadir el estilo <i>disabled</i> al de <i>form-group</i>.
+	                       					</p>
+<pre><code>
+&lt;div class="form-group disabled"&gt;
+  &lt;label for="textarea-disabled" class="control-label"&gt;Área de texto inhabilitada:&lt;/label&gt;
+  &lt;div class="controls col-md-4"&gt;
+	&lt;textarea rows="3" id="textarea-disabled" disabled="disabled" class="input-xlarge"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				<br><br>
+                                            <div class="error form-group">
+                                                     <label for="textarea-error" class="control-label">Área de texto con error:</label>
+													<div class="controls col-md-4">
+														<textarea rows="3" id="textarea-error" class="input-xlarge"></textarea>
+														<div class="help-block">Corregir el error</div>
+													</div>
+                                              </div>
+	                       					  <div class="form-group-inner">
+	                       					<p>
+	                        				Para mostrar un error, se deberá añadir el estilo <i>error</i> al de <i>form-group</i>. 
+	                        				Si se quiere añadir un mensaje aclaratorio, el texto deberá ser del estilo <i>help-block</i>.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="form-group error"&gt;
+  &lt;label for="textarea-error" class="control-label"&gt;Área de texto con error:&lt;/label&gt;
+  &lt;div class="controls col-md-4"&gt;
+	&lt;textarea rows="3" id="textarea-error" class="input-xlarge"&gt;&lt;/textarea&gt;
+	&lt;div class="help-block"&gt;Corregir el error&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				
+                            				<div class="form-group">
+												<label for="textarea-helped2" class="control-label">Área de texto con texto de ayuda:</label>
+												<div class="controls col-md-4">
+													<textarea rows="3" id="textarea-helped2" name="textarea-helped2" class="input-xlarge"></textarea>
+												</div>
+												<div class="block-hint">[texto de ayuda]</div>
+											</div>
+										    <div class="form-group-inner">
+	                       					<p>
+	                        				Para mostrar el texto de ayuda añadiremos un div al final del textarea con la classe <i>block-hint</i>. El texto deberá ir entre corchetes <code>[]</code>[].
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="form-group "&gt;
+  &lt;label for="textarea-error" class="control-label"&gt;Área de texto de ayuda:&lt;/label&gt;
+  &lt;div class="controls col-md-4"&gt;
+	&lt;textarea rows="3" id="textarea-error" class="input-xlarge"&gt;&lt;/textarea&gt;
+	&lt;div class="help-block"&gt;Corregir el error&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="block-hint empty-label-margin"&gt;[texto de ayuda]&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				
+                            				<div class="form-group">
+												<label for="textarea-rta" class="control-label">Área de texto enriquecida:</label>
+												<div class="controls col-md-4">
+													<textarea rows="3" id="textarea-rta" name="textarea-rta" class="rich-text-area input-xlarge"></textarea>
+												</div>
+												
+											</div>
+											
+                            				<div class="form-group-inner">
+	                       					<p>
+	                        				Para añadir un campo de texto enriquecido simplemente añadiremos la classe css <code>rich-text-area</code> al campo de texto en cuestión.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="form-group "&gt;
+  &lt;label for="textarea-error" class="control-label"&gt;Área de texto enriquecido:&lt;/label&gt;
+  &lt;div class="controls col-md-4"&gt;
+	&lt;textarea rows="3" id="textarea-error" class="rich-text-area"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				
+                            				
+                            				
+                                    	</fieldset>
+                                	</form>
+							</div>
+
+															
+						</div>
+				</div>
+
+
+				<!-- Menu -->
+				<div id="menu-tf7-docu-right" class="col-sm-3 col-md-3"></div>
+				</div>
+				</div>
+				</div>
+
+			</div>
+			<!--/row-->
+
+		<!--/ .content-->
+	<div class="footer">
+		<hr>
+		@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br>
+		<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La
+			Caixa</a>
+	</div>
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/jquery-cookie/1.0/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/globalize/0.1.0a1/globalize.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript" src="../../static/fwk/js/acglobalizeutils.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/validationEngine/2.5.2/js/jquery.validationEngine.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script type="text/javascript" src="menu.js"></script>
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+	
+	<!-- Date Picker -->
+	<link href="/static/fwk/components/bootstrap-datepiker-eternicode/1.3.0_custom/css/datepicker.css" rel="stylesheet">
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-datepiker-eternicode/1.3.0_custom/js/bootstrap-datepicker.js"></script>
+	<!-- Fin Date Picker -->
+	
+	<!-- TIME Picker -->
+	<link href="/static/fwk/components/bootstrap-timepicker/0.2.3_custom/css/bootstrap-timepicker.min.css" rel="stylesheet">
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-timepicker/0.2.3_custom/js/bootstrap-timepicker.min.js"></script>
+	<!-- Fin TIME Picker -->
+	
+	<!-- RTA -->
+	<script type="text/javascript" src="/static/fwk/components/tinymce/3.5.8/jquery.tinymce.js"></script>
+	<!-- Fin RTA -->
+	
+
+</body></html>

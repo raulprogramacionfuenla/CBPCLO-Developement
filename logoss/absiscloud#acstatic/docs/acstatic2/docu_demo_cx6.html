@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet"> 
+
+  </head>
+
+  <body>
+
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+				<span class="canal">ABSIS Cloud</span>
+				<span class="separador"></span>
+		        <a href="demo.html">Galería de componentes estáticos</a>
+		        </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_cx6.html" data-original-title=""> Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+		 	<div class="row">
+		        <div class="col-sm-9 col-md-9">
+					<div class="row">
+	            		<div class="col-sm-12 col-md-12">
+	            		
+	            			<div class="form-group-inner">
+								<ol class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para TF7</a></li>
+									<li class="active">Estructura de página</li>
+								</ol>
+								<h3 id="page-title" class="content-title">Estructura de página</h3>
+										
+								<h3 class="content-title emphasized">Estructura general</h3>
+								<div class="form-group-inner">	 
+									<p>
+									Dentro del <i>body</i> de una página estandard encontramos una estructura similar a la siguiente. Destacar que el contenido se divide
+									en dos <i>div</i>, uno con <i>col-sm-9 col-md-9</i> para el contenido y sus secciones y otro con <i>col-sm-3 col-md-3</i> para el menú.
+									</p>    
+                 			
+<pre><code>
+&lt;div class="content"&gt;
+
+  &lt;!-- Page Title --&gt;
+  &lt;div class="page-header"&gt; 
+    ...
+  &lt;/div&gt; 
+    
+  &lt;!-- Content  --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm-12 col-md-12"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-sm-9 col-md-9"&gt;
+          &lt;div class="form-group-inner"&gt;
+          	&lt;h3 class="content-title"&gt;Estructura de página&lt;/h3&gt;
+          	&lt;h3 class="content-title emphasized"&gt;Estructura general&lt;/h3&gt;
+               ...	            
+          &lt;/div&gt;
+        &lt;/div&gt;
+ 
+        &lt;!-- Menu --&gt;
+        &lt;div id="menu-tf7-right" class="col-sm-3 col-md-3"&gt;
+          ...
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;  
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;
+
+&lt;!-- Javascripts --&gt;
+...
+
+</code></pre>
+		                		</div>
+			                 </div>
+	            
+			            	<div class="form-group-inner">
+			                <h3 class="content-title emphasized">Cabecera de página</h3>
+                       		<div class="form-group-inner">	 
+                       		<p>
+	                       	La cabecera de la página está contenida en un <i>div</i> con estilo <i>page-header</i>. El título deberá ser un <i>h1</i>.
+	                       	</p>    
+                 			
+<pre><code>
+&lt;div class="page-header"&gt; 
+  &lt;h1&gt;Elementos de Página&lt;/h1&gt;
+&lt;/div&gt; 
+
+</code></pre>
+		                		</div>
+			                 </div>
+
+		                     <div class="form-group-inner">
+		                     <h3 class="content-title emphasized">Menú lateral</h3>
+                       		<div class="form-group-inner">                                           
+                       		 <p>
+                       		 El menú estará contenido en un <i>div</i> de estilo <i>menu-tf7-right</i> con otro <i>div</i> anidado
+                       		 con estilo <i>sidebar-nav</i>.
+                       		 Para listar las diferentes páginas usaremos un elemento de lista <i>ul</i> con estilos <i>nav nav-list</i>.
+	                       	 </p>    	 
+                 			
+<pre><code>
+&lt;div id="menu-tf7-right" class="col-sm-3 col-md-3"&gt;
+  &lt;div class="sidebar-nav"&gt;
+    &lt;ul class="nav nav-list"&gt;
+      &lt;li&gt;&lt;a href="docu_demo_cx1.html" class="current" data-original-title=""&gt; Elementos de Navegación&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="docu_demo_cx2.html" data-original-title=""&gt; Formularios&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="docu_demo_cx3.html" data-original-title=""&gt; Tablas y Listas&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="docu_demo_cx4.html" data-original-title=""&gt; Mensajes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="docu_demo_cx5.html" data-original-title=""&gt; Sistema Grid&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+		                		</div>
+		                     </div>
+		                     <div class="form-group-inner">
+                             <h3 class="content-title emphasized">Sección</h3>
+	                       		<div class="form-group-inner">                                           
+                       		 <p>
+                       		 Para las distitas secciones usaremos un <i>div</i> con el estilo <i>form-group</i>.
+                       		 Para poner el título con la barra de separación usaremos una etiqueta <i>h3</i>.
+                       		 Para el contenido justificado un <i>div</i> con estilo <i>form-group-inner</i>
+	                       	 </p>    	 
+		                              
+<pre><code>
+&lt;div id="id sección" class="form-group"&gt;
+  &lt;h3&gt;Título sección&lt;/h2&gt;
+  &lt;div class="form-group-inner"&gt;	 
+  ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            	</div>
+                        	</div>
+                         
+		                     
+	                       	<div class="form-group-inner">
+                                <h3 class="content-title emphasized">Pie de página</h3>
+	                       		<div class="form-group-inner">                                           
+                       		 <p>
+                       		 El pie de página debe definirse en un elemento <i>footer</i>.
+                       		 Deberemos incluir el separador <i>hr</i> y el contenido informativo.
+	                       	 </p>    	 
+		                              
+<pre><code>
+&lt;div class="footer"&gt;
+  &lt;hr&gt;
+  @ "la Caixa", Barcelona 2012. Todos los derechos reservados. &lt;br&gt; 
+  &lt;a&gt;lacaixa.es&lt;/a&gt; | &lt;a&gt;ABSIS Cloud&lt;/a&gt;| &lt;a&gt;ACStatic&lt;/a&gt; | &lt;a&gt;La Caixa&lt;/a&gt;    
+&lt;/div&gt;
+</code></pre>  
+                            	</div>
+                        	</div>
+                        	
+                        	
+	                       	<div class="form-group-inner">
+                                <h3 class="content-title emphasized">Contenido del header</h3>
+	                       		<div class="form-group-inner">                                           
+                       		 <p>
+                       		 Todas las páginas tienen que incluir en el header las siguientes librerías y css para Bootstrap 3:
+	                       	 </p> 
+<pre><code>
+&lt;absiscloud:static type="style" source="absiscloud" path="components/bootstrap/3.1.1/css/bootstrap.min.css"/&gt;
+&lt;absiscloud:static type="style" source="absiscloud" path="styles/acstatic2/ac.css"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/bootstrap/3.1.1/js/bootstrap.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="js/acstatic2/acstatic.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/bootstrap-respond/respond.min.js"/&gt;
+</code></pre>  	                       	 
+
+                            	</div>
+                        	</div>
+                    	</div>       
+					</div>
+		  		</div>
+		  
+				<!-- Menu -->
+		     	<div id="menu-tf7-docu-right" class="col-sm-3 col-md-3"></div>
+                
+  			</div><!--/row-->
+  
+		</div><!--/ .content-->
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script src="menu.js"></script>
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+  
+</body></html>

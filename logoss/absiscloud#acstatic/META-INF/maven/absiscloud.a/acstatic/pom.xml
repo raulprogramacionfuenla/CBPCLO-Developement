@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>absiscloud.a</groupId>
+  <artifactId>acstatic</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>acstatic</name>
+  
+  <properties>		
+		<!-- Configuracion de la construccion -->
+		<java-version>1.6</java-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- FIN DE Configuracion de la construccion -->
+	
+		<!-- Versiones de dependencias y plugins -->
+		<org.apache.maven.plugins.maven-compiler-plugin-version>2.3.2</org.apache.maven.plugins.maven-compiler-plugin-version>
+		<org.apache.maven.plugins.maven-deploy-plugin-version>2.7</org.apache.maven.plugins.maven-deploy-plugin-version>
+		<org.apache.maven.plugins.maven-eclipse-plugin-version>2.9</org.apache.maven.plugins.maven-eclipse-plugin-version>
+		<!-- FIN DE Versiones de dependencias y plugins -->
+  </properties>
+
+  <build>
+      <plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-eclipse-plugin-version}</version>
+				<configuration>
+					<additionalProjectnatures>
+                      <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+                      <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-compiler-plugin-version}</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+					</configuration>
+			</plugin>            
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${org.apache.maven.plugins.maven-deploy-plugin-version}</version>
+			</plugin>
+			<plugin>         
+			    <groupId>org.codehaus.mojo</groupId>         
+			    <artifactId>build-helper-maven-plugin</artifactId>         
+			    <version>1.7</version>         
+			    <executions>           
+			        <execution>             
+			            <id>remove-old-artifacts</id>             
+			            <phase>package</phase>             
+			            <goals>               
+			                <goal>remove-project-artifact</goal>             
+			            </goals>            
+			            <configuration>  
+			                <removeAll>true</removeAll><!-- When true, remove all built artifacts including all versions. When false, remove all built artifacts of this project version -->             
+			            </configuration>          
+			        </execution>         
+			    </executions>       
+			</plugin>			
+      </plugins>
+  </build>
+
+</project>

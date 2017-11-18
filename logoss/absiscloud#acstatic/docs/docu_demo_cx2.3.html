@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ABSIS Cloud | ACStatic | La Caixa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Styles -->
+<link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet" />
+<link href="../static/fwk/styles/ac.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="content">
+
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+					<a href="demo.html">Galería de componentes estáticos</a>
+				</h1>
+				<div class="align_right">
+					<a href="demo_cx2.3.html" data-original-title=""> Muestrario</a>
+				</div>
+			</div>
+
+			<!-- Content  -->
+			<div class="row-fluid">
+				<div id="content" class="span9 container-fluid">
+					<div class="row-fluid">
+						<div class="span12 control-group-inner">
+							<ul class="breadcrumb">
+								<li><a href="demo.html">Componentes estáticos para TF7</a>
+									<span class="divider">&gt;</span></li>
+								<li><a href="docu_demo_cx2.html">Formularios</a>
+									<span class="divider">&gt;</span></li>
+								<li class="active">Radio butons y checkboxes</li>
+							</ul>
+							<h3 class="content-title">Radio butons y checkboxes</h3>
+						
+
+							<h3 id="checkboxes-radiobuttons-title" class="content-title emphasized">Checkboxes y Radionbuttons</h3>
+							<div id="checkboxes-radiobuttons" class="control-group-inner">
+								
+                                	<form class="form-horizontal">
+                                    	<fieldset>
+                                    	
+                               
+											<br/><br/>
+                                    	
+                                    	
+                                            <div class="control-group checkbox-group">
+                                                    <label for="inlineCheckbox1" class="control-label">Checkboxes alineados</label>
+                                                    <div class="controls">
+                                                        <label class="checkbox inline">
+                                                            <input type="checkbox" value="option1" id="inlineCheckbox1"> 1
+                                                        </label>
+                                                        <label class="checkbox inline">
+                                                            <input type="checkbox" value="option2" id="inlineCheckbox2"> 2
+                                                        </label>
+                                                        <label class="checkbox inline">
+                                                            <input type="checkbox" value="option3" id="inlineCheckbox3"> 3
+                                                        </label>
+                                                    </div>
+                                                </div> 
+	                       					 <div class="control-group-inner">
+	                       					<p>
+	                       					Para tener un grupo de checkbox alineados se deberá primero informar que es un grupo añadiendo el estilo <i>checkbox-group</i> a la <i>div</i>
+	                       					con estilo <i>control-group</i>. Después se deberá añadir el estilo <i>inline</i> al <i>label</i> de cada checkbox. 
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="control-group checkbox-group"&gt;
+  &lt;label for="inlineCheckbox1" class="control-label"&gt;Checkboxes alineados&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;label class="checkbox inline"&gt;
+      &lt;input type="checkbox" value="option1" id="inlineCheckbox1"&gt; 1
+    &lt;/label&gt;
+    &lt;label class="checkbox inline"&gt;
+      &lt;input type="checkbox" value="option2" id="inlineCheckbox2"&gt; 2
+    &lt;/label&gt;
+    &lt;label class="checkbox inline"&gt;
+      &lt;input type="checkbox" value="option3" id="inlineCheckbox3"&gt; 3
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+
+</code></pre>  
+                            				</div>
+                            				<br><br>
+                                            <div class="control-group checkbox-group">
+                                                    <label class="control-label">Checkboxes en columna</label>
+                                                    <div class="controls">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="option1" name="optionsCheckboxList1">
+                                                            Opción 1
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="option2" name="optionsCheckboxList2">
+                                                            Opción 2
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" value="option3" name="optionsCheckboxList3">
+                                                            Opción 3
+                                                        </label>
+                                                        <label class="checkbox disabled">
+	                                                       <input disabled="disabled" value="option1"  type="checkbox" />
+	                                                      Checkbox inhabilitado
+	                                                   </label>
+	                                                   <label class="checkbox error">
+	                                                       <input value="option1"  type="checkbox" />
+	                                                      Checkbox con error
+	                                                      <div class="help-block">Corregir el error</div>
+	                                                   </label>
+                                                     </div>
+                                                </div> 
+	                       					 <div class="control-group-inner">
+	                       					<p>
+	                       					Para tener un grupo de checkbox en columna se deberá informar que es un grupo añadiendo el estilo <i>checkbox-group</i> a la <i>div</i>
+	                       					con estilo <i>control-group</i>.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="control-group checkbox-group"&gt;
+  &lt;label class="control-label"&gt;Checkboxes en columna&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;label class="checkbox"&gt;
+      &lt;input type="checkbox" value="option1" name="optionsCheckboxList1"&gt;
+      Opción 1
+    &lt;/label&gt;
+    &lt;label class="checkbox"&gt;
+      &lt;input type="checkbox" value="option2" name="optionsCheckboxList2"&gt;
+      Opción 2
+    &lt;/label&gt;
+    &lt;label class="checkbox"&gt;
+      &lt;input type="checkbox" value="option3" name="optionsCheckboxList3"&gt;
+      Opción 3
+    &lt;/label&gt;
+     &lt;label class="checkbox disabled"&gt;
+         &lt;input disabled="disabled" value="option1"  type="checkbox" /&gt;
+       Checkbox inhabilitado
+     &lt;/label&gt;
+     &lt;label class="checkbox error"&gt;
+         &lt;input value="option1"  type="checkbox" /&gt;
+       Checkbox con error
+        &lt;div class="help-block"&gt;Corregir el error &lt;/div&gt;
+     &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt; 
+
+</code></pre>  
+                            				</div>
+                            				<br><br>
+                            				<div class="control-group radiobutton-group">
+													<label class="control-label">Radio buttons</label>
+													<div class="controls">
+														<label class="radio"> <input type="radio"
+															checked="checked" value="option1" id="optionsRadios1"
+															name="optionsRadios"> 
+															Opción A
+														</label> 
+														<label class="radio disabled"> <input type="radio"
+															value="option2" id="optionsRadios2" disabled="disabled" name="optionsRadios">
+															Opción B
+														</label>
+														<label class="radio error"> <input type="radio"
+															value="option2" id="optionsRadios2" name="optionsRadios">
+															Opción C
+															 <div class="help-block">Corregir el error</div>
+														</label>
+													</div>
+												</div>
+                                           
+                                            <div class="control-group-inner">
+                                            <p>
+	                       					Para tener un grupo de <i>radio-button</i> se deberá informar que es un grupo añadiendo el estilo <i>radiobutton-group</i> a la <i>div</i>
+	                       					con estilo <i>control-group</i>.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="control-group radiobutton-group"&gt;
+  &lt;label class="control-label"&gt;Radio buttons&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;label class="radio"&gt;
+      &lt;input type="radio" checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"&gt;
+      Opción A
+    &lt;/label&gt;
+    &lt;label class="radio disabled"&gt;
+      &lt;input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"&gt;
+      Opción B
+    &lt;/label&gt;
+    &lt;label class="radio error"&gt;
+      &lt;input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"&gt;
+      Opción C
+      &lt;div class="help-block"&gt;Corregir el error&lt;/div&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				<br><br>
+                            				<div class="control-group radiobutton-group disabled">
+                                               <div class="controls">
+                                                   <label class="checkbox">
+                                                       <input disabled="disabled" value="option1"  type="checkbox" />
+                                                      Checkbox inhabilitado
+                                                   </label>
+                                               </div>
+                                            </div>
+	                       					
+	                       					<div class="control-group-inner">
+	                       					<p>
+	                        				Para un checkbox inhabilitado, a parte del atributo <i>disabled</i> en el input, se deberá añadir el estilo <i>disabled</i> al de <i>control-group</i>.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="control-group radiobutton-group disabled"&gt;
+  &lt;div class="controls"&gt;
+    &lt;label class="checkbox"&gt;
+    &lt;input disabled="disabled" value="option1"  type="checkbox" /&gt;
+     Checkbox inhabilitado
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                                    	    <br><br>
+                            				<div class="control-group radiobutton-group error">
+                                               <div class="controls">
+                                                   <label class="checkbox">
+                                                       <input value="option1"  type="checkbox" />
+                                                      Checkbox con error
+                                                      <span class="help-block">Corregir el error</span>
+                                                   </label>
+                                               </div>
+                                            </div>
+	                       					
+	                       					<div class="control-group-inner">
+	                       					<p>
+	                        				Para un checkbox con error se deberá añadir el estilo <i>error</i> al de <i>control-group</i>.
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="control-group radiobutton-group error"&gt;
+  &lt;div class="controls"&gt;
+    &lt;label class="checkbox"&gt;
+	  &lt;input value="option1"  type="checkbox" /&gt;
+	  Checkbox con error
+	  &lt;span class="help-block"&gt;Corregir el error&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				<br><br>
+												<div class="control-group radiobutton-group">
+	                                               <label class="control-label">Checkboxes de salida</label>
+													<div class="consultas-controls">
+														<ul>
+														<li>
+														<label class="checkbox">  
+															<input class="consulta" type="checkbox"
+															value="option1" name="optionsCheckboxList1">
+															Opción 1
+														</label> 
+														</li>
+														<li>
+														<label class="checkbox">
+															<input class="consulta" type="checkbox"
+															value="option2" checked="checked" name="optionsCheckboxList2">
+															Opción 2
+														</label>
+														</li>
+														<li> 
+														<label class="checkbox">
+															<input class="consulta" type="checkbox"
+															value="option3" checked="checked" name="optionsCheckboxList3">
+															Opción 3
+														</label>
+														</li>
+														</ul>
+													</div>
+	                                            </div>
+	                       					
+	                       					<div class="control-group-inner">
+	                       					<p>
+	                        				Para un checkbox de salida se deberá añadir el estilo <i>consultas-controls</i> al elemento <i>div</i> padre del elemento ul.
+	                       					</p>
+	                       					<p>
+	                       					Para cada elemento <i>input</i> de tipo checkbox deberá añadir el estilo <i>consulta</i> 
+	                       					</p>
+		                              
+<pre><code>
+&lt;div class="control-group radiobutton-group"&gt;
+  &lt;label class="control-label"&gt;Checkboxes de salida&lt;/label&gt;
+  &lt;div class="consultas-controls"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;label class="checkbox"&gt;  
+          &lt;input class="consulta" type="checkbox"
+          value="option1" name="optionsCheckboxList1"&gt;
+          Opción 1
+        &lt;/label&gt; 
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label class="checkbox"&gt;
+          &lt;input class="consulta" type="checkbox"
+          value="option2" checked="checked" name="optionsCheckboxList2"&gt;
+          Opción 2
+        &lt;/label&gt;
+      &lt;/li&gt;
+      &lt;li&gt; 
+        &lt;label class="checkbox"&gt;
+          &lt;input class="consulta" type="checkbox"
+          value="option3" checked="checked" name="optionsCheckboxList3"&gt;
+          Opción 3
+        &lt;/label&gt;
+      &lt;/li&gt;
+      ...
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>  
+                            				</div>
+                            				<br><br>                            				                                    	    
+                                            </fieldset>
+                                        </form>
+									
+							</div>
+							
+												
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Menu -->
+				<div id="menu-tf7-docu-right" class="span3"></div>
+				</div>
+
+			</div>
+			<!--/row-->
+
+		</div>
+		<!--/ .content-->
+	</div>
+	<!--/.fluid-container-->
+	<div class="footer">
+		<hr>
+		@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br>
+		<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La
+			Caixa</a>
+	</div>
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" 	src="../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" 	src="../static/fwk/components/jquery-cookie/1.0/jquery.cookie.js"></script>
+	<script type="text/javascript" 	src="../static/fwk/components/globalize/0.1.0a1/globalize.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript"	src="../static/fwk/js/acglobalizeutils.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/validationEngine/2.5.2/js/jquery.validationEngine.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"charset="utf-8"></script>
+	<script type="text/javascript" 	src="../static/fwk/js/acstatic.js"></script>
+	<script type="text/javascript" 	src="menu.js"></script>
+	
+	<!-- Date Picker -->
+	<link href="/static/fwk/components/bootstrap-datepiker-eternicode/1.0.0/css/datepicker.css" rel="stylesheet" />
+	<script type="text/javascript"  src="/static/fwk/components/bootstrap-datepiker-eternicode/1.0.0/js/bootstrap-datepicker.js"></script>
+	<!-- Fin Date Picker -->
+	
+	<!-- TIME Picker -->
+	<link href="/static/fwk/components/bootstrap-timepicker/0.2.3/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+	<script type="text/javascript"  src="/static/fwk/components/bootstrap-timepicker/0.2.3/js/bootstrap-timepicker.min.js"></script>
+	<!-- Fin TIME Picker -->
+	
+	<!-- RTA -->
+	<script type="text/javascript"  src="/static/fwk/components/tinymce/3.5.8/jquery.tinymce.js"></script>
+	<!-- Fin RTA -->
+	
+</body>
+</html>

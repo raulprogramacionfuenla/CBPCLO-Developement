@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NewScreen</title>
+	<link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
+	<link href="../static/fwk/styles/ac.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="BusquedaDinamica.js"></script>
+</head>
+<body>
+	
+	<style>
+		.consultas{
+			border: solid black 1px;
+			border-radius: 5px;
+			padding: 20px 0px 20px 0px;
+		}
+		.cons{
+			padding: 10px;
+		}
+		
+		.content-title.emphasized.blue{
+			background-color:#DDE8ED;
+			box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+			color: black;
+		}
+		.footer{
+			position: absolute;
+			bottom: 10px;
+		    left: 0%; 
+   		    right: 0%;
+   		    margin-left: 0px;
+   		    margin-right: 0px;
+		}
+		
+		hr{
+			width: 50%;
+			position: absolute;
+			right: 25%;
+		}
+		
+		.buscador{
+			box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+			position: absolute;
+			border: 1px solid #879BB3;
+			background: rgba(255,255,255,0.8);
+			margin-top: -12px;
+			display: none;
+			z-index: 300;
+			max-height: 108px;
+			overflow-y: scroll;
+		}
+		.buscador li{
+			list-style: none;
+			cursor: pointer;
+			padding: 0px;
+		}
+		.buscador  li:hover{
+			background: #DDE8ED;
+		}
+		
+	</style>
+
+	<script>
+		$(document).ready(function(){
+ 				$('#aplicacion').CBPBusquedaDinamica({
+ 					placeHolder: 'Aplicación',
+ 					notFound: 'Aplicación no encontrada'
+ 				});
+ 				$('#componente').CBPBusquedaDinamica({
+ 					placeHolder: 'Componente',
+ 					notFound: 'Componente no encontrado'
+ 				});
+ 				$('#version').CBPBusquedaDinamica({
+ 					placeHolder: 'Versión',
+ 					notFound: 'Componente no encontrado'
+ 				});
+ 				$('#proveedor').CBPBusquedaDinamica({
+ 					placeHolder: 'Proveedor',
+ 					notFound: 'Componente no encontrado'
+ 				});
+		});
+	</script>
+
+	<!--Cabecera-->
+	<div class="page-header"> 
+				<h1>
+				<span class="canal">CBPCLO<span class="se"></span><span class="sd"></span><span class="ie"></span><span class="id"></span><span class="se"></span><span class="sd"></span><span class="ie"></span><span class="id"></span></span>
+				<span class="separador"></span>
+		       <a href="demo.html">Control Best Practices</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_cx5.html" data-original-title=""> U0112345</a>
+		        </div>
+		   	</div>
+
+	<!--Titulo-->
+	<br>
+	<h3 class="content-title emphasized blue">Consulta<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+	
+	<!--Consultas-->
+		<div class="row-fluid consultas">
+		<!-- Fila 1-->
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span4 cons">
+				<div class="span4"><b>Aplicación</b></div>
+				 <div class="span4"><input type="text" id="aplicacion" class="input-medium">
+					
+
+				 </div>
+			</div>
+			
+			<div class="span4 cons">
+				<div class="span4"><b>Versión</b></div>
+				 <div class="span4"><input type="text" id="version" class="input-medium"></div>
+			</div>
+			<div class="span2"></div>
+		</div>
+
+		<!--Fila2-->
+
+			<div class="row-fluid">
+			<div class="span2"></div>
+			<div class="span4 cons">
+				<div class="span4"><b>Componente</b></div>
+				 <div class="span4"><input type="text" id="componente" class="input-medium"></div>
+			</div>
+			
+			<div class="span4 cons">
+				<div class="span4"><b>Proveedor</b></div>
+				 <div class="span4"><input type="text" id="proveedor" class="input-medium"></div>
+			</div>
+			<div class="span2"></div>
+		</div>
+	</div>
+	
+	<!--Elementos de busqueda-->
+	<br><br><br><br><br><br><br><br><br><br><br>
+	<h3 class="content-title emphasized blue">Filtros<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+
+	<div class="row-fluid">
+	<div class="span12">
+		<div class="span6">
+			<h3 class="content-title emphasized">Tipo de consulta<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+			
+			<ul>
+				<li><input type="radio"  checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"> Actual</li>
+				<li><input  type="radio"  checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"> Histórico</li>
+			</ul>
+
+		</div>
+		<div class="span6">
+			<h3 class="content-title emphasized">Resultado<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+
+			<ul>
+				<li><input type="radio"  checked="checked" value="option1" id="optionsRadios1" name="resulRadio"> Todos</li>
+				<li><input  type="radio"  checked="checked" value="option1" id="optionsRadios1" name="resulRadio"> OK ✔ </li>
+				<li><input  type="radio"  checked="checked" value="option1" id="optionsRadios1" name="resulRadio"> KO ✖</li>
+			</ul>
+		</div>
+
+	</div>
+	</div>
+	
+
+	<div class="row-fluid">
+	<div class="span12">
+		<div class="span6">
+			<h3 class="content-title emphasized">Periodo<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+			
+			<div class="row-fluid"> 
+					<div class="span6">Desde <input type="text"></div>
+					<div class="span6"> Hasta <input type="text"></div>
+			</div>
+
+		</div>
+		<div class="span6">
+			<h3 class="content-title emphasized">Mostrar solo<span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+			<ul>
+				<li><input type="checkbox"  checked="checked" value="option1" id="optionsRadios1" name="optionsRadios"> Bloqueados</li>
+				<li><input  type="checkbox"   value="option1" id="optionsRadios1" name="optionsRadios"> Susceptibles de bloqueo</li>
+			</ul>
+		</div>
+
+	</div>
+	</div>
+
+		<div class="footer">
+		<hr>
+		@ "la Caixa", Barcelona 2017. Todos los derechos reservados. <br>
+		<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>CBPCLO</a> | <a>La
+			Caixa</a>
+		</div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/fwk/styles/ac.css" rel="stylesheet"> 
+  
+  </head>
+
+  <body>
+
+	<div class="container-fluid">
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+		        	<a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_apps10.html" data-original-title="">Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+			<div class="row-fluid">
+			<div class="span12">
+		 	<div class="row-fluid">
+		 		 <div class="span9 container-fluid">
+					<div class="row-fluid">
+	            		<div class="span12">
+	             			<div class="control-group-inner">
+								<ul class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para APPS</a>
+										<span class="divider">&gt;</span></li>
+									<li class="active">Slider bar</li>
+								</ul>
+								<h3  id="page-subtitle" class="content-title">Slider bar</h3>
+
+	             				<h3 id = "pagination-title" class="content-title emphasized">Slider bar</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps10_widget01.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+										<div class="control-group-inner">
+										<p>Las slider bars nos permiten asignar un valor numérico a un campo mediante una barra de desplazamiento, indicando algunos campos como las unidades, la precisión del número o el rango de valores.</p>
+                       		    			<p>Para poder implementar este componente necesitamos crear un <code>div</code> que tenga como <code>class</code> el valor <code>slider-group-label-fixed</code></p>
+                       		    			<p> El div principal deberá contener 2 elementos: </p>
+                       		    			<ul>
+                       		    				<li><b>Label + campo:</b> Consiste en un bloque de tipo <code>div</code> con la clase <code>slider-label</code> que contiene lo siguiente:</li>
+                       		    				<ul>
+                       		    					<li>Un bloque de tipo <code>label</code> que nos marca el texto que veremos delante del campo de texto. Tiene las siguientes peculiaridades:
+                       		    					<ul>
+                       		    						<li>El atributo <code>for</code> debe corresponderse con el identificador del campo (descrito a continuación)</li>
+                       		    						<li>El cuerpo del bloque debe contener el texto que queremos visualizar</li>
+                       		    					</ul>
+                       		    					<li>Un bloque de tipo <code>input</code> que nos marca el campo de texto que se rellenará con el slider. Tiene las siguientes características:</li>
+                       		    					<ul>
+                       		    						<li>El atributo <code>id</code> debe ser único, ya que es el identificador del campo y, como se ha explicado en el punto anterior, debe corresponder con el campo <code>for</code> de la etiqueta.</li>
+                       		    						<li>El atributo <code>name</code> debe concordar con el identificador.
+                       		    						<li>El atributo <code>type</code> debe tener el valor <code>text</code></li>
+                       		    						<li>El cuerpo del bloque estará vacío</li>
+                       		    					</ul>
+                       		    					<li>Un bloque de tipo <code>span</code>, sin atributos, que debe contener las unidades que queremos visualizar detrás del campo</li> 
+                       		    				</ul>
+                       		    				<li><b>Slider:</b> Consiste en un bloque de tipo <code>div</code> con la clase <code>slider-container</code> que contiene el siguiente elemento:
+                       		    				<ul>
+                       		    					<li>Un bloque de tipo <code>input</code>, sin cuerpo, con los siguientes atributos:
+                       		    					<ul>
+                       		    						<li><code>type</code> debe tener el valor <code>slider</code></li>
+                       		    						<li><code>value</code> debe tener un valor numérico, correspondiente al valor inicial del slider. Este valor se verá reflejado en el campo de texto al cargar la app</li>
+                       		    						<li><code>data-min</code> debe tener un valor numérico, correspondiente al valor mínimo del slider</li>
+                       		    						<li><code>data-max</code> debe tener un valor numérico, correspondiente al valor máximo del slider</li>
+                       		    						<li><code>data-increment</code> debe tener un valor numérico, correspondiente a la precisión del slider. Cada posición que avance o retroceda el slider, este valor se sumará o restará al campo de texto</li>
+                       		    						<li><code>data-input-id</code> debe corresponderse con el valor <code>id</code> del campo de texto que hemos definido anteriormente</li>
+                       		    						<li><code>data-pre-label</code> contiene el texto que queremos que se visualice delante del valor emergente del slider</li>
+                       		    						<li><code>data-post-label</code> contiene el texto que queremos que se visualice detrás del valor emergente del slider</li>
+                       		    						<li><code>data-min-label</code> contiene el texto que queremos que se muestre bajo el extremo izquierdo del slider</li>
+                       		    						<li><code>data-max-label</code> contiene el texto que queremos que se muestre bajo el extremo derecho del slider</li>
+                       		    						<li><code>data-under-error</code> contiene el error que queremos mostrar bajo el slider en caso que el valor sea inferior al mínimo</li>
+                       		    						<li><code>data-over-error</code> contiene el error que queremos mostrar bajo el slider en caso que el valor sea superior al máximo</li>
+                       		    						<li><code>data-format</code> corresponde al formato numérico en el que queremos que se pinte el valor, tanto emergente como dentro del campo. El formato se define con los siguientes elementos</li>
+                       		    						<ul>
+                       		    							<li><code>#</code> indica una cifra, que puede mostrarse o no según el valor a representar</li>
+                       		    							<li><code>0</code> también indica una cifra, que se mostrará siempre independientemente de si el valor a representar tiene un número inferior de cifras</li>
+                       		    							<li><code>.</code> indica el separador decimal. Se visualizará como una coma, pero debe representarse en el formato como un punto.
+                       		    							<li><code>,</code> indica el separador de millares. Se visualizará como un punto, pero debe representarse en el formato como una coma.
+                       		    						</ul>
+                       		    					</ul>
+                       		    				</ul>
+											<pre>
+												<code>
+&lt;div class="slider-group-label-fixed"&gt;
+	&lt;div class="slider-label"&gt;
+		&lt;label for="importe"&gt;Importe: &lt;/label&gt;
+		&lt;input id="importe" name="importe" type="text" /&gt;
+		&lt;span&gt;€&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="slider-container"&gt;
+		&lt;input 	value="20000" 
+				type="slider" 
+				data-min="1000"
+				data-max="60000" 
+				data-increment="1000" 
+				data-input-id="importe"
+				data-pre-label="" 
+				data-post-label="€" 
+				data-min-label="1.000€"
+				data-max-label="60.000€"
+				data-under-error="El importe mínimo es de 1.000 €" 
+				data-over-error="El importe máximo es de 60.000 €"
+				data-format="#,###.#" /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+											</pre>
+
+											<p>
+												Para que se aplique el comportamiento dinámico será
+												necesario incorporar al cerrar el
+												<code>body</code>
+												de la página los ficheros javascript siguientes:
+											</p>
+
+											<pre>
+												<code>
+...
+&lt;/body&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jquery/1.8.2/jquery-1.8.2.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jslider/0.0/js/jshashtable-2.1_src.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jquery.numberformatter/1.2.3/jquery.numberformatter-1.2.3.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jslider/0.0/bin/jquery.slider.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="js/acstatic-apps.js"/&gt;
+</code>
+											</pre>
+										</div>
+
+									</div>
+						</div>
+					</div>
+		  
+				</div>
+				<!-- Menu -->
+		     	<div id="menu-apps-docu-right" class="span3"></div>
+  		  </div>
+  		  </div><!--/row-->
+		</div><!--/ .content-->
+	</div><!--/.fluid-container--> 
+	
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>       
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../static/fwk/components/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../static/fwk/js/acstatic.js"></script>
+	<script src="menu.js"></script>
+
+  </body>
+</html>

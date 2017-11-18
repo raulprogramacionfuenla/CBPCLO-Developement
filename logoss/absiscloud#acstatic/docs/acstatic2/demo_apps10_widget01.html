@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link href="../../static/fwk/styles/acstatic2/ac-apps.css" rel="stylesheet"> 
+	</head>
+
+	<body>
+		<div class="widget-inner widget-inner-hpattern-4-4 widget-inner-vpattern-3-4">
+			<div class="widget-header">
+			</div>
+		<div class="widget-body widget-body-vpattern-3-4">
+
+			<!-- Single selection dropdown link -->
+			<div class="widget-control-group">
+				<div class="widget-control-group-title">1. Introduzca el
+					importe y el tipo de interés</div>
+
+				<div class="slider-group-label-fixed">
+
+					<div class="slider-label">
+						<label for="importe">Importe: </label> <input id="importe"
+							name="importe" type="text" /> <span>€</span>
+					</div>
+					<div class="slider-container">
+						<input 	value="20000" 
+								type="slider" 
+								data-min="1000"
+								data-max="60000" 
+								data-increment="1000" 
+								data-input-id="importe"
+								data-pre-label="" 
+								data-post-label="€" 
+								data-min-label="1.000€"
+								data-max-label="60.000€"
+								data-under-error="El importe mínimo es de 1.000 €" 
+								data-over-error="El importe máximo es de 60.000 €"
+								data-format="#,###.#" />
+					</div>
+				</div>
+				<div class="slider-group-label-fixed">
+
+					<div class="slider-label">
+						<label for="interes">Interés: </label> <input id="interes"
+							name="interes" type="text" /> <span>%</span>
+					</div>
+					<div class="slider-container">
+						<input 	value="16" 
+								type="slider" 
+								data-min="7.5" 
+								data-max="20"
+								data-increment="0.1" 
+								data-input-id="interes" 
+								data-pre-label=""
+								data-post-label="%" 
+								data-min-label="7,5%" 
+								data-max-label="20%"
+								data-under-error="El interés mínimo es del 7,5%" 
+								data-over-error="El interés máximo es del 20%"
+								data-format="#.#" />
+					</div>
+				</div>
+			</div>
+			<div class="widget-control-group">
+				<div class="widget-control-group-title">2. Adapte la cuota o el plazo</div>
+
+				<div class="slider-group-label-fixed">
+
+					<div class="slider-label">
+						<label for="cuota">Cuota: </label> <input id="cuota"
+							name="cuota" type="text" /> <span>€/mes</span>
+					</div>
+					<div class="slider-container">
+						<input 	value="20000" 
+								type="slider" 
+								data-min="50"
+								data-max="6000" 
+								data-increment="50" 
+								data-input-id="cuota"
+								data-pre-label="" 
+								data-post-label="€" 
+								data-min-label="50 €"
+								data-max-label="6.000 €" 
+								data-under-error="La cuota mínima es de 50 €" 
+								data-over-error="La cuota máxima es de 6.000 €"
+								data-format="#,###.#" />
+					</div>
+				</div>
+				<div class="slider-group-label-fixed">
+
+					<div class="slider-label">
+						<label for="plazo">Plazo: </label> <input id="plazo"
+							name="plazo" type="text" /> <span>meses</span>
+					</div>
+					<div class="slider-container">
+						<input 	value="1"
+								type="slider" 
+								data-min="1" 
+								data-max="96"
+								data-increment="1" 
+								data-input-id="plazo" 
+								data-pre-label=""
+								data-post-label="meses" 
+								data-min-label="1 mes" 
+								data-max-label="96 meses (8 años)"
+								data-under-error="El plazo mínimo es de 1 mes" 
+								data-over-error="El plazo máximo es de 96 meses (8 años)"
+								data-format="#.#" />
+					</div>
+				</div>
+			</div>
+
+			<div class="widget-footer"></div>
+		</div></body>
+	<script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+	
+	
+	<link href="../../static/fwk/components/jslider/0.0/bin/jquery.slider.min.css" rel="stylesheet"> 
+	<!--
+	<script src="../../static/fwk/components/jslider/0.0/js/draggable-0.1.js"></script>
+	<script src="../../static/fwk/components/jslider/0.0/js/tmpl.js"></script>
+	<script src="../../static/fwk/components/jslider/0.0/js/jshashtable-2.1_src.js"></script>
+	<script src="../../static/fwk/components/jslider/0.0/js/jquery.numberformatter-1.2.3.js"></script>
+	<script src="../../static/fwk/components/jslider/0.0/js/jquery.dependClass-0.1.js"></script>
+	<script src="../../static/fwk/components/jslider/0.0/js/jquery.slider.js"></script>
+	 -->
+	 <script src="../../static/fwk/components/jslider/0.0/js/jshashtable-2.1_src.js"></script>
+	 <script src="../../static/fwk/components/jquery.numberformatter/1.2.3/jquery.numberformatter-1.2.3.min.js"></script>
+	<script src="../../static/fwk/components/jslider/0.0/bin/jquery.slider.min.js"></script>
+	
+	<script src="../../static/fwk/js/acstatic-apps.js"></script>
+	<script>
+
+		
+	</script>
+	
+</html>

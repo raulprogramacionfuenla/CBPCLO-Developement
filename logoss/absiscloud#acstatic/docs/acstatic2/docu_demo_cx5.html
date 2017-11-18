@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet"> 
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+  </head>
+
+  <body>
+
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+				<span class="canal">ABSIS Cloud</span>
+				<span class="separador"></span>
+		       <a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_cx5.html" data-original-title=""> Muestrario</a>
+		        </div>
+		   	</div> 
+   
+ 		<div id="grid" class="row">
+            <div class="col-sm-12 col-md-12">
+		 	<div class="row">
+                    <div id="content" class="section-body col-sm-9 col-md-9">
+                                <div class="form-group-inner">
+									<ol class="breadcrumb">
+										<li><a href="demo.html">Componentes estáticos para TF7</a>
+											</li>
+										<li class="active">Sistema Grid</li>
+									</ol>
+                                	<h3 id="page-title" class="content-title">Sistema Grid</h3>
+	                         		
+	                         		<h3 class="content-title emphasized">Nesting</h3>    
+                                	<div class="form-group-inner">
+                                    <div class="show-grid row">
+                                        <div class="col-sm-12 col-md-12">
+                                            Col 12
+                                            <div class="show-grid row">
+                                                <div class="col-sm-6 col-md-6">
+                                                    Col 6
+                                                </div>
+                                                <div class="col-sm-6 col-md-6">
+                                                    Col 6
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                      
+                                    <div class="row">
+                                    <div class="col-sm-12 col-md-12">                                                        
+                       		          <p>
+	                       					Para trabajar con anidaciones usaremos los estilos <i>row</i> 
+	                       					Junto con los etilos de col-xs-X, col-sm-X, col-md-X y col-lg-X  para modular las medidas. Por ejemplo <i>col-md-12</i> y <i>col-md-6</i>.
+	                       					</p>
+	                       					<p>
+	                       					En el ejemplo se usa el estilo <i>show-grid</i> para que el resultado sea visual.
+	                       					</p>
+	                       		     </div>	      	                   			
+<pre><code>
+&lt;div class="row"&gt;
+  &lt;div class="col-sm-12 col-md-12"&gt;
+    Col 12
+    &lt;div class="row"&gt;
+      &lt;div class="col-sm-6 col-md-6"&gt;
+        Col 6
+      &lt;/div&gt;
+      &lt;div class="col-sm-6 col-md-6"&gt;
+        Col 6
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+		                		</div>
+		                		</div>
+		                	 <h3 class="content-title emphasized">Columns</h3>
+                   					<div class="form-group-inner">
+                                       <div class="show-grid row">
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                           <div class="col-sm-1 col-md-1">1</div>
+                                       </div>
+                                       <div class="show-grid row">
+                                           <div class="col-sm-4 col-md-4">4</div>
+                                           <div class="col-sm-4 col-md-4">4</div>
+                                           <div class="col-sm-4 col-md-4">4</div>
+                                       </div>
+                                       <div class="show-grid row">
+                                           <div class="col-sm-6 col-md-6">6</div>
+                                           <div class="col-sm-3 col-md-3">3</div>
+                                           <div class="col-sm-3 col-md-3">3</div>
+                                       </div>
+                                       <div class=" show-grid row">
+                                           <div class="col-sm-5 col-md-5">5</div>
+                                           <div class="col-sm-5 col-md-5">5</div>
+                                           <div class="col-sm-2 col-md-2">2</div>
+                                       </div>
+                                       <div class=" show-grid row">
+                                           <div class="col-sm-8 col-md-8">8</div>
+                                           <div class="col-sm-2 col-md-2">2</div>
+                                           <div class="col-sm-2 col-md-2">2</div>
+                                       </div>
+                                       <div class=" show-grid row">
+                                           <div class="col-sm-12 col-md-12">12</div>  
+                                       </div>                                               
+								</div>
+								<div class="form-group-inner">
+                               <div class="row">                               
+                                            <p>
+	                       					Para trabajar con "Fluid Columns" usaremos los estilos <i>row</i>
+	                       					y los distintos col-X para  modular las medidas.
+	                       					</p>    	            
+	                       					<p>
+	                       					En el ejemplo se usa el estilo <i>show-grid</i> para que el resultado sea visual.
+	                       					</p>            			
+<pre><code>
+&lt;div class="show-grid row"&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+   &lt;div class="col-sm-1 col-md-1"&gt;1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="show-grid row"&gt;
+   &lt;div class="col-sm-4 col-md-4"&gt;4&lt;/div&gt;
+   &lt;div class="col-sm-4 col-md-4"&gt;4&lt;/div&gt;
+   &lt;div class="col-sm-4 col-md-4"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="show-grid row"&gt;
+   &lt;div class="col-sm-6 col-md-6"&gt;6&lt;/div&gt;
+   &lt;div class="col-sm-3 col-md-3"&gt;3&lt;/div&gt;
+   &lt;div class="col-sm-3 col-md-3"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=" show-grid row"&gt;
+   &lt;div class="col-sm-5 col-md-5"&gt;5&lt;/div&gt;
+   &lt;div class="col-sm-5 col-md-5"&gt;5&lt;/div&gt;
+   &lt;div class="col-sm-2 col-md-2"&gt;2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=" show-grid row"&gt;
+   &lt;div class="col-sm-8 col-md-8"&gt;8&lt;/div&gt;
+   &lt;div class="col-sm-2 col-md-2"&gt;2&lt;/div&gt;
+   &lt;div class="col-sm-2 col-md-2"&gt;2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=" show-grid row"&gt;
+   &lt;div class="col-sm-12 col-md-12"&gt;12&lt;/div&gt;  
+&lt;/div&gt;                                               
+</code></pre>
+		                		</div>
+                                        
+                                        </div></div>
+
+           </div>
+              <div id="menu-tf7-docu-right" class="col-sm-3 col-md-3"></div>
+              </div></div>
+	</div><!--/row-->
+  </div><!--/ .content-->
+      
+  
+
+ 
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>    
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script src="menu.js"></script>
+   <script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+
+  
+</body></html>

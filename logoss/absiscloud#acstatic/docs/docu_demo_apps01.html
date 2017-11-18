@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/fwk/styles/ac.css" rel="stylesheet"> 
+  
+  </head>
+
+  <body>
+
+	<div class="container-fluid">
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+		        	<a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_apps01.html" data-original-title="">Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+			<div class="row-fluid">
+			<div class="span12">
+		 	<div class="row-fluid">
+		 		 <div class="span9 container-fluid ">
+					<div class="row-fluid">
+	            		<div class="span12">
+	             			<div class="control-group-inner">
+								<ul class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para APPS</a>
+										<span class="divider">&gt;</span></li>
+									<li class="active">Estructura del widget</li>
+								</ul>
+	             				<h3  id="page-subtitle" class="content-title">Estructura del widget</h3>
+	             				<!--
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal normal (4/4 = 388px) y patrón vertical 1/8 (58px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-1-8">
+											<iframe src="demo_apps01_widget01.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-1-8" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Si el contenido de un widget se genera en plataforma ABSIS Cloud, el contenedor de APPS lo embebe mediante un iFrame. El contenedor de APPS
+									se encarga de pintar el marco y la cabecera del widget con su nombre y diversos controles. Al desarrollar widgets con ABSIS Cloud debemos tan
+									sólo preocuparnos por su contenido, el resto es responsabilidad del contenedor.
+		                       		</p>
+		                       		<p>
+									Están preestablecidos los tamaños admitidos para los widgets así como la distribución y los márgenes entre los elementos internos. Por ello,
+									para generar el contenido de un widget como el del ejemplo, definiremos una página como la siguiente, que será la embebida por el contenedor
+									de widgets:
+		                       		</p>
+
+<pre><code>
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;meta name="description" content=""&gt;
+		&lt;meta name="author" content=""&gt;
+		<b>&lt;absiscloud:static type="style" source="absiscloud" path="styles/ac.css"&gt;</b>
+	&lt;/head&gt;
+	&lt;body&gt;
+		<b>&lt;div class="widget-inner widget-inner-hpattern-4-4 widget-inner-vpattern-1-8"&gt;</b>
+			<b>&lt;div class="widget-header"&gt;</b>
+			&lt;/div&gt;
+			<b>&lt;div class="widget-body widget-body-vpattern-1-8" &gt;</b>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt sodales nulla, a rutrum lacus rhoncus sit amet....
+			&lt;/div&gt;
+			<b>&lt;div class="widget-footer"&gt;</b>
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+		                       		<p>
+									Obsérvese que:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Se trata de una página HTML completa, con su cabecera y su cuerpo.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> El fichero CSS que se utiliza no es el los Componentes estáticos para TF7,
+									sino uno específico para los componentes estáticos para APPS.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> El lay-out está predefinido y debe ser respetado: hay un <code>DIV</code> de clase <code>widget-inner</code>
+									que contiene tres <code>DIVs</code>, el primero de clase <code>widget-header</code> y sin contenido, el segundo de clase <code>widget-body</code> dentro del
+									que irá el contenido específico de nuestra página, y el tercero de clase <code>widget-footer</code> y sin contenido.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> En el <code>DIV</code> de clase <code>widget-inner</code> dos clases adicionales establecen el ancho y el alto
+									del widget. En este caso, en que se utiliza patrón horizontal normal (4/4 = 388px), la clase para indicarlo es <code>widget-inner-hpattern-4-4</code>;
+									para indicar que se utiliza patrón vertical 1/8 (58px) se utiliza la clase <code>widget-inner-vpattern-1-8</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> También es necesario establecer el alto en el <code>DIV</code> de clase <code>widget-body</code>. En este caso,
+									en que se utiliza patrón vertical 1/8 (58px) la clase para indicarlo es <code>widget-body-vpattern-1-8</code>.
+		                       		</p>
+		                		</div>
+								-->
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal normal (4/4 = 388px) y patrón vertical 1/4 (91px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-1-4">
+											<iframe src="demo_apps01_widget02.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-1-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		El lay-out anterior es el mismo para todos estos widgets, sin importar sus dimensiones. Lo que cambia son las clases adicionales que establecen
+									dichas dimensiones. Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal normal (4/4 = 388px) se usa de la clase <code>widget-inner-hpattern-4-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 1/4 (91px) se usan las clases <code>widget-inner-vpattern-1-4</code> y
+									<code>widget-body-vpattern-1-4</code>.
+		                       		</p>
+
+<pre><code>
+&lt;div class="widget-inner <b>widget-inner-hpattern-4-4 widget-inner-vpattern-1-4</b>"&gt;
+	&lt;div class="widget-header"&gt;
+	&lt;/div&gt;
+	&lt;div class="widget-body <b>widget-body-vpattern-1-4</b>" &gt;
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+	&lt;/div&gt;
+	&lt;div class="widget-footer"&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+		                		</div>
+								<!--
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal normal (4/4 = 388px) y patrón vertical 3/8 (124px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-8">
+											<iframe src="demo_apps01_widget03.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-8" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal normal (4/4 = 388px) se usa de la clase <code>widget-inner-hpattern-4-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 3/8 (124px) se usan las clases <code>widget-inner-vpattern-3-8</code> y
+									<code>widget-body-vpattern-3-8</code>.
+		                       		</p>
+		                		</div>
+								-->
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal normal (4/4 = 388px) y patrón vertical 2/4 (190px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-2-4">
+											<iframe src="demo_apps01_widget04.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-2-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal normal (4/4 = 388px) se usa de la clase <code>widget-inner-hpattern-4-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 2/4 (190px) se usan las clases <code>widget-inner-vpattern-2-4</code> y
+									<code>widget-body-vpattern-2-4</code>.
+		                       		</p>
+		                		</div>
+
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal normal (4/4 = 388px) y patrón vertical 3/4 (289px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps01_widget05.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal normal (4/4 = 388px) se usa de la clase <code>widget-inner-hpattern-4-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 3/4 (289px) se usan las clases <code>widget-inner-vpattern-3-4</code> y
+									<code>widget-body-vpattern-3-4</code>.
+		                       		</p>
+		                		</div>
+
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal normal (4/4 = 388px) y patrón vertical 4/4 (388px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-4-4">
+											<iframe src="demo_apps01_widget06.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-4-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal normal (4/4 = 388px) se usa de la clase <code>widget-inner-hpattern-4-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 4/4 (388px) se usan las clases <code>widget-inner-vpattern-4-4</code> y
+									<code>widget-body-vpattern-4-4</code>.
+		                       		</p>
+		                		</div>
+
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal mitad (2/4 = 190px) y patrón vertical 1/4 (91px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-2-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-1-4">
+											<iframe src="demo_apps01_widget07.html" class="widget-container-iframe widget-container-iframe-hpattern-2-4 widget-container-iframe-vpattern-1-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal mitad (2/4 = 190px) se usa de la clase <code>widget-inner-hpattern-2-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 1/4 (91px) se usan las clases <code>widget-inner-vpattern-1-4</code> y
+									<code>widget-body-vpattern-1-4</code>.
+		                       		</p>
+		                		</div>
+
+	             				<h3 id = "pagination-title" class="content-title emphasized">Estructura del widget patrón horizontal mitad (2/4 = 190px) y patrón vertical 2/4 (190px)</h3>
+	             				<div class="control-group control-group-inner">
+									<div class="widget-container widget-container-hpattern-2-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-2-4">
+											<iframe src="demo_apps01_widget08.html" class="widget-container-iframe widget-container-iframe-hpattern-2-4 widget-container-iframe-vpattern-2-4" frameborder="0" >
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="control-group-inner">	 
+		                       		<p>
+		                       		Para este caso:
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón horizontal mitad (2/4 = 190px) se usa de la clase <code>widget-inner-hpattern-2-4</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Para establecer patrón vertical 2/4 (190px) se usan las clases <code>widget-inner-vpattern-2-4</code> y
+									<code>widget-body-vpattern-2-4</code>.
+		                       		</p>
+		                		</div>
+                        	
+	                        </div>
+                    	</div>       
+					</div>
+		  		</div>
+		  
+				<!-- Menu -->
+		     	<div id="menu-apps-docu-right" class="span3"></div>
+                
+  			</div>
+  		  </div>
+  		  </div><!--/row-->
+		</div><!--/ .content-->
+	</div><!--/.fluid-container--> 
+	
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>       
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../static/fwk/components/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../static/fwk/js/acstatic.js"></script>
+	<script src="menu.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+﻿Componente .................. Estilo ABSIS
+---------------------------------------------------------------------------------------------------------
+Título ...................... 1.2.2. Con nombre de aplicación - Con enlace (v. 2.0)
+Paginación .................. 3.1. Paginadores - Paginador (v. 1.0)
+Hilo de Ariadna ............. 10.2. Título de Pantalla - Título de pantalla: Con ruta
+Pestañas .................... 9.1. Pestañas (Vida Caixa) - Pestañas sin sub-navegación (v. 1.2)
+Enlaces ..................... 12.1. Enlaces - Enlace en texto (v. 1.0)
+Menús desplegables .......... 12.10. Enlaces - Menú desplegable
+Entrada texto ............... 11.1.1. Campo de texto - Campo de texto: Editable (v. 2.0)
+Fecha ....................... 11.7.1. Fecha y hora - Campo fecha (v. 2.0)
+Checkbox .................... 11.3.1. Checkbox - Check box: Editable (v. 2.0)
+Lista desplegable ........... 11.4.1. Select - Lista desplegable: Editable (v. 2.0)
+Área de texto ............... 11.14. Área de texto
+Entrada obligatoria ......... 11.1.3. Campo de texto - Campo de entrada de texto: Obligatorio (v. 2.0)
+Password .................... 11.12. Contraseña - Campo contraseña (v. 2.0)
+Entrada Inhabilitada ........ 11.1.2. Campo de texto - Campo de texto: Inhabilitado (v. 2.0)
+Checkbox Inhabilitado ....... 11.3.2. Checkbox - Check box: Inhabilitado (v. 2.0)
+Entrada con Error ........... 11.1.4. Campo de texto - Campo de texto: Error (v. 2.0)
+Checkbox en fila ............ 11.3.7. Checkbox - Check boxes: En fila
+Checkbox en columna ......... 11.3.7. Checkbox - Check boxes: En columna
+Radio button ................ 11.2.1. Radio button - Radio button: Editable (v. 2.0)
+Tablas ...................... 2. Tablas
+Listados .................... 14. Listados
+Mensajes > Mensajes ......... 17. Mensajes
+Mensajes > Alertas .......... 27. Texto con alerta (v. 1.0) / 2.27. Tablas - Tablas con errores / 11. Elementos de formulario 
+Pie de página ............... 34. Pie de página Sólo intranet (v. 1.1)
+Linea separadora ............ 19. Línea separadora horizontal (v. 1.0)

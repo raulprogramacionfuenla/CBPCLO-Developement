@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ABSIS Cloud | ACStatic | La Caixa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Styles -->
+<link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet" />
+<link href="../static/fwk/styles/ac.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="content">
+
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+					<a href="demo.html">Galería de componentes estáticos</a>
+				</h1>
+				<div class="align_right">
+					<a href="demo_cx2.2.html" data-original-title=""> Muestrario</a>
+				</div>
+			</div>
+
+			<!-- Content  -->
+			<div class="row-fluid">
+				<div id="content" class="span9 container-fluid">
+					<div class="row-fluid">
+						<div class="span12 control-group-inner">
+							<ul class="breadcrumb">
+								<li><a href="demo.html">Componentes estáticos para TF7</a>
+									<span class="divider">&gt;</span></li>
+								<li><a href="docu_demo_cx2.html">Formularios</a>
+									<span class="divider">&gt;</span></li>
+								<li class="active">Filtros</li>
+							</ul>
+							<h3 class="content-title">Filtros</h3>
+							
+
+							<h3 id="toggle-box-simple-title" class="content-title emphasized">Togglebox Simple</h3>
+							<div id="toggle-box-simple" class="control-group-inner">
+								<div class="toggle-box expandido">
+					                  <span class="toggle-box-boton-expandir">Ver Filtros</span>
+					                  <span class="toggle-box-boton-contraer">Ocultar Filtros</span>
+					                  <div class="toggle-box-content ">
+					                      	<form class="form-horizontal inline-fields ">
+					                      		
+												<div class="control-group required span5">
+													<label for="focusedInput" class="control-label">Entrada obligatoria*:</label>
+													<div class="controls">
+														<input type="text" value="" class="input-medium">
+													</div>
+												</div>
+												<div class="control-group  span4">
+													<label for="select01" class="control-label">Lista
+														desplegable</label>
+													<div class="controls">
+														<select id="select01">
+															<option>opcion</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+														</select>
+													</div>
+												</div>
+												
+												<div class="control-group radiobutton-group span2">
+	                                               <div class="controls">
+	                                                   <label class="checkbox">
+	                                                       <input  value="option1"  type="checkbox" />
+	                                                      My Checkbox 
+	                                                   </label>
+	                                               </div>
+	                                            </div>
+	                                            <button title="Título del botón" class="btn" type="submit">Filtrar</button>
+												<!--<div class="form-actions">
+													
+												</div>  -->
+											</form>											
+					                  </div>
+					                </div>
+							</div>
+	       					<div class="control-group-inner">
+	       					<p>
+	       					El <i>div</i> principal contiene la clase css <i>toggle-box</i>. Con las clases css <i>expandido</i> o <i>contraido</i> le indicaremos al navegador el estado incial del componente.
+	       					</p>
+		                    <p>
+	       					Los botones que sirven para contrar o expandir se ubicarán al principio del div y se formarán con un span que tenga las clases css <i>toggle-box-boton-expandir</i> y <i>toggle-box-boton-contraer</i> respectivamente. 
+	       					</p>   
+	       					<p>
+	       					El contenido del formulario de filtros se define en un div con la clase <i>toggle-box-content</i>. El formulario deberá tener las clases css <i>form-horizontal inline-fields</i>.
+	       					Dentro del formulario se ubican los campos siguiendo las estructuras y normativas generales del los campos definidas en esta misma página.
+	       					Para las ubicaciones de los campos y para definir la amplitud de los mismos se puede usar el sistema de "spanX" definido en el apartado <a href="/docs/docu_demo_cx5.html">Sistema Grid</a>
+	       					</p>     
+	       					<p>
+	       					El boton de envio se pone directamente al final de formulario con una clase css <i>btnABSIS</i>.
+	       					</p>
+<pre><code>
+&lt;div class="toggle-box expandido"&gt;
+	&lt;span class="toggle-box-boton-expandir"&gt;Ver Filtros&lt;/span&gt;
+	&lt;span class="toggle-box-boton-contraer"&gt;Ocultar Filtros&lt;/span&gt;
+		&lt;div class="toggle-box-content "&gt;
+	      	&lt;form class="form-horizontal inline-fields "&gt;
+[...]			                      		
+				&lt;div class="control-group required span5"&gt;
+					&lt;label for="focusedInput" class="control-label"&gt;Entrada obligatoria*:&lt;/label&gt;
+					&lt;div class="controls"&gt;
+						&lt;input type="text" value="" class="input-medium"&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+[...]
+                &lt;button class="btnABSIS" type="submit"&gt;Filtrar&lt;/button&gt;
+			&lt;/form&gt;										
+		&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+               				</div>
+
+							<h3 id="toggle-box-title" class="content-title emphasized">Togglebox super expandido</h3>
+							<div id="toggle-box" class="control-group-inner">
+								<div class="toggle-box expandido completo">
+					                  <span class="toggle-box-boton-expandir">Ver Filtros</span>
+					                  <span class="toggle-box-boton-contraer">Ocultar Filtros</span>
+					                  <div class="toggle-box-content">
+					                      	<form class="form-horizontal inline-fields super-expandido">
+					                      		<div class="control-group inline-fields disabled opcional">
+													<label for="disabledInput" class="control-label">Entrada inhabilitada:</label>
+													<div class="controls">
+														<input type="text" id="disabledInput" value="inhabilitado"
+																disabled="disabled" class="input-medium">
+													</div>
+												</div>
+												<div class="control-group required">
+													<label for="focusedInput" class="control-label">Entrada obligatoria*:</label>
+													<div class="controls">
+														<input type="text" value="" class="input-medium">
+													</div>
+												</div>
+												<div class="control-group">
+													<label for="select01" class="control-label">Lista
+														desplegable</label>
+													<div class="controls">
+														<select id="select01">
+															<option>opcion</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+															<option>5</option>
+														</select>
+													</div>
+												</div>
+												<div class="control-group opcional">
+													<label for="xxx" class="control-label">Campo Opcional:</label>
+													<div class="controls">
+														<input type="text" value="" class="input-medium">
+													</div>
+												</div>
+												<div class="control-group radiobutton-group ">
+	                                               <div class="controls">
+	                                                   <label class="checkbox">
+	                                                       <input  value="option1"  type="checkbox" />
+	                                                      My Checkbox 
+	                                                   </label>
+	                                               </div>
+	                                            </div>
+												<button title="Título del botón" class="btn" type="submit">Filtrar</button>
+											
+												
+											</form>
+											<span class="toggle-box-boton-completar">Más parámetros</span>
+					                      	<span class="toggle-box-boton-resumir">Menos parámetros</span>
+											
+					                  </div>
+					                </div>
+							</div>
+	       					
+	       					<div class="control-group-inner">
+	       					<p>
+	       					El <i>div</i> principal contiene la clase css <i>toggle-box</i>. Con las clases css <i>expandido</i> o <i>contraido</i> le indicaremos al navegador el estado incial del componente.
+	       					</p>
+		                    <p>Si al div <i>toggle-box</i> le añadimos la clase css <strong>super-expandido</strong> al expandirse se renderizará con un campo en cada fila.</p>
+		                    <p>
+	       					Los botones que sirven para contrar o expandir se ubicarán al principio del div y se formarán con un span que tenga las clases css <i>toggle-box-boton-expandir</i> y <i>toggle-box-boton-contraer</i> respectivamente. 
+	       					</p>   
+	       					<p>
+	       					El contenido del formulario de filtros se define en un div con la clase <i>toggle-box-content</i>. El formulario deberá tener las clases css <i>form-horizontal inline-fields</i>.
+	       					Dentro del formulario se ubican los campos siguiendo las estructuras y normativas generales del los campos definidas en esta misma página.
+	       					Para las ubicaciones de los campos y para definir la amplitud de los mismos se puede usar el sistema de "spanX" definido en el apartado <a href="/docs/docu_demo_cx5.html">Sistema Grid</a>
+	       					</p>     
+	       					<p>
+	       					El boton de envio se pone directamente al final de formulario con una clase css <i>btnABSIS</i>.
+	       					</p>
+	       					<p>
+	       					Los campos que se quieren mostrar/ocultar con el boton de mas/menos parametros deberemos ponerles la clase css <i><strong>opcional</strong></i>.
+	       					</p>
+	       					<p>
+	       					Los botones que sirven para mostrar/ocultar se ubicarán justo después de cerrar el formulario y se formarán con un span que tenga las clases css <i>toggle-box-boton-completar</i> y <i>toggle-box-boton-resumir</i> respectivamente. 
+	       					</p>     
+<pre><code>
+&lt;div class="toggle-box expandido"&gt;
+	&lt;span class="toggle-box-boton-expandir"&gt;Ver Filtros&lt;/span&gt;
+	&lt;span class="toggle-box-boton-contraer"&gt;Ocultar Filtros&lt;/span&gt;
+		&lt;div class="toggle-box-content "&gt;
+	      	&lt;form class="form-horizontal inline-fields <strong>super-expandido</strong>"&gt;
+[...]			                      		
+	&lt;div class="control-group <strong>opcional</strong>"&gt;
+		&lt;label for="focusedInput" class="control-label"&gt;Entrada opcional:&lt;/label&gt;
+		&lt;div class="controls"&gt;
+			&lt;input type="text" value="" class="input-medium"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+[...]
+                &lt;button class="btnABSIS" type="submit"&gt;Filtrar&lt;/button&gt;<strong>
+		&lt;span class="toggle-box-boton-completar"&gt;Más parámetros&lt;/span&gt;
+		&lt;span class="toggle-box-boton-resumir"&gt;Menos parámetros&lt;/span&gt;</strong>  
+			&lt;/form&gt;										
+		&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  																						
+					              
+               				</div>
+													
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Menu -->
+				<div id="menu-tf7-docu-right" class="span3"></div>
+				</div>
+
+			</div>
+			<!--/row-->
+
+		</div>
+		<!--/ .content-->
+	</div>
+	<!--/.fluid-container-->
+	<div class="footer">
+		<hr>
+		@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br>
+		<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La
+			Caixa</a>
+	</div>
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" 	src="../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" 	src="../static/fwk/components/jquery-cookie/1.0/jquery.cookie.js"></script>
+	<script type="text/javascript" 	src="../static/fwk/components/globalize/0.1.0a1/globalize.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript"	src="../static/fwk/js/acglobalizeutils.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/validationEngine/2.5.2/js/jquery.validationEngine.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"charset="utf-8"></script>
+	<script type="text/javascript" 	src="../static/fwk/js/acstatic.js"></script>
+	<script type="text/javascript" 	src="menu.js"></script>
+	
+	<!-- Date Picker -->
+	<link href="/static/fwk/components/bootstrap-datepiker-eternicode/1.0.0/css/datepicker.css" rel="stylesheet" />
+	<script type="text/javascript"  src="/static/fwk/components/bootstrap-datepiker-eternicode/1.0.0/js/bootstrap-datepicker.js"></script>
+	<!-- Fin Date Picker -->
+	
+	<!-- TIME Picker -->
+	<link href="/static/fwk/components/bootstrap-timepicker/0.2.3/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+	<script type="text/javascript"  src="/static/fwk/components/bootstrap-timepicker/0.2.3/js/bootstrap-timepicker.min.js"></script>
+	<!-- Fin TIME Picker -->
+	
+	<!-- RTA -->
+	<script type="text/javascript"  src="/static/fwk/components/tinymce/3.5.8/jquery.tinymce.js"></script>
+	<!-- Fin RTA -->
+	
+</body>
+</html>

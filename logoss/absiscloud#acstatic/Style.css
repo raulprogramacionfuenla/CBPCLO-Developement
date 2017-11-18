@@ -1,0 +1,181 @@
+@CHARSET "ISO-8859-1";
+/*======= Estilos exclusivos de CBPCLO =======*/
+:root{
+	--azul:#1A64A4;
+	--azulClarito:#DDE8ED;
+	--gris:#DFDFDE;
+	--rojo:#FFC2B3;
+	--rojoOs:#AE5742;
+	--verde:#C9E8A3;
+	--verdeOs:#739F3C;
+}
+
+
+li{
+	list-style: none;
+}
+
+/*Modificar la posición del footer*/
+.footer{margin: 0% 0% 0% 0%;}
+
+/*:_:_:_: Estilos botonera menú principal _:_:_:_:*/
+ul.contenedor-botones{
+	padding: 20px 0px 20px 0px;
+}
+
+.cbpBtn{
+	background:#DDE8ED;
+	padding: 10px;
+	display: block;
+	color:black;
+	border-radius:10px;
+	text-decoration: none;
+	text-align:center;
+	margin-bottom: 15px;
+	width:50%;
+}
+
+
+ul.contenedor-botones li{
+	display:block;
+}
+
+.container-center{
+	width:100%;
+	padding:0px 0px 40px 0px;
+}
+
+.contenedor-botones{
+	list-style:none;
+}
+
+.cbpBtn h2{
+	color: black;
+	font-size:15px;
+}
+
+.cbpBtn:hover{
+	background:var(--azul);
+	color:white;
+}
+
+.cbpBtn:hover h2{
+	color:white;
+}
+
+
+.control-group label, select, .controls, .date{
+	display: inline-block;
+}
+
+/*:_:_:_: Para páginas de formularios _:_:_:_:*/
+label{width: 50%;} /*Controla la separación del label y el titulo*/
+.botCluster{padding: 30px 0px 30px 0px;}
+.input-appen{display: inline-block;}
+.input-append,.date,.datepicker,.hor{display: inline-block; position: relative;}
+.control-group{padding: 0px; margin-bottom: 0px;}
+
+.control-group{margin:0px 0px 0px 0px;}
+
+
+/*<==========================================================================>*/
+/* _:_:_:_:_:_:_PopUp de alerta de mala inserción de formularios_:_:_:_:_:_:_*/
+/*<===========================================================================>*/
+
+.popUp{
+  height: 220px;
+  width: 700px;
+  background: white;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.7);
+  position: fixed;
+  left: 50%;
+  top:50%;
+  margin-left: -350px;
+  margin-top: -105px;
+  border-radius:10px;
+  border: 1px solid var(--gris);
+}
+
+.popUp h1{
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	background: var(--azulClarito);
+	font-size:13px;
+	width:100%;
+	border-bottom: solid 3px var(--gris); 
+}
+
+.popUp .infoModal{
+	height:60%;
+	width: 90%;
+	overflow-y:scroll;
+}
+.popUp .infoModal p{
+	text-align: left;
+	padding: 10px 0px 3px 5px;
+}
+
+.btnCerrarPop{
+	margin-top: 10px;
+}
+
+/*Colores tabla tick cross*/
+.OK{
+	background:var(--verde); 
+	color:var(--verdeOs); 
+	 text-align: center;
+}
+
+.KO{
+	background:var(--rojo); 
+	color:var(--rojoOs); 
+	 text-align: center;
+}
+
+.odd td input,p{
+	display:inline-block;
+}
+
+.odd td p{
+	padding: 8px 0px 0px 9px;
+}
+
+.odd td input{
+	padding:0px 0px 0px 0px;
+	margin-top:-5px;
+}
+
+
+/*<====================================================================>*/
+/* _:_:_:_:_:_:_Panel inferior vista detalle, vista DB2 ..._:_:_:_:_:_:_*/
+/*<====================================================================>*/
+.rightElement{
+	float: right;
+}
+
+.cajetin .rightElement .btt{
+	padding: 5px 5px 5px 5px;
+	border-radius: 100px;
+	border: solid 2px #DDE8ED;
+	margin-left: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.cajetin .rightElement .btt:hover{
+	box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+}
+
+.leftElement{
+	float:  right;
+	font-weight: lighter;
+}
+
+.botCltab{
+	padding-left: 2px;
+}
+
+
+
+
+

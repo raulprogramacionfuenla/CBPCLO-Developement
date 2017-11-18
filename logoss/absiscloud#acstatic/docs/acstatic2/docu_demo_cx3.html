@@ -1,0 +1,1654 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet"> 
+
+  </head>
+
+  <body>
+
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+			        <a href="demo.html">Galería de componentes estáticos</a>
+		        </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_cx3.html" data-original-title=""> Muestrario</a>
+		        </div>
+		   	</div> 
+
+			<!-- Content  -->
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+		 		<div class="row">
+				<div class="col-sm-9 col-md-9">
+					<div class="form-group-inner">
+					<ul class="breadcrumb">
+						<li><a href="demo.html">Componentes estáticos para TF7</a>
+							</li>
+						<li class="active">Tablas y Listas</li>
+					</ul>
+					<h3 id="page-subtitle" class="content-title">Tablas y Listas</h3>
+	             	                   
+	             	<p>En la siguiente tabla se muestran las clases disponibles para las tablas: </p>                        		
+                    <div id="table-style" class="form-group">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                      <th>Nombre</th>
+                                      <th>Class</th>
+                                      <th>Descripción</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>Basic</td>
+                                      <td>
+                                          <code>.table</code>
+                                      </td>
+                                      <td>Únicamente líneas horizontales</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Bordered</td>
+                                      <td>
+                                          <code>.table-bordered</code>
+                                      </td>
+                                      <td>Líneas horizontales y verticales</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                    </div>
+                    
+                
+                    <h3 id="basic-table-title" class="content-title emphasized">Tabla básica</h3>
+					<div id="basic-table" class="form-group-inner">
+                         <table class="table">
+                             <thead>
+                                 <tr>
+                                     <th>#</th>
+                                     <th>First Name</th>
+                                     <th>Last Name</th>
+                                     <th>Username</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td>1</td>
+                                     <td>Mark</td>
+                                     <td>Otto</td>
+                                     <td>@mdo</td>
+                                 </tr>
+                                 <tr>
+                                 	<td>2</td>
+                                     <td>Andrew</td>
+                                     <td>Otto</td>
+                                     <td>@TwBootstrap</td>
+                                 </tr>
+                                 <tr>
+                                     <td>3</td>
+                                     <td>Jacob</td>
+                                     <td>Thornton</td>
+                                     <td>@fat</td>
+                                 </tr>
+                                 <tr>
+                                     <td>4</td>
+                                     <td>Larry</td>
+                                     <td>Thin</td>
+                                     <td>@twitter</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                    </div>
+                    
+<div class="form-group-inner">
+   					<p>
+   					Para tener una tabla con el estilo básico únicamente se deberá indicar el estilo <i>table</i>.
+   					</p>
+		                              
+<pre><code>
+&lt;table class="table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;First Name&lt;/th&gt;
+      ...
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td &gt;1&lt;/td&gt;
+      &lt;td&gt;Mark&lt;/td&gt;
+      &lt;td&gt;Otto&lt;/td&gt;
+      &lt;td&gt;@mdo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Andrew&lt;/td&gt;
+      &lt;td&gt;Otto&lt;/td&gt;
+      &lt;td&gt;@TwBootstrap&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre>  
+                    </div>   
+                    <br><br>                    
+
+                    
+                    
+                             
+                    <h3 id="borded-table-title" class="content-title emphasized">Tabla bordered</h3>
+		       		<div id="borded-table-title" class="form-group-inner">
+                           <table class="table table-bordered">
+                               <thead>
+                                   <tr>
+                                       <th>#</th>
+                                       <th>First Name</th>
+                                       <th>Last Name</th>
+                                       <th>Username</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr>
+                                       <td>1</td>
+                                       <td>Mark</td>
+                                       <td>Otto</td>
+                                       <td>@mdo</td>
+                                   </tr>
+                                   <tr>
+                                       <td>2</td>
+                                       <td>Jacob</td>
+                                       <td>Thornton</td>
+                                       <td>@fat</td>
+                                   </tr>
+                                   <tr>
+                                       <td>3</td>
+                                       <td>Larry</td>
+                                       <td>the Bird</td>
+                                       <td>@twitter</td>
+                                   </tr>
+                               </tbody>
+                           </table>
+
+                    </div>
+                    
+                    <div class="form-group-inner">
+   					<p>
+   					Para tener una tabla con separaciones entre columnas, a parte del estilo <i>table</i> se deberá especificar el estilo <i>table-bordered</i>.
+   					</p>
+		                              
+<pre><code>
+&lt;table class="table table-bordered"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;First Name&lt;/th&gt;
+      ...
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Mark&lt;/td&gt;
+      &lt;td&gt;Otto&lt;/td&gt;
+      &lt;td&gt;@mdo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Jacob&lt;/td&gt;
+      &lt;td&gt;Thornton&lt;/td&gt;
+      &lt;td&gt;@fat&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre>  
+       				</div>
+       				<br><br>
+  		      		<h3 id="datatbles-title" class="content-title emphasized">Datatables</h3>
+		       		<div id="datatbles" class="form-group-inner">    
+				       <table id="example" class="table">
+				        <thead>
+				          <tr>
+				            <th><a>#</a></th>
+				            <th><a>Estado</a></th>
+				            <th><a>Descripción</a></th>
+				            <th><a>Fecha Inicial</a></th>
+				            <th><a>Fecha Final</a></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora EPSON</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>2</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora KONICA</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>3</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora MINOLTA</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>4</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición móvil SAMSUNG</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>5</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición móvil iPhone</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>6</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición móvil HTC</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>  
+				            <tr>
+				            <td>7</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Nokia</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>8</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Alcatel</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>9</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Motorola</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>10</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición portátil TOSHIBA</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				          <tr>
+				            <td>11</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil IBM</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>12</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil HP</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>13</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil SAMSUNG</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>14</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición portátil APPLE</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>15</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición portátil ACER</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>16</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición portátil LG</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				            <tr>
+				            <td>17</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor TOSHIBA</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>18</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor LG</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>19</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>20</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición monitor IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr> <tr>
+				            <td>21</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición monitor ACER</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>22</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición monitor HP</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>23</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición ratón de cordón</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>24</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición ratón inalámbrico</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>25</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición teclado inalámbrico</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>26</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición ordenador HP</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				            <tr>
+				            <td>27</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador ACER</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>28</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>29</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>30</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición fuente alimentación</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				        </tbody>
+				      </table>
+             	</div>
+                        
+                        
+                     	                       				<div class="form-group-inner">
+	                       					<p>
+	                       					Para tener una tabla paginada, primero deberemos crear una tabla con estilo <i>table</i> y asignarle un identificador, 
+	                       					en el ejemplo "tabla_paginada_ABSIS"."
+	                       					</p>
+		                             
+
+<pre><code>
+&lt;table id="tabla_paginada_ABSIS" class="table"&gt;
+ &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;a&gt;#&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Estado&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Descrición&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Fecha Inicial&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Fecha Fina&lt;/a&gt;l&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Petición impresora EPSON&lt;/td&gt;
+      &lt;td&gt;5-ene&lt;/td&gt;
+      &lt;td&gt;20-mar&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre> 
+<br><br> 
+
+	                       					<p>
+	                       					También deberemos incluir los estilos y los scripts del compomente para tablas dinámicas. 
+	                       					En el script de inicialización especificaremos el identificador de la tabla. En el ejemplo: "tabla_paginada_ABSIS". 
+	                       					</p>
+	                       					<p>
+	                       					<b>Importante: 
+	                       					Es muy importante recordar que los estilos de absis siempre deben ser los últimos en incluirse en la página.
+	                       					Es preferible introducirlos al final de la página para mejorar la carga de la página.
+	                       					</b>
+	                       					</p>
+<pre><code>
+
+&lt;!--  datatables themes   --&gt;
+&lt;absiscloud:static type="style" source="absiscloud" path="components/datatable/css/DT_bootstrap.css"/&gt;
+...
+
+&lt;!-- SCRIPTS --&gt;
+
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/jquery.dataTables.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/DT_bootstrap.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/four_button/1.0_custom/four_button.js"/&gt;
+
+&lt;script&gt;  // datatable demo
+ 
+/* Inicialización tabla */
+$(document).ready(function() {
+	$('#tabla_paginada_ABSIS').dataTable( {
+		"sDom": "&lt;'datatables-action-box'&lt;'span6'l&gt;&lt;'span6'f&gt;r&gt;t&lt;'datatables-action-box'&lt;'span6'i&gt;&lt;'span6'p&gt;&gt;",
+		"sPaginationType": "four_button",
+		"aaSorting": [[ 2, "desc" ]],
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ filas por página",
+  			"sInfo": "Mostrando _START_ - _END_ de _TOTAL_ entradas",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
+			"sInfoFiltered": "(filtradas de un total de _MAX_ entradas)",
+			"sSearch": "Buscar:",
+			"sZeroRecords": "No se han encontrado entradas"
+	
+		}
+	} );
+} );
+   &lt;/script&gt;  
+
+</code></pre>  
+<br><br>     
+
+	                       					<p>
+	                       					En el ejemplo anterior los datos a mostrar en el listado vienen como parte del HTML de la página.
+	                       					Para volúmenes altos de datos, conviene solicitarlos al servidor mediante peticiones AJAX,
+	                       					tal y como se indica en la <a href="http://datatables.net/release-datatables/examples/server_side/server_side.html">documentación del plugin DataTables</a>.
+	                       					</p>
+                            				</div>
+        
+  		      		<h3 id="datatables-title" class="content-title emphasized">Datatables Row Grouping</h3>
+		       		<div id="datatables" class="form-group-inner">    
+				       <table id="examplePAG" class="table">
+				        <thead>
+				          <tr>
+				            <th><a>#</a></th>
+				            <th><a>Estado</a></th>
+				            <th><a>Descripción</a></th>
+				            <th><a>Fecha Inicial</a></th>
+				            <th><a>Fecha Final</a></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora EPSON</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>2</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora KONICA</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>3</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora MINOLTA</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>4</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición móvil SAMSUNG</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>5</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición móvil iPhone</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>6</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición móvil HTC</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>  
+				            <tr>
+				            <td>7</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Nokia</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>8</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Alcatel</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>9</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Motorola</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>10</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición portátil TOSHIBA</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				          <tr>
+				            <td>11</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil IBM</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>12</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil HP</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>13</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil SAMSUNG</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>14</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición portátil APPLE</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>15</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición portátil ACER</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>16</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición portátil LG</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				            <tr>
+				            <td>17</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor TOSHIBA</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>18</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor LG</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>19</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>20</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición monitor IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr> <tr>
+				            <td>21</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición monitor ACER</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>22</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición monitor HP</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>23</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición ratón de cordón</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>24</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición ratón inalámbrico</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>25</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición teclado inalámbrico</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>26</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición ordenador HP</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				            <tr>
+				            <td>27</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador ACER</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>28</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>29</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>30</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición fuente alimentación</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				        </tbody>
+				      </table>
+             	</div>
+                        
+                        
+                     	                       				<div class="form-group-inner">
+	                       					<p>
+	                       					Para personalizar tabla paginada de la posición de los elementos de opciones (filtro de entrada, información, etc).
+	                       					</p>
+	                       					<p>
+	                       					DataTables proporciona el parámetro de inicialización SDOM que se puede ajustar los elementos para indicar dónde desea mostrar. La sintaxis disponible es:
+	                       					</p>
+	                       					<p>
+	                       					</p><ul>
+	                       					<li>l - Numero de filas por página</li>
+	                       					<li>f - Buscador</li>
+	                       					<li>t - tabla</li>
+	                       					<li>i - Información</li>
+	                       					<li>p - Paginación</li>
+	                       					<li>r - Procesando</li>
+	                       					</ul>
+<pre><code>
+
+&lt;!--  datatables themes   --&gt;
+
+&lt;absiscloud:static type="style" source="absiscloud" path="components/datatable/css/DT_bootstrap.css"/&gt;
+...
+
+&lt;!-- SCRIPTS --&gt;
+
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/jquery.dataTables.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/DT_bootstrap.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/four_button/1.0_custom/four_button.js"/&gt;
+
+	
+&lt;script&gt;  // datatable demo
+ 
+/* Inicialización tabla */
+$(document).ready(function() {
+	$('#tabla_paginada_ABSIS').dataTable( {
+		<strong>"sDom": "&lt;'datatables-action-box'&lt;'span6'&gt;&lt;'span6'p&gt;r&gt;t&lt;'datatables-action-box'&lt;'span6'i&gt;&lt;'span6'p&gt;&gt;",</strong>
+		"sPaginationType": "four_button",
+		"aaSorting": [[ 2, "desc" ]],
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ filas por página",
+  			"sInfo": "Mostrando _START_ - _END_ de _TOTAL_ entradas",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
+			"sInfoFiltered": "(filtradas de un total de _MAX_ entradas)",
+			"sSearch": "Buscar:",
+			"sZeroRecords": "No se han encontrado entradas"
+	
+		}
+	} );
+} );
+   &lt;/script&gt;  
+
+</code></pre>  
+<br><br>     
+
+	                       					<p>
+	                       					En el ejemplo anterior los datos a mostrar en el listado vienen como parte del HTML de la página.
+	                       					Para volúmenes altos de datos, conviene solicitarlos al servidor mediante peticiones AJAX,
+	                       					tal y como se indica en la <a href="http://datatables.net/release-datatables/examples/server_side/server_side.html">documentación del plugin DataTables</a>.
+	                       					</p>
+                            				</div>
+
+       				<br><br>
+  		      		<h3 id="datatables-title" class="content-title emphasized">Datatables con rangos</h3>
+		       		<div id="datatables" class="form-group-inner">    
+				       <table id="examplePagAG" class="table">
+				        <thead>
+				          <tr>
+				            <th><a>#</a></th>
+				            <th><a>Estado</a></th>
+				            <th><a>Descripción</a></th>
+				            <th><a>Fecha Inicial</a></th>
+				            <th><a>Fecha Final</a></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora EPSON</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>2</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora KONICA</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>3</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora MINOLTA</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>4</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición móvil SAMSUNG</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>5</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición móvil iPhone</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>6</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición móvil HTC</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>  
+				            <tr>
+				            <td>7</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Nokia</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>8</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Alcatel</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>9</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición móvil Motorola</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>10</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición portátil TOSHIBA</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				          <tr>
+				            <td>11</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil IBM</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>12</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil HP</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>13</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición portátil SAMSUNG</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>14</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición portátil APPLE</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>15</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición portátil ACER</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>16</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición portátil LG</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				            <tr>
+				            <td>17</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor TOSHIBA</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>18</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor LG</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>19</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición monitor APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>20</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición monitor IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr> <tr>
+				            <td>21</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición monitor ACER</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr>
+				            <td>22</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición monitor HP</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr>
+				            <td>23</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición ratón de cordón</td>
+				            <td>21-jul</td>
+				            <td>25-jul</td>
+				          </tr>  <tr>
+				            <td>24</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición ratón inalámbrico</td>
+				            <td>12-ago</td>
+				            <td>13-oct</td>
+				          </tr>
+				          <tr>
+				            <td>25</td>
+				            <td><span class="label label-warning">Pendiente</span></td>
+				            <td>Petición teclado inalámbrico</td>
+				            <td>1-sep</td>
+				            <td>1-oct</td>
+				          </tr>
+				          <tr>
+				            <td>26</td>
+				            <td><span class="label label-danger label-default">Anulada</span></td>
+				            <td>Petición ordenador HP</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				            <tr>
+				            <td>27</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador ACER</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>28</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>    <tr>
+				            <td>29</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>     <tr>
+				            <td>30</td>
+				            <td><span class="label label-default">Anterior</span></td>
+				            <td>Petición fuente alimentación</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				        </tbody>
+				      </table>
+						<ul id="buttonCustom" class="separador-rangos">
+						  <li class="primer"><a href="#">1 elemento</a></li>
+						  <li><a href="#">2 elemento</a></li>
+						  <li><a href="#">3 elemento</a></li>  
+						</ul>
+             	</div>
+                        
+                        
+                     	                       				<div class="form-group-inner">
+	                       					<p>
+	                       					Para insertar elementos nuevos (no forma parte de Datatable) adicionales en cabecera o pie de la tabla. 
+	                       					</p>
+	                       					<p>
+	                       					Primero, debemos de crear un espacio en forma de HTML que tenga definido en el atributo <i>id="buttonCustom"</i> como mueatra en el siguiente código:
+	                       					</p>
+		                             
+
+<pre><code>
+&lt;div id = "datatbles" class="form-group-inner"&gt;    
+&lt;table id="examplePagAG" class="table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;a&gt;#&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Estado&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Descripción&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Fecha Inicial&lt;/a&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;a&gt;Fecha Final&lt;/a&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Petición impresora EPSON&lt;/td&gt;
+      &lt;td&gt;5-ene&lt;/td&gt;
+      &lt;td&gt;20-mar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Petición impresora KONICA&lt;/td&gt;
+      &lt;td&gt;5-abr&lt;/td&gt;
+      &lt;td&gt;15-jul&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+     &lt;tr&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;&lt;span class="label"&gt;Anterior&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Petición fuente alimentación&lt;/td&gt;
+      &lt;td&gt;12-nov&lt;/td&gt;
+      &lt;td&gt;20-nov&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+<strong>
+&lt;ul id="buttonCustom" class="separador-rangos"&gt;
+  &lt;li class="primer"&gt;&lt;a href="#"&gt;1 elemento&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;2 elemento&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;3 elemento&lt;/a&gt;&lt;/li&gt;  
+&lt;/ul&gt;
+</strong>
+&lt;/div&gt;
+
+</code></pre>  
+
+	                       					<p>
+	                       					En el script de inicialización especificaremos el identificador de la tabla. En el ejemplo: "tabla_paginada_ABSIS". 
+	                       					</p>
+	                       					<p>
+	                       					Segundo, modificar SDOM de dataTables para visualizar el nuevo elemento. Para ello, hay que añadir <i>&lt;'dataTables_rango'&gt;</i> en el lugar deseado a mostrar.
+	                       					</p>
+	                       					<p>
+	                       					Tercero, script de inicializacion del nuevo elemento en la tabla.
+	                       					</p>
+<pre><code>
+
+&lt;!--  datatables themes   --&gt;
+
+&lt;absiscloud:static type="style" source="absiscloud" path="components/datatable/css/DT_bootstrap.css"/&gt;
+...
+
+&lt;!-- SCRIPTS --&gt;
+
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/jquery.dataTables.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/DT_bootstrap.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/four_button/1.0_custom/four_button.js"/&gt;
+
+
+&lt;script&gt;  // datatable demo
+ 
+/* Inicialización tabla */
+$(document).ready(function() {
+	$('#tabla_paginada_ABSIS').dataTable( {
+		"sDom": "&lt;'datatables-action-box'&lt;'span6'<strong>&lt;'dataTables_rango'&gt;</strong>&gt;&lt;'span6'p&gt;r&gt;t&lt;'datatables-action-box'&lt;'span6'&lt;'dataTables_rango'&gt;&gt;&lt;'span6'p&gt;&gt;",
+		"sPaginationType": "four_button",
+		"aaSorting": [[ 2, "desc" ]],
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ filas por página",
+  			"sInfo": "Mostrando _START_ - _END_ de _TOTAL_ entradas",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
+			"sInfoFiltered": "(filtradas de un total de _MAX_ entradas)",
+			"sSearch": "Buscar:",
+			"sZeroRecords": "No se han encontrado entradas"
+	
+		}
+	} );
+	<strong>
+	var buttonCustom = $("#buttonCustom");
+	var buttonPlaceholder = $(".dataTables_rango");
+	buttonPlaceholder.html(buttonCustom);
+	</strong>
+} );
+   &lt;/script&gt;  
+
+</code></pre>  
+<br><br>     
+
+	                       					<p>
+	                       					En el ejemplo anterior los datos a mostrar en el listado vienen como parte del HTML de la página.
+	                       					Para volúmenes altos de datos, conviene solicitarlos al servidor mediante peticiones AJAX,
+	                       					tal y como se indica en la <a href="http://datatables.net/release-datatables/examples/server_side/server_side.html">documentación del plugin DataTables</a>.
+	                       					</p>
+                            				</div>
+
+       				<br><br>
+       				                            				        
+  		      		<h3 id="datatables-title" class="content-title emphasized">Datatables Row Grouping</h3>
+		       		<div id="datatables" class="form-group-inner">    
+				       <table id="exampleRG" class="table">
+				        <thead>
+				          <tr>
+				          	<th><a>#</a></th>
+				            <th><a>Estado</a></th>
+				            <th><a>Descripción</a></th>
+				            <th><a>Fecha Inicial</a></th>
+				            <th><a>Fecha Final</a></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr class="group-item-realizada" id="0">
+				            <td>Realizada</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora EPSON</td>
+				            <td>5-ene</td>
+				            <td>20-mar</td>
+				          </tr>
+				          <tr class="group-item-planificada" id="4">
+				            <td>Planificada</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador APPLE</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>				          
+				          <tr class="group-item-realizada" id="1">
+				            <td>Realizada</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora KONICA</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>
+				          <tr class="group-item-realizada" id="2">
+				            <td>Realizada</td>
+				            <td><span class="label label-success">Realizada</span></td>
+				            <td>Petición impresora KONICA</td>
+				            <td>5-abr</td>
+				            <td>15-jul</td>
+				          </tr>			
+				          
+				          <tr class="group-item-planificada" id="3">
+				            <td>Planificada</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador ACER</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>        
+				          <tr class="group-item-planificada" id="5">
+				            <td>Planificada</td>
+				            <td><span class="label label-info">Planificada</span></td>
+				            <td>Petición ordenador IBM</td>
+				            <td>12-nov</td>
+				            <td>20-nov</td>
+				          </tr>
+				        </tbody>
+				      </table>
+             	</div>
+                        
+                        
+                     	                   <div class="form-group-inner">
+	                       					<p>
+	                       					Para tener una tabla de agrupación que se pueda agrupar/expandir, primero deberemos crear una tabla con estilo <i>table</i> y asignarle un identificador, 
+	                       					en el ejemplo "tabla_agrupacion_ABSIS".
+	                       					</p> 
+	                       					<p>En cada una de las filas de la primera columna de la tabla ha de poner el nombre en la que se va a agrupar independiente del order de agrupación</p>
+	                       					<p>Ver siguiente ejemplo de la tabla: Realizada y Pendiente que está en negrita</p>
+	                       					
+		                             
+
+<pre><code>
+&lt;table id="tabla_agrupacion_ABSIS" class="table"&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;a&gt;#&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Estado&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Descripción&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Fecha Inicial&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Fecha Final&lt;/a&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Realizada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición impresora EPSON&lt;/td&gt;
+    &lt;td&gt;5-ene&lt;/td&gt;
+    &lt;td&gt;20-mar&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Planificada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-info"&gt;Planificada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición ordenador APPLE&lt;/td&gt;
+    &lt;td&gt;12-nov&lt;/td&gt;
+    &lt;td&gt;20-nov&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Realizada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición impresora KONICA&lt;/td&gt;
+    &lt;td&gt;5-abr&lt;/td&gt;
+    &lt;td&gt;15-jul&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Realizada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición impresora KONICA&lt;/td&gt;
+    &lt;td&gt;5-abr&lt;/td&gt;
+    &lt;td&gt;15-jul&lt;/td&gt;
+  &lt;/tr&gt;			
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Planificada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-info"&gt;Planificada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición ordenador ACER&lt;/td&gt;
+    &lt;td&gt;12-nov&lt;/td&gt;
+    &lt;td&gt;20-nov&lt;/td&gt;
+  &lt;/tr&gt;        
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Planificada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-info"&gt;Planificada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición ordenador IBM&lt;/td&gt;
+    &lt;td&gt;12-nov&lt;/td&gt;
+    &lt;td&gt;20-nov&lt;/td&gt;
+  &lt;/tr&gt;
+    ...  
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre> 
+<br><br> 
+
+	                       					<p>
+	                       					También deberemos incluir los estilos y los scripts del compomente para tablas dinámicas. 
+	                       					En el script de inicialización especificaremos el identificador de la tabla. En el ejemplo: "tabla_agrupacion_ABSIS". 
+	                       					</p>
+	                       					<p>
+	                       					<b>Importante: 
+	                       					Es muy importante recordar que los estilos de absis siempre deben ser los últimos en incluirse en la página.
+	                       					Es preferible introducirlos al final de la página para mejorar la carga de la página.
+	                       					</b>
+	                       					</p>
+<pre><code>
+
+&lt;!--  datatables themes   --&gt;
+&lt;absiscloud:static type="style" source="absiscloud" path="components/datatable/css/DT_bootstrap.css"/&gt;
+...
+
+&lt;!-- SCRIPTS --&gt;
+
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/jquery.dataTables.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/datatable/js/DT_bootstrap.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/four_button/1.0_custom/four_button.js"/&gt;
+
+	
+&lt;script&gt;  // datatable demo
+ 
+/* Inicialización tabla */
+$(document).ready(function() {
+	$(document).ready( function () {
+		$('#tabla_agrupacion_ABSIS').dataTable({ 
+				"bLengthChange": false, 
+				"bPaginate": false,
+				"bFilter": false
+		}).rowGrouping({bExpandableGrouping: true, <strong>asExpandedGroups: ["Planificada"]</strong>});
+	} );
+   &lt;/script&gt;  
+
+</code></pre>  
+<br><br>     
+
+	                       					<p>
+	                       					En el ejemplo anterior en donde está definido en negrita (<i><strong>asExpandedGroups: ["Planificada"]</strong></i>) es opcional, nos permite definir una lista de agrupaciones que queremos estar expandida por defecto al inicializar.
+	                       					</p>
+	                       								
+	                       					<p>
+	                       					Los datos a mostrar en el listado vienen como parte del HTML de la página.
+	                       					Para volúmenes altos de datos, conviene solicitarlos al servidor mediante peticiones AJAX,
+	                       					tal y como se indica en la <a href="http://datatables.net/release-datatables/examples/server_side/server_side.html">documentación del plugin DataTables</a>.
+	                       					</p>
+                            				</div>
+                            				
+                <h3 id="datatbles-grupos2-title" class="content-title emphasized">Datatables con agrupación de filas y cabeceras personalizadas</h3>
+	       		<div id="datatbles-grupos2" class="form-group-inner">    
+			       
+			       
+			       <table data-role="grouping-headers" data-table-id="exampleRG2">
+			       		<tbody><tr data-locator-text="Realizada">
+			       			<td><a href="#123">Realizada</a></td>
+			       			<td>aa1</td>
+			       			<td>2</td>
+			       			<td>3</td>
+			       		</tr>
+			       		<tr data-locator-text="Planificada">
+			       			<td>Planificada</td>
+			       			<td>1</td>
+			       			<td>2</td>
+			       			<td>3</td>
+			       		</tr>
+			       </tbody></table>
+			       
+			       <table id="exampleRG2" class="table">
+			        <thead>
+			          <tr>
+			          	<th><a>#</a></th>
+			            <th><a>Estado</a></th>
+			            <th><a>Descripción</a></th>
+			            <th><a>Fecha Inicial</a></th>
+			            <th><a>Fecha Final</a></th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>Realizada</td>
+			            <td><span class="label label-success">Realizada</span></td>
+			            <td>Petición impresora EPSON</td>
+			            <td>5-ene</td>
+			            <td>20-mar</td>
+			          </tr>
+			          <tr>
+			            <td>Planificada</td>
+			            <td><span class="label label-info">Planificada</span></td>
+			            <td>Petición ordenador APPLE</td>
+			            <td>12-nov</td>
+			            <td>20-nov</td>
+			          </tr>				          
+			          <tr>
+			            <td>Realizada</td>
+			            <td><span class="label label-success">Realizada</span></td>
+			            <td>Petición impresora KONICA</td>
+			            <td>5-abr</td>
+			            <td>15-jul</td>
+			          </tr>
+			          <tr>
+			            <td>Realizada</td>
+			            <td><span class="label label-success">Realizada</span></td>
+			            <td>Petición impresora KONICA</td>
+			            <td>5-abr</td>
+			            <td>15-jul</td>
+			          </tr>			
+			          
+			          <tr>
+			            <td>Planificada</td>
+			            <td><span class="label label-info">Planificada</span></td>
+			            <td>Petición ordenador ACER</td>
+			            <td>12-nov</td>
+			            <td>20-nov</td>
+			          </tr>        
+			          <tr>
+			            <td>Planificada</td>
+			            <td><span class="label label-info">Planificada</span></td>
+			            <td>Petición ordenador IBM</td>
+			            <td>12-nov</td>
+			            <td>20-nov</td>
+			          </tr>
+			        </tbody>
+			      </table>
+             	</div> 
+             	<div class="form-group-inner">
+	                       					<p>
+	                       					El uso de las tablas es idéntico al del punto anterior (Datatables Row Grouping), la diferencia es que en este caso de uso se muestra como personalizar las cabeceras. 
+	                       					</p>
+	                       					<p>
+	                       					ABSIS Cloud proporciona un mecanismo que inserta automáticamente una tabla por cabecera de agrupación. El mecanismo consiste en crear una tabla con las cabeceras que queremos insertar. Esta tabla deberá contener varios atributos de tipo <code>data-*</code> que le ofrecerán al sistema la información necesaria para hacer la fusión de la tabla con las cabeceras.  
+	                       					</p>
+	                       					<p>
+	                       					El tag table tabla deberá contener un atributo con <code>data-role="grouping-headers"</code> y otro llamado <code>data-table-id</code> que tenga por valor el identificador de la tabla, por ejemplo, si queremos inyectar la cabecera a la tabla <code>idTabla</code> tendríamos: <code>data-table-id="idTabla"</code>.
+	                       					</p>
+	                       					<p>
+	                       					Cada tag TR de la tabla de cabeceras deberá contener la información que se quiera meter dentro de los TR de agrupación. La substitución se realizará cuando se encuentren las ocurrencias del contenido <code>data-locator-text</code> del TR de cabeceras en el TD la agrupación. 
+	                       					Por ejemplo, si vamos a realizar una agrupación por el texto <i>Realizada</i>, el data-locator-text debería ser "Realizada" (<code>data-locator-text="Realizada"</code>).
+	                       					</p>
+		                             
+<pre><code>
+&lt;table <strong>data-role="grouping-headers"</strong> <strong>data-table-id="id-tabla"</strong>&gt;
+	&lt;tr  <strong>data-locator-text="Realizada"</strong>&gt;
+		&lt;td&gt;&lt;a href="#123"&gt;Realizada&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;2&lt;/td&gt;
+		&lt;td&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	...
+&lt;/table&gt;
+
+
+
+&lt;table <strong>id="id-tabla"</strong> class="table"&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;a&gt;#&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Estado&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Descripción&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Fecha Inicial&lt;/a&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;a&gt;Fecha Final&lt;/a&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;<strong>Realizada</strong>&lt;/td&gt;
+    &lt;td&gt;&lt;span class="label label-success"&gt;Realizada&lt;/span&gt;&lt;/td&gt;
+    &lt;td&gt;Petición impresora EPSON&lt;/td&gt;
+    &lt;td&gt;5-ene&lt;/td&gt;
+    &lt;td&gt;20-mar&lt;/td&gt;
+  &lt;/tr&gt;
+    ...  
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre> 
+<br><br> 
+
+	                       					<p>
+	                       					Finalmente añadir que en la configuración del rowGrouping será necesario rellenar el atributo <code>fnOnGrouped</code> con una función que termine invocando a la funcion JS <code>applyRowGroupingHeaders();</code>. Véase el siguiente ejemplo: 
+											</p>
+	                       					
+<pre><code>
+ 
+/* Inicialización tabla */
+$(document).ready(function() {
+	$(document).ready( function () {
+		$('#id-tabla').dataTable({ 
+				"bLengthChange": false, 
+				"bPaginate": false,
+				"bFilter": false
+		}).rowGrouping({
+				bExpandableGrouping: true, 
+				asExpandedGroups: ["Planificada"],
+				<strong>fnOnGrouped: function(){
+					applyRowGroupingHeaders(); 
+				}</strong>
+			});
+	} );
+&lt;/script&gt;  
+
+</code></pre>  
+                            				</div>
+             	
+             	
+             	
+             	 
+           		<h3 id="listas-title" class="content-title emphasized">Listas</h3>
+				<div id="listas" class="form-group-inner">
+					<ul>
+                      <li>Primer ítem</li>
+                      <li>Segundo ítem
+                        <div>
+                          <ul>
+                            <li>Primer ítem
+                              <div>
+                                <ul>
+                                  <li>Primer ítem</li>
+                                  <li>Segundo ítem</li>
+                                  <li>Tercer ítem</li>
+                                </ul>
+                              </div>
+                            </li>
+                            <li>Segundo ítem</li>
+                            <li>Tercer ítem</li>
+                          </ul>
+                        </div>
+                        </li><li>Tercer ítem
+                        </li>
+                      </ul>
+                  </div>
+
+	                       					  <div class="form-group-inner">
+	                       					<p>
+	                       					Para las listas usaremos los elementos <i>ul</i>,  <i>li</i> y <i>div</i>. Para anidar listas usaremos <i>div</i>. 
+	                       					</p>
+		                              
+<pre><code>
+&lt;ul&gt;
+  &lt;li&gt;Primer ítem&lt;/li&gt;
+  &lt;li&gt;Segundo ítem
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Primer ítem
+          &lt;div&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Primer ítem&lt;/li&gt;
+              &lt;li&gt;Segundo ítem&lt;/li&gt;
+              &lt;li&gt;Tercer ítem&lt;/li&gt;
+           &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Segundo ítem&lt;/li&gt;
+        &lt;li&gt;Tercer ítem&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Tercer ítem&lt;/li&gt;
+&lt;/ul&gt;
+
+</code></pre>  
+                            				</div>
+
+                          
+              </div>
+              </div>
+            
+
+           
+              <div id="menu-tf7-docu-right" class="col-sm-3 col-md-3"></div>
+                </div></div>
+  			</div><!--/row-->
+  
+		</div><!--/ .content-->
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>    
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+    <script src="../../static/fwk/components/datatable-rowGrouping/1.9.4/js/jquery.dataTables.rowGrouping.js"></script>
+    <script src="../../static/fwk/components/four_button/1.0_custom/four_button.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script src="menu.js"></script>
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+  
+    <script>  // datatable demo
+ 
+    /* Table initialisation */
+$(document).ready(function() {
+	$('#example').dataTable( {
+		"sDom": "<'datatables-action-box'<'span6'l><'span6'f>r>t<'datatables-action-box'<'span6'i><'span6'p>>",
+		"sPaginationType": "four_button",
+		"aaSorting": [[ 2, "desc" ]],
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ filas por página",
+  			"sInfo": "Mostrando _START_ - _END_ de _TOTAL_ entradas",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
+			"sInfoFiltered": "(filtradas de un total de _MAX_ entradas)",
+			"sSearch": "Buscar:",
+			"sZeroRecords": "No se han encontrado entradas",
+			"sFirst": "Inicio",
+			"sPrevious": "Anterior",
+			"sNext": "Siguiente"
+	
+		}
+	} );
+
+	$('#examplePAG').dataTable( {
+		"sDom": "<'datatables-action-box'<'span6'><'span6'p>r>t<'datatables-action-box'<'span6'i><'span6'p>>",
+		"aaSorting": [[ 2, "desc" ]],
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ filas por página",
+  			"sInfo": "Mostrando _START_ - _END_ de _TOTAL_ entradas",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
+			"sInfoFiltered": "(filtradas de un total de _MAX_ entradas)",
+			"sSearch": "Buscar:",
+			"sZeroRecords": "No se han encontrado entradas",
+			"sFirst": "Inicio",
+			"sPrevious": "Anterior",
+			"sNext": "Siguiente"
+		},
+		"sPaginationType": "four_button"
+	} );
+
+	$('#examplePagAG').dataTable( {
+		"sDom": "<'datatables-action-box'<'span6'<'dataTables_rango'>><'span6'p>r>t<'datatables-action-box'<'span6'<'dataTables_rango'>><'span6'p>>",
+		"aaSorting": [[ 2, "desc" ]],
+		"oLanguage": {
+			"sLengthMenu": "_MENU_ filas por página",
+  			"sInfo": "Mostrando _START_ - _END_ de _TOTAL_ entradas",
+			"sInfoEmpty": "Mostrando 0 de 0 entradas",
+			"sInfoFiltered": "(filtradas de un total de _MAX_ entradas)",
+			"sSearch": "Buscar:",
+			"sZeroRecords": "No se han encontrado entradas",
+			"sFirst": "Inicio",
+			"sPrevious": "Anterior",
+			"sNext": "Siguiente"
+		},
+		"sPaginationType": "four_button"
+	} );
+	
+	var buttonCustom = $("#buttonCustom");
+	var buttonPlaceholder = $(".dataTables_rango");
+	buttonPlaceholder.html(buttonCustom);
+		
+} );
+   </script>  
+<script type="text/javascript" charset="utf-8">
+	$(document).ready( function () {
+		$('#exampleRG2').dataTable({ 
+			"sDom": "t",
+			"bLengthChange": false, 
+			"bPaginate": false,
+			"bFilter": false
+		}).rowGrouping({
+			bExpandableGrouping: true, 
+			asExpandedGroups: ["Planificada"],
+			fnOnGrouped: function(){
+					applyRowGroupingHeaders(); 
+				}
+			});
+	} );
+	 
+	
+</script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready( function () {
+		$('#exampleRG').dataTable({ 
+				"bLengthChange": false, 
+				"bPaginate": false,
+				"bFilter": false
+		}).rowGrouping({bExpandableGrouping: true, asExpandedGroups: ["Planificada"]});
+	} );
+</script>
+
+  
+</body></html>

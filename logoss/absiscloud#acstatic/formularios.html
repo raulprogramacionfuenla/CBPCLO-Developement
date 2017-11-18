@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link rel="stylesheet" href="static/fwk/styles/ac.css">
+	<link rel="stylesheet" href="Style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- Funciones propias de la interfaz-->
+	<script src="funcionesInterfaz.js"></script>
+
+	<!-- Elementos para el calendario-->
+	<link href="cal2/css/jquery.datepick.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="cal2/js/jquery.plugin.min.js"></script>
+	<script src="cal2/js/jquery.datepick.js"></script>
+	<script src="cal2/js/jquery.datepick-es.js"></script>
+	
+
+</head>
+<body>
+	
+	<!--Aquí va la cabecera-->
+	<!--Cabecera-->
+	
+	<div class="page-header"> 
+		<h1>
+			<span class="canal"><b>CBPCLO</b> <i>Control Best Practices</i><span class="se"></span><span class="sd"></span><span class="ie"></span><span class="id"></span></span>
+			<span class="separador"></span>
+		</h1>
+		<!-- Seccion usuario logueado -->
+	</div>
+	<!--FinCabecera-->
+	<!--Aqui va el contenido de los formularios-->
+
+	<!--Primera hilera de formularios-->
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="span6" id="b1"><!--Inicio del primer formulario-->
+				<!--===titulo===-->
+				<h3 id="form-style-title" class="content-title emphasized"><label class="radio">
+					<input type="radio"  value="option1" id="optionsRadios1" name="optionsRadios" checked>
+					<b>Situación actual</b>
+				</label><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+				<!--===Fin del titulo-->
+				<div class="control-group required">
+					<label for="inputReq" class="control-label"><b>Aplicación*:</b></label>
+					<div class="controls">
+						<input type="text" value="" id="inputReq" class="input-medium">
+					</div>
+				</div>
+				
+				<div class="control-group required">
+					<label for="inputReq" class="control-label"><b>Componente*:</b></label>
+					<div class="controls">
+						<input type="text" value="" id="inputReq" class="input-medium">
+					</div>
+				</div>
+
+				<div class="control-group checkbox-group">
+					<label class="control-label"><b>Factor de riesgo (8 y 9):</b></label>
+					<div class="controls">
+						<label class="checkbox">
+							<input type="checkbox" value="option1" name="optionsCheckboxList1">
+						</label>
+					</div>
+
+
+
+					<div class="control-group">
+						<label for="select01" class="control-label"><b>Excluir justificados:</b></label>
+						<div class="controls">
+							<select id="select01">
+								<option>SÍ</option>
+								<option>NO</option>
+							</select>
+						</div>
+					</div>
+
+
+					<div class="control-group">
+						<label for="select01" class="control-label"><b>Software "Nuevo":</b></label>
+						<div class="controls">
+							<select id="select01">
+								<option>SÍ</option>
+								<option>NO</option>
+							</select>
+						</div>
+					</div>
+				</div><!--Fin del span-->
+			</div>
+				<div class="span6"  id="b2">
+					<!--===titulo===-->
+					<h3 id="form-style-title" class="content-title emphasized"><label class="radio">
+						<input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">
+						<b>Por componente</b>
+					</label><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+					<!--===Fin del titulo===-->
+
+					<!-- ============================== FORMULARIO 1.2 ========================-->
+					<!--============================= AQUÍ EL FORMULARIO ======================-->
+
+					<div class="control-group">
+						<label for="select01" class="control-label"><b>Tipo de componente:</b></label>
+						<div class="controls">
+							<select id="select01">
+								<option>Programa</option>
+								<option>Módulo</option>
+								<option>Transacción</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="control-group required">
+						<label for="inputReq" class="control-label"><b>Componente*:</b></label>
+						<div class="controls">
+							<input type="text" value="" id="inputReq" class="input-medium">
+						</div>
+					</div>
+
+					<div class="control-group">
+
+						<label for="data" class="control-label"><b>	Periodo:</b></label>
+						<div class="input-append date datepicker hor" 
+						data-date="" 
+						data-date-format="dd/mm/yyyy"  
+						data-check-list="12-02-2012, 01-03-2012, 30-01-2012, 10-02-2012, 01-02-2012,30-02-2012, 12-03-2012">
+						<input id= "inicio" type="text" class = "text date-dmy input-small" value="01/01/2017" />
+					</div>
+
+
+
+					<label for="data" class="control-label"></label>
+					<div 	class="input-append date datepicker hor" 
+					data-date="" 
+					data-date-format="dd/mm/yyyy" 
+					data-check-list="12-02-2012, 01-03-2012, 30-01-2012, 10-02-2012, 01-02-2012,30-02-2012, 12-03-2012">
+					<input id= "final" type="text" class = "text date-dmy input-small" value="01/01/2017" />
+				</div>
+
+			</div><!--Fin data picker-->
+
+			<div class="control-group">
+				<label for="inputReq" class="control-label"><b>Versión:</b></label>
+				<div class="controls">
+					<input type="text" value="" id="inputReq" class="input-medium">
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label for="select01" class="control-label"><b>Excluir Justificados:</b></label>
+				<div class="controls">
+					<select id="select01">
+						<option>SÍ</option>
+						<option>NO</option>
+					</select>
+				</div>
+			</div>
+
+
+			<div class="control-group">
+				<label for="select01" class="control-label"><b>Software "Nuevo":</b></label>
+				<div class="controls">
+					<select id="select01">
+						<option>SÍ</option>
+						<option>NO</option>
+					</select>
+				</div>
+			</div>
+
+
+			<div class="control-group checkbox-group">
+				<label class="control-label"><b>Factor de riesgo (8 y 9):</b></label>
+				<div class="controls">
+					<label class="checkbox">
+						<input type="checkbox" value="option1" name="optionsCheckboxList1">
+					</label>
+				</div>
+			</div>			
+			<!--==========================================================================-->
+			
+			<!--Fin del segundo formulario-->
+		</div>
+	</div>
+
+	<!--==========================================================================-->
+	<!--Segunda hilera de formularios-->
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="span6"  id="b3">
+
+				<!--===titulo===-->
+				<h3 id="form-style-title" class="content-title emphasized"><label class="radio">
+					<input type="radio" value="option3" id="optionsRadios3" name="optionsRadios">
+					<b>Por periodo</b>
+				</label><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+				<!--===Fin del titulo===-->
+				<!--=================Aqui ponemos el contenido del formulario-->
+				
+				<div class="control-group">
+
+					<label for="data" class="control-label"><b>	Periodo:</b></label>
+					<div class="input-append date datepicker hor" 
+					data-date="" 
+					data-date-format="dd/mm/yyyy" 
+					data-check-list="12-02-2012, 01-03-2012, 30-01-2012, 10-02-2012, 01-02-2012,30-02-2012, 12-03-2012">
+					<input id="inicio" type="text" class = "text date-dmy input-small" value="01/01/2017" />
+				</div>
+
+
+
+				<label for="data" class="control-label"></label>
+				<div 	class="input-append date datepicker hor" 
+				data-date="" 
+				data-date-format="dd/mm/yyyy" 
+				data-check-list="12-02-2012, 01-03-2012, 30-01-2012, 10-02-2012, 01-02-2012,30-02-2012, 12-03-2012">
+				<input id="final" type="text" class = "text date-dmy input-small" value="01/01/2017" />
+			</div>
+
+		</div><!--Fin data picker-->
+
+		<!-- Software "Nuevo": SI o NO-->
+		<div class="control-group">
+			<label for="select01" class="control-label"><b>Proveedor:</b></label>
+			<div class="controls">
+				<select id="select01">
+					<option>EVERIS</option>
+					<option>NO</option>
+				</select>
+			</div>
+		</div>
+
+
+		<div class="control-group">
+			<label for="inputReq" class="control-label"><b>Versión:</b></label>
+			<div class="controls">
+				<input type="text" value="" id="inputReq" class="input-medium">
+			</div>
+		</div>
+
+
+		<!-- Software "Nuevo": SI o NO-->
+		<div class="control-group">
+			<label for="select01" class="control-label"><b>Resultado:</b></label>
+			<div class="controls">
+				<select id="select01">
+					<option>KO</option>
+					<option>OK</option>
+				</select>
+			</div>
+		</div>
+
+
+		<!-- Software "Nuevo": SI o NO-->
+		<div class="control-group">
+			<label for="select01" class="control-label"><b>Software "Nuevo":</b></label>
+			<div class="controls">
+				<select id="select01">
+					<option>SÍ</option>
+					<option>NO</option>
+				</select>
+			</div>
+		</div>
+
+
+	</div><!--Fin del span-->
+
+
+	<div class="span6"  id="b4">
+		<!--===titulo===-->
+		<h3 id="form-style-title" class="content-title emphasized"><label class="radio">
+			<input type="radio" value="option4" id="optionsRadios4" name="optionsRadios">
+			<b>Por versión</b>
+		</label><span class="tl"></span><span class="bl"></span><span class="br"></span><span class="tr"></span></h3>
+		<!--===Fin del titulo===-->
+		<!-- Aqui el formulario-->	
+
+
+		<!--========================== FORMULARIO  1.1 ============================-->
+		<!--============================= AQUÍ EL FORMULARIO ======================-->
+		<div class="control-group required">
+			<label for="inputReq" class="control-label"><b>Versión*:</b></label>
+			<div class="controls">
+				<input type="text" value="" id="inputReq" class="input-medium">
+			</div>
+		</div>
+		<!--Fin campo texto-->
+
+				<div class="control-group">
+
+					<label for="data" class="control-label"><b>	Periodo:</b></label>
+					<div class="input-append date datepicker hor" 
+					data-date="" 
+					data-date-format="dd/mm/yyyy" 
+					data-check-list="12-02-2012, 01-03-2012, 30-01-2012, 10-02-2012, 01-02-2012,30-02-2012, 12-03-2012">
+					<input id="inicio" type="text" class = "text date-dmy input-small" value="01/01/2017" />
+				</div>
+
+
+
+				<label for="data" class="control-label"></label>
+				<div 	class="input-append date datepicker hor" 
+				data-date="" 
+				data-date-format="dd/mm/yyyy" 
+				data-check-list="12-02-2012, 01-03-2012, 30-01-2012, 10-02-2012, 01-02-2012,30-02-2012, 12-03-2012">
+				<input id="final" type="text" class = "text date-dmy input-small" value="01/01/2017" />
+			</div>
+
+		</div><!--Fin data picker-->
+
+
+<!--KO OK-->
+<div class="control-group">
+	<label for="select01" class="control-label"><b>Resultado:</b></label>
+	<div class="controls">
+		<select id="select01">
+			<option>KO</option>
+			<option>OK</option>
+		</select>
+	</div>
+</div>
+
+<!-- Software "Nuevo": SI o NO-->
+<div class="control-group">
+	<label for="select01" class="control-label"><b>Software "Nuevo":</b></label>
+	<div class="controls">
+		<select id="select01">
+			<option>SÍ</option>
+			<option>NO</option>
+		</select>
+	</div>
+</div>
+
+<!--=========================-->
+<!--Fin del primer formulario-->
+</div><!--fin del span-->
+</div>
+</div>
+<!--============================================================================-->
+<!--Botonera-->
+
+<div class="botCluster">
+	<button title="Título del botón" class="btn emphasized"> <i class="icono-reinicio-buscador"></i> Buscar</button>
+	<button id="btnBorrarCampos"title="Título del botón" class="btn emphasized"><i class="icono-bullet-check-KO"></i> Limpiar Campos</button>
+</div>
+
+
+<!--Aqui va el footer-->
+<!--Footer-->
+<div class="footer">
+	<hr>
+	@ "la Caixa", Barcelona 2017. Todos los derechos reservados. <br> 
+	<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>CBPCLO</a> | <a>La Caixa</a>    
+</div>
+
+
+
+</body>
+</html>

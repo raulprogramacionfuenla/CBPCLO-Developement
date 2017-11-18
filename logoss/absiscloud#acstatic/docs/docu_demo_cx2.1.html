@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ABSIS Cloud | ACStatic | La Caixa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Styles -->
+<link href="../static/fwk/components/bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet" />
+<link href="../static/fwk/styles/ac.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="content">
+
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+					<a href="demo.html">Galería de componentes estáticos</a>
+				</h1>
+				<div class="align_right">
+					<a href="demo_cx2.1.html" data-original-title=""> Muestrario</a>
+				</div>
+			</div>
+
+			<!-- Content  -->
+			<div class="row-fluid">
+				<div id="content" class="span9 container-fluid">
+					<div class="row-fluid">
+						<div class="span12 control-group-inner">
+							<ul class="breadcrumb">
+								<li><a href="demo.html">Componentes estáticos para TF7</a>
+									<span class="divider">&gt;</span></li>
+								<li><a href="docu_demo_cx2.html">Formularios</a>
+									<span class="divider">&gt;</span></li>
+								<li class="active">Selector de hora</li>
+							</ul>
+							<h3 class="content-title">Selector de hora</h3>
+							
+							
+							<h3 id="form-style-title" class="content-title emphasized">Formato de hora</h3>
+							<div id="form-style" class="control-group-inner">
+								<form class="form-horizontal">
+										
+										
+										<div class="control-group-inner">
+	                       					<p>
+	                       					ABSIS Cloud ha realizado una adaptación del componente <a href="http://jdewit.github.io/bootstrap-timepicker/index.html" target="_blank">Bootstrap Timepiker</a> para simplificar la interacción del usuario a la hora de introducir fechas.
+		                              		</p>
+		                              		<p>Para el correcto funcionamiento será necesario incluir el css <code>/static/fwk/components/bootstrap-timepicker/0.2.3/css/bootstrap-timepicker.min.css</code>
+												y el JavaScript <code>/static/fwk/components/bootstrap-timepicker/0.2.3/js/bootstrap-timepicker.min.js</code></p>
+		                              		<p>
+		                              		Parte de la customización realizada del componente es que automáticamente se declaran como campos de fecha los input text con <code>class="timepiker"</code>. Es decir, ABSIS Cloud detectará como campos de entrada aquellos input cuya clase css sea <i>timepiker</i>.
+		                              		</p>
+		                              		<p>
+		                              		La configuración por defecto, se seta con la hora actual, realiza incrementos en los minutos de 5 en 5, en las horas se incrementa de 1 en 1, muestra horas y minutos en formato de 24 horas. 
+		                              		Estos parámetros pueden ser modificados cuando la aplicación así lo requiere añadiendole al input los siguientes atributos:
+		                              		</p>
+		                              		<ul>
+		                              			<li><strong>data-minute-step</strong>: [numérico] Representa el incremento de minutos en cada click. </li>
+		                              			<li><strong>data-second-step</strong>: [numérico] Representa el incremento de segundos en cada click. </li>
+		                              			<li><strong>data-show-seconds</strong>: [true/false] Permite activar la presentación de segundos. </li>
+		                              			<li><strong>data-show-meridian</strong>: [true/false] Permite activar el modo 24/12 horas.</li>
+		                              			<li><strong>data-default-time</strong>: ['current'/'11:45 AM'/false] Valor del input</li>
+		                              		</ul>
+		                              		<p>Veamos algunos ejemplos de como se deberían configurar las fechas:</p>
+                            			</div>	
+										
+										
+										<div class="control-group">
+											<label for="data" class="control-label">Hora:</label>
+											<div class="controls">
+												<div class="input-append bootstrap-timepicker">
+										            <input type="text" class="timepiker input-hhmm"/>
+										            <span class="add-on timepiker-button-container"><i class="icon-time"></i></span>
+										        </div>
+									        </div>
+								 		</div>
+							 			<div class="control-group-inner">
+<pre><code>
+&lt;div class="control-group"&gt;
+  &lt;label for="textarea" class="control-label"&gt;Hora:&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;div class="input-append bootstrap-timepicker"&gt;
+        &lt;input type="text" class="timepiker input-hhmm"/&gt;
+        &lt;span class="add-on timepiker-button-container"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            			</div>	
+								 		
+										<div class="control-group">
+											<label for="data" class="control-label">Hora (Segundos):</label>
+											<div class="controls">
+												<div class="input-append bootstrap-timepicker" >
+										            <input type="text" class="timepiker input-hhmmxx" data-show-seconds="true"/>
+										            <span class="add-on timepiker-button-container"><i class="icon-time"></i></span>
+										        </div>
+									        </div>
+								 		</div>
+							 			<div class="control-group-inner">
+<pre><code>
+&lt;div class="control-group"&gt;
+  &lt;label for="textarea" class="control-label"&gt;Hora (Segundos):&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;div class="input-append bootstrap-timepicker"&gt;
+        &lt;input type="text" class="timepiker input-hhmmxx" data-show-seconds="true"/&gt;
+        &lt;span class="add-on timepiker-button-container"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            			</div>									 		
+								 		
+										<div class="control-group">
+											<label for="data" class="control-label">Hora (AM/PM):</label>
+											<div class="controls">
+												<div class="input-append bootstrap-timepicker" >
+										            <input type="text" class="timepiker input-hhmmxx" data-show-meridian="true"/>
+										            <span class="add-on timepiker-button-container"><i class="icon-time"></i></span>
+										        </div>
+									        </div>
+								 		</div>
+							 			<div class="control-group-inner">
+<pre><code>
+&lt;div class="control-group"&gt;
+  &lt;label for="textarea" class="control-label"&gt;Hora (AM/PM):&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;div class="input-append bootstrap-timepicker" data-show-meridian="true"&gt;
+        &lt;input type="text" class="timepiker input-hhmmxxx"/&gt;
+        &lt;span class="add-on timepiker-button-container"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            			</div>	
+                            			</form >
+                            			</div>
+							<h3 id="form-style-title" class="content-title emphasized">Formato de campos</h3>
+							<div id="form-style" class="control-group-inner">
+								 		<form class="form-horizontal">
+								 		<div class="control-group required">
+											<label for="data" class="control-label">Hora requerida*:</label>
+											<div class="controls">
+												<div class="input-append bootstrap-timepicker">
+										            <input type="text"  class="timepiker input-hhmm"/>
+										            <span class="add-on timepiker-button-container"><i class="icon-time"></i></span>
+										        </div>
+									        </div>
+								 		</div>	
+							 			<div class="control-group-inner">
+<pre><code>
+&lt;div class="control-group required"&gt;
+  &lt;label for="textarea" class="control-label"&gt;Hora requerida*:&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;div class="input-append bootstrap-timepicker"&gt;
+        &lt;input type="text" class="timepiker input-hhmm"/&gt;
+        &lt;span class="add-on timepiker-button-container"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            			</div>									 									 		
+								 		<div class="control-group disabled">
+											<label for="data" class="control-label">Hora con error:</label>
+											<div class="controls">
+												<div class="input-append bootstrap-timepicker">
+										            <input type="text" disabled="disabled"  class="timepiker input-hhmm"/>
+										            <span class="add-on timepiker-button-container"><i class="icon-time"></i></span>
+										        </div>
+									        </div>
+								 		</div>
+							 			<div class="control-group-inner">
+<pre><code>
+&lt;div class="control-group  disabled"&gt;
+  &lt;label for="textarea" class="control-label"&gt;Hora con error:&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;div class="input-append bootstrap-timepicker"&gt;
+        &lt;input type="text" disabled="disabled" class="timepiker input-hhmm"/&gt;
+        &lt;span class="add-on timepiker-button-container"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            			</div>	
+                            											 		
+								 		<div class="control-group error">
+											<label for="data" class="control-label">Hora con error:</label>
+											<div class="controls">
+												<div class="input-append bootstrap-timepicker">
+										            <input type="text" class="timepiker input-hhmm"/>
+										            <span class="add-on timepiker-button-container"><i class="icon-time"></i></span>
+										        </div>
+										        <div class="help-block">Corregir el error</div>
+									        </div>
+								 		</div>
+							 			<div class="control-group-inner">
+<pre><code>
+&lt;div class="control-group  error"&gt;
+  &lt;label for="textarea" class="control-label"&gt;Hora con error:&lt;/label&gt;
+  &lt;div class="controls"&gt;
+    &lt;div class="input-append bootstrap-timepicker"&gt;
+        &lt;input type="text" class="timepiker input-hhmm"/&gt;
+        &lt;span class="add-on timepiker-button-container"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>  
+                            			</div>									 		
+
+								 	</form>
+							</div>
+							
+																			
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Menu -->
+				<div id="menu-tf7-docu-right" class="span3"></div>
+				</div>
+
+			</div>
+			<!--/row-->
+
+		</div>
+		<!--/ .content-->
+	</div>
+	<!--/.fluid-container-->
+	<div class="footer">
+		<hr>
+		@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br>
+		<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La
+			Caixa</a>
+	</div>
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" 	src="../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" 	src="../static/fwk/components/jquery-cookie/1.0/jquery.cookie.js"></script>
+	<script type="text/javascript" 	src="../static/fwk/components/globalize/0.1.0a1/globalize.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/globalize/0.1.0a1/cultures/globalize.culture.ca.js"></script>
+	<script type="text/javascript"	src="../static/fwk/js/acglobalizeutils.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/validationEngine/2.5.2/js/jquery.validationEngine.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript"	src="../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"charset="utf-8"></script>
+	<script type="text/javascript" 	src="../static/fwk/js/acstatic.js"></script>
+	<script type="text/javascript" 	src="menu.js"></script>
+	
+	<!-- Date Picker -->
+	<link href="/static/fwk/components/bootstrap-datepiker-eternicode/1.0.0/css/datepicker.css" rel="stylesheet" />
+	<script type="text/javascript"  src="/static/fwk/components/bootstrap-datepiker-eternicode/1.0.0/js/bootstrap-datepicker.js"></script>
+	<!-- Fin Date Picker -->
+	
+	<!-- TIME Picker -->
+	<link href="/static/fwk/components/bootstrap-timepicker/0.2.3/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+	<script type="text/javascript"  src="/static/fwk/components/bootstrap-timepicker/0.2.3/js/bootstrap-timepicker.min.js"></script>
+	<!-- Fin TIME Picker -->
+	
+	<!-- RTA -->
+	<script type="text/javascript"  src="/static/fwk/components/tinymce/3.5.8/jquery.tinymce.js"></script>
+	<!-- Fin RTA -->
+	
+</body>
+</html>

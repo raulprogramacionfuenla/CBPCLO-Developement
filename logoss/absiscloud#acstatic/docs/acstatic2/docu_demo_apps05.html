@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head>
+  
+    <meta charset="utf-8">
+    <title>ABSIS Cloud | ACStatic | La Caixa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Styles -->
+    <link href="../../static/fwk/components/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/fwk/styles/acstatic2/ac.css" rel="stylesheet"> 
+  
+  </head>
+
+  <body>
+
+		<div class="content">
+			
+			<!-- Page Title -->
+			<div class="page-header"> 
+				<h1>
+					<span class="canal">ABSIS Cloud</span>
+					<span class="separador"></span>
+		        	<a href="demo.html">Galería de componentes estáticos</a>
+		       </h1>
+		        <div class="align_right"> 
+		        	<a href="demo_apps05.html" data-original-title="">Muestrario</a>
+		        </div>
+		   	</div> 
+		     
+			<!-- Content  -->
+			<div class="row">
+			<div class="col-sm-12 col-md-12">
+		 	<div class="row">
+		 		 <div class="col-sm-9 col-md-9">
+	             			<div class="form-group-inner">
+								<ol class="breadcrumb">
+									<li><a href="demo.html">Componentes estáticos para APPS</a>
+										</li>
+									<li class="active">Listado de elementos</li>
+								</ol>
+								<h3 id="page-subtitle" class="content-title">Listado de elementos</h3>
+
+	             				<h3 id="pagination-title" class="content-title emphasized">Listado de elementos</h3>
+	             				<div class="form-group-inner form-group">
+									<div class="widget-container widget-container-hpattern-4-4">
+										<div class="widget-container-header">
+											Cabecera que generará el contenedor
+										</div>
+										<div class="widget-container-body-and-footer widget-container-body-and-footer-vpattern-3-4">
+											<iframe src="demo_apps05_widget01.html" class="widget-container-iframe widget-container-iframe-hpattern-4-4 widget-container-iframe-vpattern-3-4" frameborder="0">
+												Navegador sin soporte a iFrames
+											</iframe>
+										</div>
+									</div>
+								</div>
+
+			                    <div class="form-group-inner">	 
+		                       		<p>
+		                       		Para hacer aparecer un listado de elementos crearemos un <code>DIV</code> con clases <code>widget-container</code> y <code>items-list</code>.
+									Las elementos de las filas del listado se definen dentro de este <code>DIV</code> utilizando los tags estándar <code>&lt;ul&gt;</code> y
+									<code>&lt;li&gt;</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Cada fila del listado contiene texto dentro de un <code>&lt;span&gt;</code>, bien con peso regular
+									o en negrita. Para hacer aparecer la negrita asignaremos al &lt;span&gt; clase <code>bold-type</code>.
+		                       		</p>
+		                       		<p>
+									<i class="icono-bullet-fletxa-gran"></i> Opcionalmente puede mostrarse un icono a la izquierda en cada fila.
+		                       		</p>
+									<i class="icono-bullet-fletxa-gran"></i> En algunos casos puede ser necesario habilitar a la derecha de cada fila un desplegable.
+									Procederemos de manera similar a la explicada en la página <a href="docu_demo_apps03.html" data-original-title="">Enlace con desplegable de selección única</a>, pero en lugar de aplicarlos sobre un <code>DIV</code>, lo
+									aplicaremos sobre un tag <code>i</code>. A este tag le asignaremos dos clases, <code>icono-desplegable-simple-gran</code> y
+									<code>items-list-dropdown</code>. Además, en su atributo <code>data-dir</code> indicaremos valor <code>h</code>.
+		                       		<p></p>
+									
+<pre><code>
+&lt;div class="widget-control-group-content"&gt;
+	&lt;div class="widget-container items-list"&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;i class="icono-ico-envelope items-list-icon"&gt;&lt;/i&gt;
+				&lt;span class="bold-type"&gt;Las notas recibidas se resaltan en negrita, y se les asigna el icono de sobre.&lt;/span&gt;
+				&lt;i class="icono-desplegable-simple-gran items-list-dropdown" data-flexmenu="flexmenu2" data-dir="h"&gt;&lt;/i&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;i class="icono-ico-red items-list-icon"&gt;&lt;/i&gt;
+				&lt;span&gt;El estilo tipográfico de las notas una vez leídas es regular&lt;/span&gt;
+				&lt;i class="icono-desplegable-simple-gran items-list-dropdown" data-flexmenu="flexmenu2" data-dir="h"&gt;&lt;/i&gt;
+			&lt;/li&gt;	
+			&lt;li&gt;
+				&lt;i class="icono-ico-blue items-list-icon"&gt;&lt;/i&gt;
+				&lt;span&gt;&lt;i class="icono-bullet-alerta"&gt;&lt;/i&gt; La nota puede ir precedida de un icono alerta&lt;/span&gt;
+				&lt;i class="icono-desplegable-simple-gran items-list-dropdown" data-flexmenu="flexmenu2" data-dir="h"&gt;&lt;/i&gt;
+			&lt;/li&gt;				
+			&lt;li&gt;
+				&lt;i class="icono-ico-yellow items-list-icon"&gt;&lt;/i&gt;
+				&lt;span&gt;Ejemplo de nota con asignación de color/etiqueta&lt;/span&gt;
+				&lt;i class="icono-desplegable-simple-gran items-list-dropdown" data-flexmenu="flexmenu2" data-dir="h"&gt;&lt;/i&gt;
+			&lt;/li&gt;				
+			&lt;li&gt;
+				&lt;i class="icono-ico-violet items-list-icon"&gt;&lt;/i&gt;
+				&lt;span&gt;&lt;a href="#"&gt;Ejemplo de nota enlazable&lt;/a&gt;&lt;/span&gt;
+				&lt;i class="icono-desplegable-simple-gran items-list-dropdown" data-flexmenu="flexmenu2" data-dir="h"&gt;&lt;/i&gt;
+			&lt;/li&gt;				
+		&lt;/ul&gt;
+		&lt;ul id="flexmenu2" class="flexdropdownmenu"&gt;
+			&lt;li&gt;&lt;span&gt;Abrir nota&lt;/span&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;Eliminar...&lt;/span&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;Modificar...&lt;/span&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;Enviar nota...&lt;/span&gt;&lt;/li&gt;
+			&lt;li class="line"&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;Assignar:&lt;/span&gt;&lt;/li&gt;
+			&lt;li class="submenu"&gt;&lt;i class="icono-ico-unassigned_c"&gt;&lt;/i&gt;&lt;span&gt;Sin categoria (1)&lt;/span&gt;&lt;/li&gt;
+			&lt;li class="submenu"&gt;&lt;i class="icono-ico-yellow"&gt;&lt;/i&gt;Personal (5)&lt;/li&gt;
+			&lt;li class="submenu"&gt;&lt;i class="icono-ico-blue"&gt;&lt;/i&gt;Clientes (1)&lt;/li&gt;
+			&lt;li class="submenu"&gt;&lt;i class="icono-ico-green"&gt;&lt;/i&gt;Notarios (3)&lt;/li&gt;
+			&lt;li class="submenu bold-type"&gt;&lt;i class="icono-ico-red"&gt;&lt;/i&gt;Urgente (2)&lt;/li&gt;
+			&lt;li class="submenu bold-type"&gt;&lt;i class="icono-ico-envelope"&gt;&lt;/i&gt;Recibidas (1)&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+		                       		<p>
+		                       		Para que se aplique el comportamiento dinámico será necesario incorporar al cerrar el <code>body</code> de la página los ficheros javascript siguientes:
+		                       		</p>
+<pre><code>
+...
+&lt;/body&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/jquery/1.8.2/jquery-1.8.2.min.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="components/flexdropdown/1.0_custom/flexdropdown.js"/&gt;
+&lt;absiscloud:static type="script" source="absiscloud" path="js/acstatic-apps.js"/&gt;
+</code></pre>
+								</div>
+
+							</div>
+				</div>
+
+				<!-- Menu -->
+		     	<div id="menu-apps-docu-right" class="col-sm-3 col-md-3"></div>
+  		  </div>
+  		  </div><!--/row-->
+		</div><!--/ .content-->
+	
+   	<div class="footer">
+		<hr>
+			@ "la Caixa", Barcelona 2012. Todos los derechos reservados. <br> 
+			<a>lacaixa.es</a> | <a>ABSIS Cloud</a>| <a>ACStatic</a> | <a>La Caixa</a>
+	</div>       
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/fwk/components/jquery/1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="../../static/fwk/components/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="../../static/fwk/components/datatable/1.9.4/js/jquery.dataTables.js"></script>
+	<script src="../../static/fwk/js/acstatic2/acstatic.js"></script>
+	<script src="menu.js"></script>
+	<script type="text/javascript" src="/static/fwk/components/bootstrap-respond/respond.min.js"></script>
+
+  
+</div></body></html>
