@@ -3,6 +3,7 @@
 import sys
 sys.path.append('Templates')
 import properties as p
+<<<<<<< HEAD
 import POJOtpl,MYBATIStpl,DAOtpl,SERVICEtpl, SERVICEIMPLtpl
 import pystache
 import os, errno
@@ -47,3 +48,11 @@ print pystache.render(tp,p.properties)
 f = open(fpath+p.properties['ProcessName']+'Service.java','w')
 f.write(pystache.render(tp,p.properties))
 f.close()
+=======
+import POJOtpl
+import pystache
+
+
+tp = POJOtpl.tpl()
+print pystache.render(tp,p.properties)
+>>>>>>> 68c78678e338c77b2ca13686ce4ef807515e9b4c

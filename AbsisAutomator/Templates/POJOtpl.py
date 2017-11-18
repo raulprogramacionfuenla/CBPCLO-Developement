@@ -6,6 +6,10 @@ import properties
 import pystache
 def tpl():
     template = u'''
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68c78678e338c77b2ca13686ce4ef807515e9b4c
 package es.lacaixa.absiscloud.{{ProjectName}}.common.domain;
 import java.io.Serializable;
 /**
@@ -39,6 +43,13 @@ class {{ProcessName}}POJO implements Serializable{
         System.out.println("{{name}} =>" + this.{{name}});
     {{/Model}}
 	  }
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 68c78678e338c77b2ca13686ce4ef807515e9b4c
 }
 '''
     return template
