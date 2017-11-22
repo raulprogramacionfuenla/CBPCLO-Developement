@@ -2,13 +2,12 @@
 package es.lacaixa.absiscloud.cbpclo.common.domain;
 import java.io.Serializable;
 /**
- * POJO de transferencia del proceso ControlesModificar
+ * DTO de transferencia del controlador a la pantalla del proceso
+ * ControlesModificar.
  * @author aperisza
- *
- */
-class ControlesModificarPOJO implements Serializable{
+ **/
+class ControlesModificarOutDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
-
     //Variables
         private int id_control;
         private int id_tipus_control;
@@ -30,112 +29,96 @@ class ControlesModificarPOJO implements Serializable{
         public void int setid_control(int id_control){
             this.id_control = id_control;
         }
-
         public int getid_control(){
             return this.id_control;
         }
         public void int setid_tipus_control(int id_tipus_control){
             this.id_tipus_control = id_tipus_control;
         }
-
         public int getid_tipus_control(){
             return this.id_tipus_control;
         }
         public void String setclase_control_ES(String clase_control_ES){
             this.clase_control_ES = clase_control_ES;
         }
-
         public String getclase_control_ES(){
             return this.clase_control_ES;
         }
         public void String setdesc_control_CA(String desc_control_CA){
             this.desc_control_CA = desc_control_CA;
         }
-
         public String getdesc_control_CA(){
             return this.desc_control_CA;
         }
         public void String setdesc_control_ES(String desc_control_ES){
             this.desc_control_ES = desc_control_ES;
         }
-
         public String getdesc_control_ES(){
             return this.desc_control_ES;
         }
         public void String setfactorRisc(String factorRisc){
             this.factorRisc = factorRisc;
         }
-
         public String getfactorRisc(){
             return this.factorRisc;
         }
         public void String setdescripcioIncompliment_CA(String descripcioIncompliment_CA){
             this.descripcioIncompliment_CA = descripcioIncompliment_CA;
         }
-
         public String getdescripcioIncompliment_CA(){
             return this.descripcioIncompliment_CA;
         }
         public void String setdescripcioIncompliment_ES(String descripcioIncompliment_ES){
             this.descripcioIncompliment_ES = descripcioIncompliment_ES;
         }
-
         public String getdescripcioIncompliment_ES(){
             return this.descripcioIncompliment_ES;
         }
         public void String setdataAlta(String dataAlta){
             this.dataAlta = dataAlta;
         }
-
         public String getdataAlta(){
             return this.dataAlta;
         }
         public void String setdataBaixa(String dataBaixa){
             this.dataBaixa = dataBaixa;
         }
-
         public String getdataBaixa(){
             return this.dataBaixa;
         }
         public void String setdataModif(String dataModif){
             this.dataModif = dataModif;
         }
-
         public String getdataModif(){
             return this.dataModif;
         }
         public void String setdataIniciVigencia(String dataIniciVigencia){
             this.dataIniciVigencia = dataIniciVigencia;
         }
-
         public String getdataIniciVigencia(){
             return this.dataIniciVigencia;
         }
         public void String setvidas(String vidas){
             this.vidas = vidas;
         }
-
         public String getvidas(){
             return this.vidas;
         }
         public void String setclasseJava(String classeJava){
             this.classeJava = classeJava;
         }
-
         public String getclasseJava(){
             return this.classeJava;
         }
         public void String setclase_control_CA(String clase_control_CA){
             this.clase_control_CA = clase_control_CA;
         }
-
         public String getclase_control_CA(){
             return this.clase_control_CA;
         }
 
     //Show: Mustra la información contenida en la estructura:
     public void show() {
-
         System.out.println(" -------------  ControlesModificar ");
         System.out.println("id_control =>" + this.id_control);
         System.out.println("id_tipus_control =>" + this.id_tipus_control);

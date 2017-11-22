@@ -9,36 +9,33 @@ def tpl():
 package es.lacaixa.absiscloud.{{ProjectName}}.common.domain;
 import java.io.Serializable;
 /**
- * POJO de transferencia del proceso {{ProcessName}}
- * @author aperisza
- *
- */
-class {{ProcessName}}POJO implements Serializable{
+ * DTO de transferencia del controlador a la pantalla del proceso
+ * {{ProcessName}}.
+ * @author {{Author}}
+ **/
+class {{ProcessName}}OutDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
-
     //Variables
-    {{#Model}}
+    {{#OutDTO}}
         private {{type}} {{name}};
-    {{/Model}}
+    {{/OutDTO}}
 
     //Getters/Setters
-    {{#Model}}
+    {{#OutDTO}}
         public void {{type}} set{{name}}({{type}} {{name}}){
             this.{{name}} = {{name}};
         }
-
         public {{type}} get{{name}}(){
             return this.{{name}};
         }
-    {{/Model}}
+    {{/OutDTO}}
 
     //Show: Mustra la información contenida en la estructura:
     public void show() {
-
         System.out.println(" -------------  {{ProcessName}} ");
-    {{#Model}}
+    {{#OutDTO}}
         System.out.println("{{name}} =>" + this.{{name}});
-    {{/Model}}
+    {{/OutDTO}}
 	  }
 }
 '''

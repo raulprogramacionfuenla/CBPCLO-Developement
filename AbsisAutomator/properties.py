@@ -1,9 +1,9 @@
 properties={
   "ProjectName":"cbpclo",
   "Author":"aperisza",
-<<<<<<< HEAD
   "tableName":"control",
   "ProcessName":"ControlesModificar",
+  "DataTable":"false",
   "Model":[
     {"name":"id_control","type":"int"},
     {"name":"id_tipus_control","type":"int"},
@@ -20,14 +20,39 @@ properties={
     {"name":"vidas","type":"String"},
     {"name":"classeJava","type":"String"},
     {"name":"clase_control_CA","type":"String"}
-=======
-  "tableName":"pepe",
-  "ProcessName":"pepe",
-  "Model":[
-    {"name":"Nombre","type":"String"},
-    {"name":"Apellido","type":"String"},
-    {"name":"Edad","type":"int"},
-    {"name":"Fecha","type":"String"}
->>>>>>> 68c78678e338c77b2ca13686ce4ef807515e9b4c
-  ]
+  ],
+  "InDTO":[
+    {"name":"id_control","type":"int"},
+    {"name":"id_tipus_control","type":"int"},
+    {"name":"clase_control_ES","type":"String"},
+    {"name":"desc_control_CA","type":"String"},
+    {"name":"desc_control_ES","type":"String"},
+    {"name":"factorRisc","type":"String"},
+    {"name":"descripcioIncompliment_CA","type":"String"},
+    {"name":"descripcioIncompliment_ES","type":"String"},
+    {"name":"dataAlta","type":"String"},
+    {"name":"dataBaixa","type":"String"},
+    {"name":"dataModif","type":"String"},
+    {"name":"dataIniciVigencia","type":"String"},
+    {"name":"vidas","type":"String"},
+    {"name":"classeJava","type":"String"},
+    {"name":"clase_control_CA","type":"String"}
+  ],
+    "OutDTO":[
+      {"name":"id_control","type":"int"},
+      {"name":"id_tipus_control","type":"int"},
+      {"name":"clase_control_ES","type":"String"},
+      {"name":"desc_control_CA","type":"String"},
+      {"name":"desc_control_ES","type":"String"},
+      {"name":"factorRisc","type":"String"},
+      {"name":"descripcioIncompliment_CA","type":"String"},
+      {"name":"descripcioIncompliment_ES","type":"String"},
+      {"name":"dataAlta","type":"String"},
+      {"name":"dataBaixa","type":"String"},
+      {"name":"dataModif","type":"String"},
+      {"name":"dataIniciVigencia","type":"String"},
+      {"name":"vidas","type":"String"},
+      {"name":"classeJava","type":"String"},
+      {"name":"clase_control_CA","type":"String"}
+    ]
 }

@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `constantes` (
   ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `resultat_x_component_des` (
-  `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
+  `id_resultat` int(11) NOT NULL,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_des` (
 
 
 CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
-  `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
+  `id_resultat` int(11) NOT NULL,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro` (
 
 
 CREATE TABLE IF NOT EXISTS `resultat_x_component_des_historic` (
-  `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
+  `id_resultat` int(11) NOT NULL,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
@@ -85,7 +85,7 @@ UNIQUE KEY `ComponentVersioDataVersio` (`component`,`versio`,`dataFont`,`dataPro
 
 
 CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
-  `id_resultat` int(11) NOT NULL AUTO_INCREMENT,
+  `id_resultat` int(11) NOT NULL,
   `id_tipus_comp` int(11) DEFAULT NULL,
   `component` varchar(45) DEFAULT NULL,
   `apl_agrup` varchar(45) DEFAULT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `resultat_x_component_pro_historic` (
 
 
 CREATE TABLE IF NOT EXISTS `incompliments` (
-  `id_incompliments` INT NOT NULL AUTO_INCREMENT,
+  `id_incompliments` INT NOT NULL,
   `id_resultat` INT NULL,
   `id_control` INT NULL,
   `sentenciaAfectada` VARCHAR(500) NULL,
@@ -258,7 +258,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `germanar` (
-  `id_germanar` INT NOT NULL,
+  `id_germanar` INT NOT NULL  AUTO_INCREMENT,
   `germanar` VARCHAR(200) NULL,
   `dataAlta` DATE NULL,
   `dataBaixa` DATE NULL,
@@ -268,7 +268,7 @@ ENGINE = InnoDB;
 
 
 CREATE TABLE IF NOT EXISTS `regles_bloqueig` (
-  `id_regla` INT NOT NULL,
+  `id_regla` INT NOT NULL  AUTO_INCREMENT,
   `fr_Desde` INT NULL,
   `fr_fins` INT NULL,
   `numIncompliments` INT NULL,
@@ -280,6 +280,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `aplicacions_obsoletes` (
   `id_apl_obs` INT NOT NULL,
   `aplicacio` VARCHAR(45) NULL,
+   `modulo` VARCHAR(16) NULL,
   PRIMARY KEY (`id_apl_obs`))
 ENGINE = InnoDB;
 

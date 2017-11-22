@@ -18,8 +18,6 @@ import java.util.Locale;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,43 +29,32 @@ import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudController;
 import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudControllerMethod;
 
 /**
- * Controlador de {{ProcessName}}
+ * Controlador principal del proceso {{ProcessName}}
  * @author {{Author}}
  *
- */
+*/
 @Controller
 @RequestMapping(value ="/{{ProcessName}}")
-@AbsisCloudController(absisId ="home")
-public class InformesAPeticionController extends BaseController{
-	//http://localhost:8080/informes/informeEspecifico
-	private final Logger logger = LoggerFactory.getLogger(InformesAPeticionController.class);
+@AbsisCloudController(absisId ="{{ProcessName}}")
+public class {{ProcessName}}Controller extends BaseController{
+
+    /**
+	* Función de principal de controlador de {{ProcessName}}
+    * Usar para un HTTP GET
+    *
+    * @param request HttpServletRequest
+	* @param model Model
+	* @param locale Locale
+	* @return string String
+	* @throws Exception
+	*/
+	@RequestMapping(value = "/{{ProcessName}}")
+	@AbsisCloudControllerMethod(absisId = "{{ProcessName}}Id")
+	public String {{ProcessName}}MainScreen(HttpServletRequest request, Locale locale, Model model) throws Exception{
+		return "{{ProcessName}}";
+	}//End inter Host
 
 
-
-	/*============================
-	 * Pantalla formularios
-	 ============================*/
-	@Autowired
-	private CBPFastQueryService fastQuery;
-	/**
-	 * Se emplea para agilizar consultas
-	 * @param sql
-	 * @return
-	 * @throws Exception
-	 */
-	private String queryHandler(String sql, String field) throws Exception{
-		/*-- Lo vamos cargando en un hashmap --*/
-		List<HashMap<String,String>> lista = new ArrayList<HashMap<String,String>>();
-		lista = fastQuery.makeQuery(sql);
-
-		try{
-			System.out.println("\n\n Resultado de la query: " + lista.get(0).get(field));
-		}catch(Exception e){
-			System.out.println("Error de casting");
-		}
-
-
-		return lista.get(0).get(field);
-	}
+}//End of class
 '''
     return tpl
