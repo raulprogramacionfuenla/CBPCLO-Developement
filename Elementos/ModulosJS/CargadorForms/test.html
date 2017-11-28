@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <b>Nombre:</b><input  id="nombre" type="text" name="" value="">
+    <b>Apellido:</b> <input id="apellido" type="text" name="" value="">
+    <br>
+    <b>Sexo:</b>
+    <input type="radio" name="sexo" id="hombre" value="Hombre">Hombre
+    <input type="radio" name="sexo" id="mujer" value="Mujer">Mujer
+    <input type="radio" name="sexo" id="perro" value="Perro">Perro
+    <br>
+
+    <b>Vehículo</b><select id="vehiculo" class="option" name="options">
+        <option value="" id="coche">Coche</option>
+        <option value="" id="moto">Moto</option>
+        <option value="" id="avion">Avión</option>
+    </select>
+    <br>
+    <b>Descuentos</b>
+    <input type="checkbox" id="visa" name="name"> Visa
+    <input type="checkbox" id="descuentos" name="name"> Descuentos Plus
+    <br>
+  </body>
+</html>
+
+<script src="formloader.js"></script>
+<script type="text/javascript">
+    /*Ejemplo*/
+    $(document).ready(function() {
+    $('body').formloader([{
+            type:"input",
+            target:"#nombre", //id /class
+            value: "pepe" //valor literal
+        },
+        {
+              type:"select",
+              target:"#vehiculo", //id /class
+              value: "moto" //option id
+        },
+        {
+              type: "radio",
+              target:"sexo", //name
+              value: "mujer" //id
+        },
+        {
+              type: "checkbox",
+              target:"#visa", //id /class
+              value: true // true -> checked false ´-> no checked
+        }
+   ]);
+
+ });
+</script>
