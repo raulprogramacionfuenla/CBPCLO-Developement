@@ -9,7 +9,7 @@ $(document).ready(function(){
 	//Añadimos el símbolo de información a todos los tooltips:
 	$('.Toolinfo').html('ℹ');
 
-
+	
 		$(".Toolinfo").hover(function(e) {
 			//Tomamos el id
 			var id = $(this).attr("id");

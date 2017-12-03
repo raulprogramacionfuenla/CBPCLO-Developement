@@ -1,0 +1,86 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="es.lacaixa.absiscloud.cbpclo.business.dao.ControlesModificarDao">
+
+    <select id="SelectProcess" resultType="String" >
+        SELECT
+            id_control,
+            id_tipus_control,
+            clase_control_ES,
+            desc_control_CA,
+            desc_control_ES,
+            factorRisc,
+            descripcioIncompliment_CA,
+            descripcioIncompliment_ES,
+            dataAlta,
+            dataBaixa,
+            dataModif,
+            dataIniciVigencia,
+            vidas,
+            classeJava,
+            clase_control_CA,
+        FROM
+            control
+    </select>
+
+    <insert id="InsertProcess" parameterType="ControlesModificarPOJO">
+		INSERT INTO 
+		(
+            id_control,
+            id_tipus_control,
+            clase_control_ES,
+            desc_control_CA,
+            desc_control_ES,
+            factorRisc,
+            descripcioIncompliment_CA,
+            descripcioIncompliment_ES,
+            dataAlta,
+            dataBaixa,
+            dataModif,
+            dataIniciVigencia,
+            vidas,
+            classeJava,
+            clase_control_CA,
+        )
+        VALUES(
+            ${ id_control },
+            ${ id_tipus_control },
+            ${ clase_control_ES },
+            ${ desc_control_CA },
+            ${ desc_control_ES },
+            ${ factorRisc },
+            ${ descripcioIncompliment_CA },
+            ${ descripcioIncompliment_ES },
+            ${ dataAlta },
+            ${ dataBaixa },
+            ${ dataModif },
+            ${ dataIniciVigencia },
+            ${ vidas },
+            ${ classeJava },
+            ${ clase_control_CA },
+        )
+	</insert>
+
+        <update id="UpdateProcess">
+            UPDATE control SET
+                     id_control = #id_control,
+                     id_tipus_control = #id_tipus_control,
+                     clase_control_ES = #clase_control_ES,
+                     desc_control_CA = #desc_control_CA,
+                     desc_control_ES = #desc_control_ES,
+                     factorRisc = #factorRisc,
+                     descripcioIncompliment_CA = #descripcioIncompliment_CA,
+                     descripcioIncompliment_ES = #descripcioIncompliment_ES,
+                     dataAlta = #dataAlta,
+                     dataBaixa = #dataBaixa,
+                     dataModif = #dataModif,
+                     dataIniciVigencia = #dataIniciVigencia,
+                     vidas = #vidas,
+                     classeJava = #classeJava,
+                     clase_control_CA = #clase_control_CA,
+             WHERE id = id
+        </update>
+
+</mapper>

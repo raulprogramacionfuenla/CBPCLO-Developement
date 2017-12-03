@@ -1,0 +1,1 @@
+Raíz para los contenidos estáticos de la aplicación que sean ficheros de javascript.

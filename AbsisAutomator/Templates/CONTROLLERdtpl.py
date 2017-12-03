@@ -7,7 +7,7 @@ import pystache
 def tpl():
     template = u'''
 package es.lacaixa.absiscloud.{{ProjectName}}.web.controller;
-import java.text.DateFormat;
+import java.text.DateFormat;S
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,7 +29,7 @@ import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudController;
 import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudControllerMethod;
 
 /**
- * Controlador principal del proceso {{ProcessName}}
+ * Controlador principal del proceso {{ProjectName}}
  * @author {{Author}}
  *
 */
@@ -37,11 +37,9 @@ import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudControllerM
 @RequestMapping(value ="/{{ProcessName}}")
 @AbsisCloudController(absisId ="{{ProcessName}}")
 public class {{ProcessName}}Controller extends BaseController{
-
     /**
 	* Función de principal de controlador de {{ProcessName}}
     * Usar para un HTTP GET
-    *
     * @param request HttpServletRequest
 	* @param model Model
 	* @param locale Locale
@@ -53,7 +51,6 @@ public class {{ProcessName}}Controller extends BaseController{
 	public String {{ProcessName}}MainScreen(HttpServletRequest request, Locale locale, Model model) throws Exception{
 		return "{{ProcessName}}";
 	}//End inter Host
-
 
 }//End of class
 '''
