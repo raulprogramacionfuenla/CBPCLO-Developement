@@ -1,0 +1,5 @@
+exiftool -creatortool= -software= block.png
+
+exiftool -creatortool= -software= checklist.png
+
+exiftool -creatortool= -software= comp.png
