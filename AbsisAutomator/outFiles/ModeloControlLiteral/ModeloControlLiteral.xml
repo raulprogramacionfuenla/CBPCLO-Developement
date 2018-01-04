@@ -29,22 +29,21 @@
     </select>
 
     <insert id="InsertProcess" parameterType="ModeloControlLiteralInPOJO">
-		INSERT INTO 
-		(
+		INSERT INTO (
             expresioRegular,
             ordre,
             id_control_literal,
             descripcio,
             id_control,
             tipo_accion,
-        )
-        VALUES(
-            ${ expresioRegular },
-            ${ ordre },
-            ${ id_control_literal },
-            ${ descripcio },
-            ${ id_control },
-            ${ tipo_accion },
+
+        )VALUES(
+            '${ expresioRegular }',
+            '${ ordre }',
+            '${ id_control_literal }',
+            '${ descripcio }',
+            '${ id_control }',
+            '${ tipo_accion }',
         )
 	</insert>
 

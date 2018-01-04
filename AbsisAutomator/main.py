@@ -4,7 +4,7 @@ import sys
 sys.path.append('Templates')
 import properties as p
 import  CONTROLLERdtpl
-import POJOtpl,MYBATIStpl,DAOtpl,SERVICEtpl, SERVICEIMPLtpl,DTOIntpl, DTOOuttpl,JSPtpl
+import POJOtpl,MYBATIStpl,DAOtpl,SERVICEtpl, SERVICEIMPLtpl,DTOIntpl, DTOOuttpl,JSPtpl,Utilities,POJOIn,Beantpl
 import pystache
 import os, errno
 reload(sys)
@@ -65,17 +65,23 @@ f = open(fpath+p.properties['ProcessName']+'OutDTO.java','w')
 f.write(pystache.render(tp,p.properties))
 f.close()
 
-
-
-#...-> Creación de la jsp <----
-tp = JSPtpl.tpl()
-f = open(fpath+p.properties['ProcessName']+'.jsp','w')
+#...-> Creación del DTOOut <----
+tp = POJOIn.tpl()
+#print pystache.render(tp,p.properties)
+f = open(fpath+p.properties['ProcessName']+'InPOJO.java','w')
 f.write(pystache.render(tp,p.properties))
 f.close()
 
-#<-...-> Creación del Controlador <----
-tp = CONTROLLERdtpl.tpl()
-#f = open(fpath+p.properties['ProcessName']+'Controller.java','w')
-print pystache.render(tp,p.properties)
+#...-> Creación del DTOOut <----
+tp = Utilities.tpl()
+#print pystache.render(tp,p.properties)
+f = open(fpath+p.properties['ProcessName']+'Doc.md','w')
+f.write(pystache.render(tp,p.properties))
+f.close()
+
+#...-> Creación del DTOOut <----
+tp = Beantpl.tpl()
+#print pystache.render(tp,p.properties)
+f = open(fpath+p.properties['ProcessName']+'Bean.java','w')
 f.write(pystache.render(tp,p.properties))
 f.close()
