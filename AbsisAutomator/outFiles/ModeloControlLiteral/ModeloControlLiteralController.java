@@ -1,12 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-import sys
-sys.path.append('../')
-import properties
-import pystache
-def tpl():
-    template = u'''
-package es.lacaixa.absiscloud.{{ProjectName}}.web.controller;
+
+package es.lacaixa.absiscloud.cbpclo.web.controller;
 import java.text.DateFormat;S
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -23,22 +16,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import es.lacaixa.absiscloud.{{ProjectName}}.common.service.{{ProcessName}}Service;
+import es.lacaixa.absiscloud.cbpclo.common.service.ModeloControlLiteralService;
 
 import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudController;
 import es.lacaixa.absiscloud.fwk.web.controller.annotation.AbsisCloudControllerMethod;
 
 /**
- * Controlador principal del proceso {{ProjectName}}
- * @author {{Author}}
+ * Controlador principal del proceso cbpclo
+ * @author aperisza
  *
 */
 @Controller
-@RequestMapping(value ="/{{ProcessName}}")
-@AbsisCloudController(absisId ="{{ProcessName}}")
-public class {{ProcessName}}Controller extends BaseController{
+@RequestMapping(value ="/ModeloControlLiteral")
+@AbsisCloudController(absisId ="ModeloControlLiteral")
+public class ModeloControlLiteralController extends BaseController{
     /**
-	* Función de principal de controlador de {{ProcessName}}
+	* Función de principal de controlador de ModeloControlLiteral
     * Usar para un HTTP GET
     * @param request HttpServletRequest
 	* @param model Model
@@ -46,12 +39,10 @@ public class {{ProcessName}}Controller extends BaseController{
 	* @return string String
 	* @throws Exception
 	*/
-	@RequestMapping(value = "/{{ProcessName}}")
-	@AbsisCloudControllerMethod(absisId = "{{ProcessName}}Id")
-	public String {{ProcessName}}MainScreen(HttpServletRequest request, Locale locale, Model model) throws Exception{
-		return "{{ProcessName}}";
+	@RequestMapping(value = "/ModeloControlLiteral")
+	@AbsisCloudControllerMethod(absisId = "ModeloControlLiteralId")
+	public String ModeloControlLiteralMainScreen(HttpServletRequest request, Locale locale, Model model) throws Exception{
+		return "ModeloControlLiteral";
 	}//End inter Host
 
 }//End of class
-'''
-    return template

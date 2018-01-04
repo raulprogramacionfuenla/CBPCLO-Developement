@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="es.lacaixa.absiscloud.cbpclo.business.dao.ModeloControlLiteralDao">
+
+    <select id="SelectProcess" resultType="ModeloControlLiteralPOJO" >
+        SELECT
+            expresioRegular,
+            ordre,
+            id_control_literal,
+            descripcio,
+            id_control,
+            tipo_accion,
+        FROM
+            control_literal
+    </select>
+
+    <select id="SelectById" resultType="ModeloControlLiteralPOJO">
+        SELECT
+            expresioRegular,
+            ordre,
+            id_control_literal,
+            descripcio,
+            id_control,
+            tipo_accion,
+        FROM
+            control_literal
+        WHERE id_control_literal = ${id}
+    </select>
+
+    <insert id="InsertProcess" parameterType="ModeloControlLiteralInPOJO">
+		INSERT INTO 
+		(
+            expresioRegular,
+            ordre,
+            id_control_literal,
+            descripcio,
+            id_control,
+            tipo_accion,
+        )
+        VALUES(
+            ${ expresioRegular },
+            ${ ordre },
+            ${ id_control_literal },
+            ${ descripcio },
+            ${ id_control },
+            ${ tipo_accion },
+        )
+	</insert>
+
+    <update id="UpdateProcess" parameterType="ModeloControlLiteralInPOJO">
+        UPDATE control_literal SET
+                     expresioRegular = ${ expresioRegular },
+                     ordre = ${ ordre },
+                     id_control_literal = ${ id_control_literal },
+                     descripcio = ${ descripcio },
+                     id_control = ${ id_control },
+                     tipo_accion = ${ tipo_accion },
+        WHERE id_control_literal = ${ id_control_literal }
+    </update>
+
+</mapper>

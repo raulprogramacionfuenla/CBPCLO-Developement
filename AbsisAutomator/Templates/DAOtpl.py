@@ -11,34 +11,41 @@ package es.lacaixa.absiscloud.{{ProjectName}}.business.dao;
 import java.util.List;
 
 import es.lacaixa.absiscloud.{{ProjectName}}.common.domain.{{ProcessName}}InPOJO;
-import es.lacaixa.absiscloud.{{ProjectName}}.common.domain.{{ProcessName}}OutPOJO;
+import es.lacaixa.absiscloud.{{ProjectName}}.common.domain.{{ProcessName}}POJO;
 
 /**
  * [--- DAO ---]
  * DAO  del proceso {{ProcessName}}
  * @author {{Author}}
- *
  */
 public interface {{ProcessName}}Dao{
 	/**
 	* Realiza el SELECT a base de datos
-	* @param POJOin CBPBusquedaDinamicaInPOJO
-	* @return List<{{ProcessName}}OutPOJO>
+	* @param POJOin{{ProcessName}}InPOJO
+	* @return List<{{ProcessName}}POJO>
 	*/
-	List<{{ProcessName}}OutPOJO> SelectProcess({{ProcessName}}InPOJO POJOin);
+	List<{{ProcessName}}POJO> SelectProcess();
+
+    /**
+    * Realiza el SELECT de un elemento por id de la base de datos
+    * @param id int
+    * @return {{ProcessName}}POJO
+    */
+    {{ProcessName}}POJO SelectById(int id);
 
     /**
 	* Realiza el INSERT a base de datos
-	* @param POJOin CBPBusquedaDinamicaInPOJO
+	* @param POJOin {{ProcessName}}InPOJO
+    * @return Integer
 	*/
-	void InsertProcess({{ProcessName}}InPOJO POJOin);
+	Integer InsertProcess({{ProcessName}}InPOJO POJOin);
 
     /**
-    * Realiza el UPDATE a base de datos
-	* @param POJOin CBPBusquedaDinamicaInPOJO
-	*/
-	void UpdateProcess({{ProcessName}}InPOJO POJOin);
-
+    * Realiza el UPDATE de un registro de la tabla en la base de datos
+	* @param POJOin ({{ProcessName}}InPOJO
+    * @return Integer
+    */
+	Integer void UpdateProcess({{ProcessName}}InPOJO POJOin);
 
 }'''
     return template

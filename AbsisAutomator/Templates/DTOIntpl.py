@@ -36,7 +36,7 @@ class {{ProcessName}}InDTO implements Serializable{
     {{#InDTO}}
         System.out.println("{{name}} =>" + this.{{name}});
     {{/InDTO}}
-	  }
+	 }
 }
 '''
     return template

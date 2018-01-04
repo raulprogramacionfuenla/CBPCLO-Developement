@@ -19,37 +19,78 @@ import es.lacaixa.absiscloud.{{ProjectName}}.business.dao.{{ProcessName}}Dao;
 import es.lacaixa.absiscloud.{{ProjectName}}.common.domain.{{ProcessName}}Bean;
 import es.lacaixa.absiscloud.{{ProjectName}}.common.domain.{{ProcessName}}InPOJO;
 import es.lacaixa.absiscloud.{{ProjectName}}.common.service.{{ProcessName}}Service;
+import es.lacaixa.absiscloud.{{ProjectName}}.common.domain.{{ProcessName}}POJO;
 
 /**
  * Service Implement de {{ProcessName}}
  * @author {{Author}}
  */
 @Service
-public class {{ProcessName}}ServiceImpl implements {{ProcessName}}DinamicaService {
+public class {{ProcessName}}ServiceImpl implements {{ProcessName}}Service {
 
 	private {{ProcessName}}Dao formDao;
 
 	@Autowired
-	public void setDao(final CBPBusquedaDinamicaDao formDAO){
+	public void setDao(final {{ProcessName}}Dao formDAO){
 		this.formDao = formDAO;
 	}
 
 	@Override
-	public List<{{ProcessName}}OutPOJO> SELECTProcess({{ProcessName}}Bean BeanEntrada) throws Exception{
-        List<String> formPojo = new ArrayList<String>();
-
-		{{ProcessName}}InPOJO tmpPojo = BeanEntrada.getPojoIn();
-
-		System.out.println("Esto Llega Bean de {{ProcessName}}: " + BeanEntrada.getPojoIn().toString());
-
+	public {{ProcessName}}Bean SELECTProcess() throws Exception{
+        List<{{ProcessName}}POJO> formPojo = new ArrayList<{{ProcessName}}POJO>();
+        {{ProcessName}}Bean bin = new {{ProcessName}}Bean();
 		try{
-			formPojo = formDao.SelectProcess(tmpPojo);
+			formPojo = formDao.SelectProcess();
+            bin.setPojoOut(formPojo);
 		}catch(Exception ex){
-			System.out.println("Error en el formación del Dao de {{ProcessName}}");
+			System.out.println("Error en el formación del Dao de {{ProcessName}} en el SELECT");
 			throw ex;
 		}
-		return formPojo;
+		return bin;
 	}//End getEntradas
 
+    @Override
+	public Integer InsertProcess({{ProcessName}}Bean BeanEntrada)  throws Exception{
+        {{ProcessName}}InPOJO tmpPojo = BeanEntrada.getPojoIn();
+        try{
+			formDao.InsertProcess(tmpPojo);
+
+		}catch(Exception ex){
+			System.out.println("Error en el formación del Dao de {{ProcessName}} en el INSERT");
+			throw ex;
+		}
+        return 0;
+	}//End getEntradas
+
+    @Override
+	public Integer UpdateProcess({{ProcessName}}Bean BeanEntrada)  throws Exception{
+        {{ProcessName}}InPOJO tmpPojo = BeanEntrada.getPojoIn();
+        try{
+			formDao.UpdateProcess(tmpPojo);
+		}catch(Exception ex){
+			System.out.println("Error en el formación del Dao de {{ProcessName}} en el UPDATE");
+			throw ex;
+		}
+        return 0;
+	}//End getEntradas
+
+    @Override
+    public {{ProcessName}}Bean SelectById(int id) throws Exception{
+        {{ProcessName}}POJO formPojo = new {{ProcessName}}POJO();
+        {{ProcessName}}Bean bin = new {{ProcessName}}Bean();
+
+        try{
+			formPojo = formDao.SelectById(id);
+            List<{{ProcessName}}POJO> lst = new ArrayList<{{ProcessName}}POJO>();
+            bin.setPojoOut(lst);
+		}catch(Exception ex){
+			System.out.println("Error en el formación del Dao de {{ProcessName}} en el UPDATE");
+			throw ex;
+		}
+
+        return bin;
+	}//End getEntradas
+
+}//End class
  '''
     return template

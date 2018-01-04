@@ -5,13 +5,12 @@ sys.path.append('../')
 import properties
 import pystache
 def tpl():
-    template = u'''
-<?xml version="1.0" encoding="UTF-8"?>
+    template = u'''<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="es.lacaixa.absiscloud.{{ProjectName}}.business.dao.{{ProcessName}}Dao">
 
-    <select id="SelectProcess" resultType="String" >
+    <select id="SelectProcess" resultType="{{ProcessName}}POJO" >
         SELECT
         {{#Model}}
             {{name}},
@@ -20,29 +19,37 @@ def tpl():
             {{tableName}}
     </select>
 
-    <insert id="InsertProcess" parameterType="{{ProcessName}}POJO">
-		INSERT INTO {{control}}
-		(
+    <select id="SelectById" resultType="{{ProcessName}}POJO">
+        SELECT
         {{#Model}}
             {{name}},
         {{/Model}}
-        )
-        VALUES(
+        FROM
+            {{tableName}}
+        WHERE {{idMain}} = ${id}
+    </select>
+
+    <insert id="InsertProcess" parameterType="{{ProcessName}}InPOJO">
+		INSERT INTO {{control}}(
         {{#Model}}
-            ${ {{name}} },
+            {{name}},
+        {{/Model}}
+
+        )VALUES(
+        {{#Model}}
+            '${ {{name}} }',
         {{/Model}}
         )
 	</insert>
 
-        <update id="UpdateProcess">
-            UPDATE {{tableName}} SET
+    <update id="UpdateProcess" parameterType="{{ProcessName}}InPOJO">
+        UPDATE {{tableName}} SET
                  {{#Model}}
-                     {{name}} = #{{{name}}},
+                     {{name}} = ${ {{name}} },
                  {{/Model}}
-             WHERE id = id
-        </update>
+        WHERE {{idMain}} = ${ {{idMain}} }
+    </update>
 
 </mapper>
 '''
-
     return template
