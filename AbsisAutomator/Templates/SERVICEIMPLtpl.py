@@ -91,6 +91,17 @@ public class {{ProcessName}}ServiceImpl implements {{ProcessName}}Service {
         return bin;
 	}//End getEntradas
 
+    @Override
+    public Integer DeleteProcess(int id)  throws Exception{
+        Integer out = new Integer(0);
+        try{
+            out = formDao.DeleteProcess(id);
+        }catch(Exception ex){
+            System.out.println("Error en el formación del Dao de {{ProcessName}} en el DELETE");
+            throw ex;
+        }
+        return out;
+    }//End DeleteProcess
 }//End class
  '''
     return template

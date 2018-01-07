@@ -30,7 +30,7 @@ def tpl():
     </select>
 
     <insert id="InsertProcess" parameterType="{{ProcessName}}InPOJO">
-		INSERT INTO {{control}}(
+		INSERT INTO  `{{tableName}}`(
         {{#Model}}
             {{name}},
         {{/Model}}
@@ -49,6 +49,10 @@ def tpl():
                  {{/Model}}
         WHERE {{idMain}} = ${ {{idMain}} }
     </update>
+
+    <delete id="DeleteProcess">
+        DELETE from {{tableName}} WHERE {{idMain}} = #{id};
+    </delete>
 
 </mapper>
 '''

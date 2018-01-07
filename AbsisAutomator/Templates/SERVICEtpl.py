@@ -42,12 +42,14 @@ public interface {{ProcessName}}Service {
 	Integer UpdateProcess({{ProcessName}}Bean beanEntrada)  throws Exception;
 
     /**
-	* Realiza el INSERT a base de datos
+	* Realiza el DELETE de un id en base de datos
 	* @param beanEntrada {{ProcessName}}Bean
     * @return Integer
     * @throws Exception
     */
-	Integer InsertProcess({{ProcessName}}Bean beanEntrada)  throws Exception;
+	Integer DeleteProcess(int id) throws Exception;
+
+
 
 }'''
     return template

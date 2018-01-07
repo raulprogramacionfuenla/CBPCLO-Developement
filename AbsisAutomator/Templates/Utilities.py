@@ -72,12 +72,19 @@ for({{ProcessName}}POJO el : elem){
 Se emplea para realizar el INSERT de un registro de la base de datos.
 
 ```JAVA
-{{ProcessName}}Bean bOut = Impl{{ProcessName}}.SELECTProcess();
-List<{{ProcessName}}POJO> elem =  Impl{{ProcessName}}.getPojoOut();
-for({{ProcessName}}POJO el : elem){
-	//TODO
-	el.show();
-}
+
+	//Insert proces
+	{{ProcessName}}Bean insertBean = new {{ProcessName}}Bean();
+	{{ProcessName}}InPOJO insertPojo = new {{ProcessName}}InPOJO();
+
+    {{#InPOJO}}
+        insertPojo.set{{name}}("Test");
+    {{/InPOJO}}
+    insertBean.setPojoIn(insertPojo);
+
+	//Insertamos el POJO en la base de datos
+	ImplCLiteral.InsertProcess(insertBean);
+
 ```
 
 
