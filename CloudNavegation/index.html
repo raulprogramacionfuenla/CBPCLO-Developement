@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="CBPopUp.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    //Instanciamos el popUp
+    var popUp = $('body').CBPopUp();
+
+    //popUp.hide(); //Escondemos el popUp
+
+
+    //Cargar información desde el servidor
+    /*popUp.showContentFromServer({
+      controllerPath: "path/to/controller",
+      loadMsg: "<div>Cargando ...</div>",
+      TxData:{
+        //Aqui colocamos la información que transmitimos
+        //al servidor.
+        "id":"34",
+        "variable":"miVariable"
+      }
+    });*/
+
+    popUp.loadContentFromDiv('.popInf');
+    popUp.show(); //Mostramos el popUp
+
+    $('.pepe').click(function(event) {
+    alert('Aqui');
+    });
+  });
+
+  </script>
+  <title>Document</title>
+</head>
+<body>
+
+
+<div class="popInf">
+  <h1>Esto es un popUp</h1>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse inventore a, dolor rem mollitia error quis harum accusamus neque atque, natus pariatur eum, ipsa quas sequi facilis, nulla dolore quia.
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, sit! Sit nihil voluptate asperiores nulla repudiandae eius, laboriosam, quaerat officia, corporis vel est? Eaque recusandae autem, asperiores voluptas, et reprehenderit!
+  <div class="pepe">Estos es un botons</div>
+</div>
+</body>
+</html>
+
+
+<style>
+  /*
+  .CBPopWindow{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 300;
+    top:0px;
+    left: 0px;
+    display: none;
+  }
+  .CBPPopContet{
+    width: 60%;
+    height: 65vh;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 30px;
+    overflow-y: scroll;
+  }*/
+/*.CBPldMessage{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  }*/
+</style>
